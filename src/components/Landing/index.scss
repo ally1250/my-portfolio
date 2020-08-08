@@ -1,0 +1,16 @@
+@import '../Navigation/index.scss';
+@import '../../stylesheets/variables';
+
+.header {
+  @include centerContent(column);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+  margin-top: 15vh;
+  height: 50vh;
+
+  .sub-header {
+    color: $dark-gray;
+    font-size: 0.7em;
+    margin-top: 0.5em;
+  } 
+}

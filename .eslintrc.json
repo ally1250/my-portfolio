@@ -1,0 +1,77 @@
+// {
+//     "env": {
+//         "browser": true,
+//         "es2020": true
+//     },
+//     "extends": [
+//         "eslint:recommended",
+//         "plugin:react/recommended",
+//         "plugin:@typescript-eslint/recommended"
+//     ],
+//     "parser": "@typescript-eslint/parser",
+//     "parserOptions": {
+//         "ecmaFeatures": {
+//             "jsx": true
+//         },
+//         "ecmaVersion": 11,
+//         "sourceType": "module"
+//     },
+//     "plugins": [
+//         "react",
+//         "@typescript-eslint"
+//     ],
+//     "rules": {
+//     }
+// }
+
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "settings": {
+        "import/resolver": {
+            "babel-module": {}
+            // "alias": {
+            //     "map": [
+            //         ["@", "./src"],
+            //         ["@reducers", "./src/reducers"],
+            //         ["@assets/*", "./src/assets/*"],
+            //         ["@locales/*", "./src/locales/*"],
+            //         ["@common/*", "./src/components/common/*"],
+            //         ["@Constants", "./src/components/Constants"],
+            //         ["@mocks/*", "./src/mocks/*"]
+            //     ]
+            // }
+        }
+    },
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "no-script-url": 0,
+        "jsx-a11y/anchor-is-valid": 0,
+        "jsx-a11y/no-static-element-interactions": 0,
+        "jsx-a11y/click-events-have-key-events": 0,
+        "jsx-a11y/label-has-associated-control": 0,
+        "react/prop-types": 0,
+        "react/jsx-props-no-spreading": 0,
+        "no-underscore-dangle": 0,
+        "linebreak-style": 0,
+        "no-unused-vars": 0,
+        "import/no-extraneous-dependencies": 0
+    }
+}

@@ -1,0 +1,56 @@
+@import '../../stylesheets/variables';
+
+@mixin link {
+  text-decoration: none;
+  color: var(--vblack);
+  font-size: 15px;
+  padding: 0.5em 1em;
+  width: 80px;
+
+  cursor: pointer;
+}
+
+.container {
+  .name {
+    position: fixed;
+    left: 6em; /* relative to the font size */
+    top: 2em;
+    z-index: 2;
+    
+    .name-link {
+      @include link;
+      &:hover, .name-active {
+        color: $primary1;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .nav {
+    position: fixed;
+    right: 5em; /* relative to the font size */
+    top: 2em;
+    z-index: 2;
+    
+    display: flex;
+    justify-content: space-between;
+
+    .link {
+      @include transition;
+      @include link;
+
+      &:hover {
+        color: white;
+        width: 80px;
+        background-color: $primary1;
+      }
+    }
+
+    .active {
+      color: white;
+      background-color: $primary1;
+    }
+  }
+}
+
+

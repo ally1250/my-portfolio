@@ -1,0 +1,27 @@
+@import '../../stylesheets/variables';
+
+@mixin circle {
+  position: absolute;
+  width: 80vw;
+  height: 80vw;
+  border-radius: 40vw;
+  top: 5vh;
+  background-color: black;
+}
+
+.container {
+  position: relative;
+  @include centerContent;
+
+  .circle-left {
+    @include circle;
+    right: 30vw;
+    background-color: $primary1;
+  }
+
+  .circle-right {
+    @include circle;
+    left: 30vw;
+    background-color: $primary2;
+  }
+}
