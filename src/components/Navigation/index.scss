@@ -4,8 +4,10 @@
   text-decoration: none;
   color: $dark-gray;
   font-size: 14px;
-  padding: 0.5em 1em;
+  padding: 1em 1em;
   width: 80px;
+  display: flex;
+  justify-content: flex-start;
 
   cursor: pointer;
 }
@@ -21,10 +23,11 @@
 
   .name {
     margin-top: 2em;
-    margin-left: 6em;
+    margin-left: 2em;
 
     .name-link {
       @include link;
+      background-color: rgba(255, 255, 255, 0.7);
       &:hover, .name-active {
         color: $primary1;
         cursor: pointer;
@@ -33,9 +36,13 @@
   }
 
   .nav {
+    background-color: rgba(255, 255, 255, 0.7);
     margin-top: 2em;
-    margin-right: 6em;
+    margin-right: 2em;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    // @include rotate;
 
     .link {
       @include transition;

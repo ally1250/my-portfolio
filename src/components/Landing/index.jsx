@@ -7,14 +7,12 @@ const Landing = () => (
   <div className="landing">
     <div className="header">
       <Fade bottom>
-
         {data.header}
         <div className="sub-header">{data.subHeader}</div>
       </Fade>
       {/* <button><a href={`mailto:${data.contactEmail}`}
       rel="noopener noreferrer">Contact</a></button> */}
     </div>
-
   </div>
 );
 

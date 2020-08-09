@@ -22,3 +22,11 @@ $brown: #976662;
   justify-content: center;
   align-items: center;
 }
+
+@mixin rotate ($degrees: -90deg) {
+  transform: rotate($degrees);
+  -webkit-transform: rotate($degrees);
+  -moz-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  -o-transform: rotate($degrees);
+}
