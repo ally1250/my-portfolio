@@ -1,6 +1,25 @@
 import React, { Component } from 'react';
 import { ReactComponent as Background } from '../../assets/background.svg';
+import { ReactComponent as DesignerIcon } from '../../assets/designer-icon.svg';
+import { ReactComponent as DeveloperIcon } from '../../assets/developer-icon.svg';
+import data from '../../Data';
+
 import './index.scss';
+
+const DetailSection = ({ section }) => (
+  <div>
+    {section.detail.map((detail) => (
+      <div className="section">
+        <div className="section-title">
+          {detail.title.join('\r\n')}
+        </div>
+        <div className="section-detail">
+          {detail.detail.join('\r\n')}
+        </div>
+      </div>
+    ))}
+  </div>
+);
 
 class About extends Component {
   constructor(props) {
@@ -11,8 +30,35 @@ class About extends Component {
 
   render() {
     return (
-      <div className="container">
-        <Background />
+      <div className="about">
+        <Background className="background" />
+        <div className="label-container">
+          <div className="label-section">
+            <DesignerIcon />
+            <div className="designer">
+              Designer
+              <DetailSection
+                section={data.designerSection}
+              />
+            </div>
+          </div>
+          <div className="label-section">
+            <div className="overlap">
+              <DetailSection
+                section={data.overlapSection}
+              />
+            </div>
+          </div>
+          <div className="label-section">
+            <DeveloperIcon />
+            <div className="developer">
+              Developer
+              <DetailSection
+                section={data.developerSection}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

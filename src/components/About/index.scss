@@ -6,22 +6,87 @@
   height: 80vw;
   border-radius: 40vw;
   top: 5vh;
-  background-color: black;
 }
 
-.container {
+@mixin label {
+  position: absolute;
+  font-size: 3em;
+}
+
+@mixin section-detail {
+  font-size: 14px;
+  font-weight: normal;
+  white-space: pre-line;
+  margin: auto;
+  overflow-wrap: normal;
+  word-wrap: break-word;
+  height: fit-content
+}
+
+.about {
   position: relative;
   @include centerContent;
 
-  .circle-left {
-    @include circle;
-    right: 30vw;
-    background-color: $primary1;
+  .background {
+    margin-left: -40%;
+    margin-right: -40%;
+    width: 1900px;
+    height: 1145px;
   }
 
-  .circle-right {
-    @include circle;
-    left: 30vw;
-    background-color: $primary2;
+  .label-container {
+    display: grid;
+    grid-template-columns: 4fr 1fr 4fr;
+    // column-gap: 6%;
+    justify-items: center;
+    align-items: start;
+
+    width: 100%;
+    height: 100%;
+    @include label;
+
+    .label-section {
+      margin-top: 1.5em; 
+      font-size: 50px;
+
+      .designer {
+        color: $primary2;
+        .section-detail {
+          color: white;
+          @include section-detail;
+        }
+      }
+      .developer {
+        color: $primary1;
+        .section-detail {
+          color: $brown;
+          @include section-detail;
+        }
+      }
+      .overlap {
+        margin-top: 4em;
+        color: $dark-gray;
+
+        .section-detail {
+          @include section-detail;
+        }
+      }
+      .section {
+        &:not(:first-child) {
+          margin-top: 1em;
+        }
+
+        &:first-child {
+          margin-top: 1.5em;
+        }
+
+        .section-title {
+          font-size: 16px;
+          font-weight: bold;
+          white-space: pre;
+          margin-bottom: 1em;
+        }
+      }
+    }
   }
 }

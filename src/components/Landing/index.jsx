@@ -4,8 +4,7 @@ import data from '../../Data';
 import './index.scss';
 
 const Landing = () => (
-  <div>
-    <div className="landing" />
+  <div className="landing">
     <div className="header">
       <Fade bottom>
 

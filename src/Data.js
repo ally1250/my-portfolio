@@ -10,30 +10,23 @@ const data = {
     title: 'Designer',
     detail: [
       {
-        title: ['Clarity', 'Usability'],
-        detail: ['I focus on clean design patterns and simple interactions.'],
-      },
-      {
-        title: ['Desirability'],
-        detail: ['I value feedback from users and clients.'],
-      },
-      {
         title: ['Tools'],
         detail: [
-          'Balsamiq Mockups',
           'Figma',
-          'InDesign',
-          'Photoshop',
+          'Balsamiq Mockups',
+          'Adobe InDesign',
+          'Adobe Photoshop',
           'Pen and Paper',
         ],
       },
       {
         title: ['Skills'],
         detail: [
-          'Stakeholder Research',
           'UI/UX Design',
-          'Web',
-          'Mobile',
+          'Ideation',
+          'Stakeholder Research',
+          'Visual Design',
+          'Communication',
         ],
       },
     ],
@@ -42,28 +35,24 @@ const data = {
     title: 'Developer',
     detail: [
       {
-        title: ['Innovation'],
-        detail: ['I enjoy bringing ideas to life across devices using the latest technologies.'],
-      },
-      {
         title: ['Languags'],
         detail: [
           'Javascript',
           'CSS3',
-          'HTML5',
           'Java',
+          'HTML5',
           'Python',
           'C/C++',
-          'Assembly (ARM)'
+          // 'Assembly (ARM)',
         ],
       },
       {
         title: ['Skills'],
         detail: [
           'React',
-          'React Native',
+          // 'React Native',
           'Flutter',
-          'Redux',
+          // 'Redux',
           'AWS',
           'MongoDB',
           'GraphQL',
@@ -77,9 +66,21 @@ const data = {
   overlapSection: {
     detail: [
       {
-        title: ['Aesthetics', 'Functionality'],
-        detail: ['My knowledge in both fields helps me create good-looking user interfaces that are also easy to implement and use.'],
+        title: ['Clarity', 'Usability', 'Desirability'],
+        detail: ['My knowledge in both fields help me create clean design patterns and simple interactions that are easy to implement and use.'],
       },
+      // {
+      //   title: ['Desirability'],
+      //   detail: ['I value feedback from users and clients.'],
+      // },
+      {
+        title: ['Innovation'],
+        detail: ['I enjoy bringing ideas to life with my artistic senses and technical strengths.'],
+      },
+      // {
+      //   title: ['Aesthetics', 'Functionality'],
+      //   detail: ['My knowledge in both fields helps me create good-looking user interfaces that are also easy to implement and use.'],
+      // },
     ],
   },
 };

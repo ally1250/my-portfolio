@@ -2,8 +2,8 @@
 
 @mixin link {
   text-decoration: none;
-  color: var(--vblack);
-  font-size: 15px;
+  color: $dark-gray;
+  font-size: 14px;
   padding: 0.5em 1em;
   width: 80px;
 
@@ -11,12 +11,18 @@
 }
 
 .container {
+  position: fixed;
+  top: 0;
+  transition: top 0.6s;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
   .name {
-    position: fixed;
-    left: 6em; /* relative to the font size */
-    top: 2em;
-    z-index: 2;
-    
+    margin-top: 2em;
+    margin-left: 6em;
+
     .name-link {
       @include link;
       &:hover, .name-active {
@@ -27,13 +33,9 @@
   }
 
   .nav {
-    position: fixed;
-    right: 5em; /* relative to the font size */
-    top: 2em;
-    z-index: 2;
-    
+    margin-top: 2em;
+    margin-right: 6em;
     display: flex;
-    justify-content: space-between;
 
     .link {
       @include transition;
