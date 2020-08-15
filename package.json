@@ -14,24 +14,25 @@
     "react-bootstrap": "^1.3.0",
     "react-dom": "^16.13.1",
     "react-reveal": "^1.2.2",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^3.4.3",
     "react-scroll": "^1.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/preset-react": "^7.10.4",
     "@babel/runtime": "^7.6.2",
+    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/parser": "^3.7.1",
     "babel-eslint": "^10.0.3",
     "babel-plugin-module-resolver": "^4.0.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-import-resolver-alias": "^1.1.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react-hooks": "^1.7.0",
-    "@typescript-eslint/eslint-plugin": "^3.7.1",
-    "@typescript-eslint/parser": "^3.7.1",
     "eslint-import-resolver-babel-module": "^5.1.2",
     "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-react": "^7.20.5"
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "file-loader": "^6.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,0 +1,75 @@
+@import '../../stylesheets/variables';
+@import '../About/index.scss';
+
+@mixin content {
+  // position: absolute;
+}
+
+@mixin project-content {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin project-header($position) {
+  font-size: 25px;
+  font-weight: bold;
+  width: 8em;
+  text-align: $position;
+  margin-bottom: 1em;
+}
+
+.projects {
+  @include centerContent(column);
+
+  .content-container {
+    position: relative;
+    width: 100%;
+    margin: 1em 0;
+    // height: fit-content;
+
+    .header {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 5em;
+    }
+    
+    .content-right {
+      margin-left: 15vw;
+      @include content;
+    }
+
+    .content-left {
+      margin-right: 25vw;
+      @include content;
+    }
+
+    .project-content-left {
+      @include project-content;
+    }
+
+    .project-content-right {
+      @include project-content;
+    }
+
+    .project-header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0 2em;
+
+      .project-description {
+        font-size: 14px;
+        color: $font-gray;
+      }
+
+      .project-header-left {
+        @include project-header(left);
+      }
+
+      .project-header-right {
+        @include project-header(right);
+      }
+    }
+  }
+}

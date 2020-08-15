@@ -4,6 +4,7 @@ import './App.css';
 import Navigation from './components/Navigation';
 import Landing from './components/Landing';
 import About from './components/About';
+import Projects from './components/Projects';
 
 function App() {
   window.onbeforeunload = function () {
@@ -15,6 +16,8 @@ function App() {
       <Navigation />
       <Landing />
       <About />
+      <div style={{ height: '30vh' }} />
+      <Projects />
       <div style={{ height: 2000, width: '100%' }} />
     </div>
   );
