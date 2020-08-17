@@ -48,3 +48,8 @@ body {
   z-index: 1;
 }
 
+.resume-container {
+  display: flex;
+  justify-content: center;
+}
+

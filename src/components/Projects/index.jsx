@@ -1,19 +1,39 @@
 import React, { Component } from 'react';
 import { Fade } from 'react-reveal';
+import { ReactComponent as DesignerIcon } from '../../assets/designer-icon.svg';
+import { ReactComponent as DeveloperIcon } from '../../assets/developer-icon.svg';
 import { ReactComponent as Square } from '../../assets/square.svg';
 import { ReactComponent as Triangle } from '../../assets/triangle.svg';
 import { ReactComponent as TogetherApp } from '../../assets/together-app.svg';
 import { ReactComponent as Circle } from '../../assets/circle.svg';
+import { ReactComponent as LargeCircle } from '../../assets/large-circle.svg';
 import { ReactComponent as Rectangle } from '../../assets/rectangle.svg';
-import { ReactComponent as Triangle2 } from '../../assets/triangle2.svg';
+import { ReactComponent as StraightTriangle } from '../../assets/straight-triangle.svg';
+import { ReactComponent as DiamondButton } from '../../assets/diamond-button.svg';
 
 import RecodeWeb from '../../assets/recode-web.svg';
 import UCSDApp from '../../assets/UCSD-app.svg';
-import FoodDeliveryApp from '../../assets/food-delivery-app.svg';
+import Test from '../../assets/test.svg';
+// import FoodDeliveryApp from '../../assets/food-delivery-app.svg';
 import BirchSearchApp from '../../assets/birch-search-app.svg';
+import AmazonProject from '../../assets/amazon-project.svg';
 
-import data from '../../Data';
 import './index.scss';
+
+const renderDescription = (description) => {
+  if (description) return description.map((item) => <div className="description-item">{item}</div>);
+  return <div />;
+};
+
+const renderRole = (design, develop) => (
+  <div style={{ marginBottom: '0.2em' }}>
+    <div className="label">
+      {design ? 'Design' : ''}
+      {develop && design ? ' & ' : ''}
+      {develop ? ' Develop ' : ''}
+    </div>
+  </div>
+);
 
 const Container = ({ children, style }) => (
   <div className="content-container" style={style}>
@@ -22,30 +42,34 @@ const Container = ({ children, style }) => (
 );
 
 const ContentContainer = ({
-  style, content, header, description, left, textStyle,
+  style, content, header, description, left, textStyle, develop, design,
 }) => (
   <div>
-    {
-      left
-        ? (
-          <div className="project-content-left" style={style}>
-            {content}
-            <div className="project-header-container" style={textStyle}>
-              <div className="project-header-left">{header}</div>
-              {description.map((item) => <div className="project-description">{item}</div>)}
+    {left
+      ? (
+        <div className="project-content" style={style}>
+          {content}
+          <div className="project-header-container" style={textStyle}>
+            {renderRole(design, develop)}
+            <div className="project-header-left">{header}</div>
+            <div style={{ textAlign: 'start' }}>
+              {renderDescription(description)}
             </div>
           </div>
-        )
-        : (
-          <div className="project-content-right" style={style}>
-            <div className="project-header-container" style={{ alignItems: 'flex-end', ...textStyle }}>
-              <div className="project-header-right">{header}</div>
-              {description.map((item) => <div className="project-description">{item}</div>)}
+        </div>
+      )
+      : (
+        <div className="project-content" style={style}>
+          <div className="project-header-container" style={{ alignItems: 'flex-end', ...textStyle }}>
+            {renderRole(design, develop)}
+            <div className="project-header-right">{header}</div>
+            <div style={{ textAlign: 'end' }}>
+              {renderDescription(description)}
             </div>
-            {content}
           </div>
-        )
-    }
+          {content}
+        </div>
+      )}
   </div>
 );
 
@@ -66,73 +90,112 @@ class Projects extends Component {
             </div>
           </Fade>
         </Container>
-        <Container>
-          <Square className="content-left" />
-          <ContentContainer
-            style={{ left: '36vw', top: '-5vh' }}
-            content={<TogetherApp />}
-            textStyle={{ marginLeft: '4em', marginTop: '6em' }}
-            header="Together - Fitness App"
-            description={['User Research', 'UI/UX Design']}
-            left
-          />
-        </Container>
 
-        <Container>
-          <Triangle className="content-right" />
+        <Container style={{ marginTop: '13em' }}>
+          <LargeCircle className="content-left" />
           <ContentContainer
-            style={{ right: '20vw', top: '30vh' }}
+            style={{ right: '29vw', top: '15vh' }}
+            textStyle={{ marginLeft: '3em', marginTop: '-3em' }}
             content={<img src={RecodeWeb} alt="ReCode Website" />}
             header="CORE Platform Redesign"
-            description={['UI/UX Design', 'React.js', 'Node.js']}
-            textStyle={{ marginTop: '2em' }}
+            develop
+            design
+            description={['UI/UX Design', 'Communication', 'Agile Software Development', 'React.js']}
+            left
           />
         </Container>
 
         <Container style={{ marginTop: '6em' }}>
+          <Triangle className="content-right" />
+          <ContentContainer
+            style={{ right: '20vw', top: '25vh' }}
+            content={(
+              <img
+                src={AmazonProject}
+                alt="Amazon Project"
+              />
+            )}
+            textStyle={{ marginTop: '4em', marginRight: '3em' }}
+            header="Amazon Internship"
+            design
+            develop
+            description={['UI/UX Design', 'React.js', 'AWS']}
+          />
+        </Container>
+
+        <Container style={{ marginTop: '15em', marginRight: '10em' }}>
           <Circle className="content-left" />
           <ContentContainer
-            style={{ left: '36vw', top: '8vh' }}
+            style={{ left: '36vw', top: '2.5em' }}
+            textStyle={{ marginLeft: '4em', marginTop: '-1em' }}
             content={<img src={UCSDApp} alt="UCSD Offical Application" />}
             header="UC San Diego Offical Application"
-            description={['UI/UX Design', 'React.js', 'Node.js']}
-            textStyle={{ marginLeft: '4em' }}
+            develop
+            design
+            description={['UI/UX Design', 'Communication', 'Flutter', 'AWS']}
             left
           />
         </Container>
 
-        <Container style={{ marginTop: '12em' }}>
+        <Container style={{ marginTop: '20em', marginLeft: '5em' }}>
           <Rectangle className="content-right" />
           <ContentContainer
-            style={{ right: '19vw', top: 0 }}
+            style={{ right: '17vw', top: '-2.5em' }}
             content={(
               <img
-                src={FoodDeliveryApp}
+                src={Test}
                 alt="Food Delivery Application"
-                style={{ marginTop: '-10vh' }}
+                // style={{ marginTop: '-10vh' }}
               />
             )}
-            header="CORE Platform Redesign"
-            description={['UI/UX Design', 'React.js', 'Node.js']}
-            textStyle={{ marginTop: '2em' }}
+            header="Food Delivery System"
+            develop
+            design
+            description={['UI/UX Design', 'Communication', 'React Native', 'MongoDB']}
+            textStyle={{ marginTop: '2em', marginRight: '4em' }}
           />
         </Container>
 
-        <Container style={{ marginTop: '20em' }}>
-          <Triangle2 className="content-left" />
+        <Container style={{ marginTop: '10em' }}>
+          <StraightTriangle className="content-left" />
           <ContentContainer
-            style={{ left: '35vw', top: '-8vh' }}
+            style={{ left: '32vw', top: '4vh' }}
             content={(
               <img
                 src={BirchSearchApp}
-                alt="Food Delivery Application"
+                alt="Birch Search Application"
               />
             )}
-            textStyle={{ marginTop: '30vh' }}
+            textStyle={{ marginTop: '28vh', marginLeft: '4em' }}
             header="Birch Search Application"
-            description={['UI/UX Design', 'React.js', 'Node.js']}
+            design
+            description={['UI/UX Design', 'Stakeholder Research', 'User Testing']}
             left
           />
+        </Container>
+
+        <Container style={{ marginTop: '15em' }}>
+          <Square className="content-right" />
+          <ContentContainer
+            style={{ right: '41vw', top: '-4.5vh' }}
+            content={<TogetherApp />}
+            textStyle={{ marginRight: '4em', marginTop: '5em' }}
+            header="Together - Fitness App"
+            design
+            description={['User Research', 'Ideation', 'Prototyping']}
+          />
+        </Container>
+
+        <Container style={{ marginTop: '25vh' }}>
+          <div style={{ fontSize: 16, marginBottom: '2em' }}>
+            I’m also interested in visual arts.
+          </div>
+          <div style={{ position: 'relative', width: 'fit-content' }}>
+            <DiamondButton style={{ width: '25vw' }} />
+            <div className="button-label">
+              Checkout some of my art pieces!
+            </div>
+          </div>
         </Container>
       </div>
     );

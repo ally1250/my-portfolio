@@ -1,5 +1,5 @@
 const data = {
-  name: 'Danling W.',
+  name: 'DANLING W.',
   header: 'Hello, my name is Danling Wang.',
   subHeader: 'I love designing and buillding clean user interfaces.',
 

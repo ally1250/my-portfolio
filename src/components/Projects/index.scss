@@ -1,10 +1,6 @@
 @import '../../stylesheets/variables';
 @import '../About/index.scss';
 
-@mixin content {
-  // position: absolute;
-}
-
 @mixin project-content {
   position: absolute;
   display: flex;
@@ -12,6 +8,7 @@
 }
 
 @mixin project-header($position) {
+  text-transform: uppercase;
   font-size: 25px;
   font-weight: bold;
   width: 8em;
@@ -26,30 +23,32 @@
     position: relative;
     width: 100%;
     margin: 1em 0;
-    // height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .header {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 5em;
+      @include header;
     }
     
     .content-right {
       margin-left: 15vw;
-      @include content;
     }
 
     .content-left {
       margin-right: 25vw;
-      @include content;
     }
 
-    .project-content-left {
+    .project-content {
       @include project-content;
-    }
 
-    .project-content-right {
-      @include project-content;
+      .label {
+        // margin-left: 1.7em;
+        display: inline;
+        text-transform: uppercase;
+        color: $dark-gray;
+        font-size: 14px;
+      }
     }
 
     .project-header-container {
@@ -58,10 +57,52 @@
       align-items: flex-start;
       margin: 0 2em;
 
-      .project-description {
-        font-size: 14px;
-        color: $font-gray;
+      .description-container {
+        display: flex;
+
+        .description {
+          // text-transform: uppercase;
+          color: white;
+          font-size: 12px;
+          background-color: rgb(168, 168, 168);
+          padding: 0.1em 0.5em;
+          margin-top: 0.5em;
+          margin-right: 0.5em;
+
+          @include centerContent;
+
+          span {
+            margin: 0 0.3em;
+            line-height: 12px;
+            font-size: 18px;
+            color: $gray;
+            font-weight: bold;
+          }
+        }
       }
+
+      .description-item {
+        // text-transform: uppercase;
+        // position: relative;
+        // list-style-type: none;
+        margin-left: 0.5em;
+        font-size: 13px;
+        line-height: 1.5;
+        color: rgb(134, 134, 134);
+
+        // &::before {
+        //     content: '■';
+        //     position: absolute;
+        //     bottom: 1px;
+        //     left: -1em;          /* Adjust this value so that it appears where you want. */
+        //     font-size: 1.1em;      /* Adjust this value so that it appears what size you want. */
+        // }
+      }
+
+      // .description {
+      //   font-size: 14px;
+      //   color: $font-gray;
+      // }
 
       .project-header-left {
         @include project-header(left);
@@ -71,5 +112,15 @@
         @include project-header(right);
       }
     }
+  }
+  .button-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    font-weight: bold;
+    font-size: 20px;
+    color: $primary1;
   }
 }

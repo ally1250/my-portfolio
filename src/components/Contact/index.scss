@@ -1,0 +1,61 @@
+@import '../../stylesheets/variables';
+
+.contact {
+  margin-top: 40vh;
+  @include centerContent(column);
+
+  .header {
+    @include header;
+  }
+
+  label {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+
+    margin-top: 2em;
+    font-size: 1.5em;
+    color: $primary1;
+    @include transition;
+
+    .text-input {
+      border: none;
+      padding: 0 1em;
+      height: 1.5em;
+      border-bottom: 2px solid $primary1;
+      font: normal 18px Arial;
+      // font-size: 18px;
+      width: 10em;
+      color: $primary2;
+      @include transition;
+
+      &:focus, &:hover {
+        outline: none;
+        border-bottom: 2px solid rgba($primary1, 0.6);
+      }
+    }
+
+    &:hover, &:focus-within {
+      color: rgba($primary1, 0.6);
+    }
+  }
+
+  .submit-button {
+    margin-top: 3em;
+    border: none;
+    background-color: transparent;
+    color: $primary1;
+    font-size: 20px;
+    font-weight: bold;
+    padding: .8em 2em;
+    outline: none !important;
+
+    @include transition;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $primary1;
+      color: white;
+    }
+  }
+}
