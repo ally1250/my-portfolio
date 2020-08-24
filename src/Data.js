@@ -1,8 +1,8 @@
 const data = {
   name: 'DANLING W.',
   header: 'Hello, my name is Danling Wang.',
-  subHeader: 'I love designing and buillding clean user interfaces.',
-
+  // subHeader: 'I love designing and buillding clean user interfaces.',
+  subHeader: 'I am passionate about creating user-centered designs and realizing them with my experience in software development.',
   email: 'ally112250@gmail.com',
   phone: '408-680-6901',
 

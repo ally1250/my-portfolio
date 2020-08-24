@@ -56,10 +56,9 @@ class Navigation extends Component {
 
     return (
       <div
-        className="container"
-        // style={{ top: visible ? 0 : -100 }}
+        className="nav-container"
       >
-        <div className="name">
+        <div className="name" onClick={this.logS}>
           <NavLink
             to="landing"
             label={data.name}

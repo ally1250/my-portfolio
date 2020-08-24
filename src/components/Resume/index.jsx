@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { pdfjs } from 'react-pdf';
 import { Document, Page } from 'react-pdf/dist/entry.webpack';
+import { Header } from '../common';
 import Resume from '../../assets/Resume.pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 
@@ -22,9 +23,10 @@ class index extends Component {
     const { pageNumber } = this.state;
     return (
       <div className="resume">
-        <div className="header">
+        <Header header="Resume" />
+        {/* <div className="header">
           Resume
-        </div>
+        </div> */}
         <div className="resume-container">
           <Document
             file={Resume}

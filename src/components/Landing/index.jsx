@@ -5,10 +5,19 @@ import './index.scss';
 
 const Landing = () => (
   <div className="landing">
-    <div className="header">
+    <div className="landing-header">
       <Fade bottom>
         {data.header}
-        <div className="sub-header">{data.subHeader}</div>
+        <div className="sub-header">
+          I am passionate about creating
+          {' '}
+          <span className="design">user-centered designs</span>
+          {' '}
+          and realizing them with my experience in
+          {' '}
+          <span className="develop">software development</span>
+          .
+        </div>
       </Fade>
       {/* <button><a href={`mailto:${data.contactEmail}`}
       rel="noopener noreferrer">Contact</a></button> */}

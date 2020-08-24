@@ -1,0 +1,133 @@
+@import '../../stylesheets/variables';
+
+@mixin titleFont {
+  font-family: 'Merriweather', serif;
+  color: #323649;
+}
+
+@mixin textFont {
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.05em;
+  color: #616475;
+}
+
+@mixin indentFont {
+  font-family: 'PT Serif', serif;
+  color: #323649;
+}
+
+.content-container {
+  margin: 10% auto 20%;
+  width: 66%;
+
+  ul {
+    list-style-type: circle;
+    list-style-position: inside;
+    margin-left: 0;
+    padding-left: 0;
+    list-style-position: outside;
+    margin-left: 1em;
+  }
+
+  li {
+    @include textFont;
+    width: 37em;
+    margin-left: 2em;
+  }
+}
+
+.indent-container {
+  padding: 2em 4em;
+  background-color: $vwhite;
+  margin-bottom: 0.5em;
+  font-family: 'Montserrat';
+
+  .indented-list {
+    list-style-type: none;
+
+    li {
+      // @include textFont;
+      font-family: 'Montserrat';
+      font-weight: bold;
+      width: 100%;
+      color: #616475;
+      font-size: 16px;
+      line-height: 2.5;
+      // letter-spacing: 1px;
+
+      &::before {
+        @include titleFont;
+        content: '>';
+        margin-right: 1.5em;
+        margin-left: -3em;
+        color: $dark-gray;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+h1 {
+  @include titleFont;
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 60px;
+  width: 11em;
+  line-height: 1.5;
+  color: $primary1;
+}
+
+h2 {
+  @include titleFont;
+  font-size: 30px;
+  // color: $primary1;
+  font-weight: bold;
+  // text-transform: uppercase;
+  margin-bottom: 2em;
+  margin-top: 5em;
+  counter-reset: h3-counter;
+}
+
+h3 {
+  counter-increment: h3-counter;
+  @include textFont;
+  font-style: italic;
+  margin-top: 2em;
+  color: black;
+  font-weight: bold;
+  // text-transform: uppercase;
+  font-size: 20px;
+  color: $primary1;
+
+  &::before {
+    @include titleFont;
+    color: $primary1;
+    content: counter(h3-counter);
+    width: 1em;
+    display: inline-block;
+    margin-right: 1em;
+  }
+}
+
+p, div {
+  @include textFont;
+}
+
+.divider {
+  height: 20vh;
+  width: 100%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.iterations-divider {
+  @include centerContent(column);
+  padding: 15vh 0;
+  width: 100vw;
+  background-color: #141414;
+}

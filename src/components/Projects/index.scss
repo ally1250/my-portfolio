@@ -11,37 +11,33 @@
   text-transform: uppercase;
   font-size: 25px;
   font-weight: bold;
-  width: 8em;
+  width: 16em;
   text-align: $position;
   margin-bottom: 1em;
 }
 
 .projects {
+  margin-top: 10vh;
   @include centerContent(column);
 
-  .content-container {
-    position: relative;
-    width: 100%;
-    margin: 1em 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .header {
+    @include header;
+  }
+  
+  .content-right {
+    margin-left: 15vw;
+  }
 
-    .header {
-      @include header;
-    }
-    
-    .content-right {
-      margin-left: 15vw;
-    }
+  .content-left {
+    margin-right: 25vw;
+  }
 
-    .content-left {
-      margin-right: 25vw;
-    }
+  .project-content-container {
+    cursor: pointer;
 
     .project-content {
       @include project-content;
-
+  
       .label {
         // margin-left: 1.7em;
         display: inline;
@@ -50,67 +46,64 @@
         font-size: 14px;
       }
     }
+  }
 
-    .project-header-container {
+  .project-header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 2em;
+
+    .description-container {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin: 0 2em;
 
-      .description-container {
-        display: flex;
+      .description {
+        color: white;
+        font-size: 12px;
+        background-color: rgb(168, 168, 168);
+        padding: 0.1em 0.5em;
+        margin-top: 0.5em;
 
-        .description {
-          // text-transform: uppercase;
-          color: white;
-          font-size: 12px;
-          background-color: rgb(168, 168, 168);
-          padding: 0.1em 0.5em;
-          margin-top: 0.5em;
-          margin-right: 0.5em;
+        @include centerContent;
 
-          @include centerContent;
-
-          span {
-            margin: 0 0.3em;
-            line-height: 12px;
-            font-size: 18px;
-            color: $gray;
-            font-weight: bold;
-          }
+        span {
+          margin: 0 0.3em;
+          line-height: 12px;
+          font-size: 18px;
+          color: $gray;
+          font-weight: bold;
         }
       }
+    }
 
-      .description-item {
-        // text-transform: uppercase;
-        // position: relative;
-        // list-style-type: none;
-        margin-left: 0.5em;
-        font-size: 13px;
-        line-height: 1.5;
-        color: rgb(134, 134, 134);
+    .description-item {
+      // text-transform: uppercase;
+      // position: relative;
+      // list-style-type: none;
+      font-size: 13px;
+      line-height: 1.5;
+      color: rgb(134, 134, 134);
 
-        // &::before {
-        //     content: '■';
-        //     position: absolute;
-        //     bottom: 1px;
-        //     left: -1em;          /* Adjust this value so that it appears where you want. */
-        //     font-size: 1.1em;      /* Adjust this value so that it appears what size you want. */
-        // }
-      }
-
-      // .description {
-      //   font-size: 14px;
-      //   color: $font-gray;
+      // &::before {
+      //     content: '■';
+      //     position: absolute;
+      //     bottom: 1px;
+      //     left: -1em;          /* Adjust this value so that it appears where you want. */
+      //     font-size: 1.1em;      /* Adjust this value so that it appears what size you want. */
       // }
+    }
 
-      .project-header-left {
-        @include project-header(left);
-      }
+    // .description {
+    //   font-size: 14px;
+    //   color: $font-gray;
+    // }
 
-      .project-header-right {
-        @include project-header(right);
-      }
+    .project-header-left {
+      @include project-header(left);
+    }
+
+    .project-header-right {
+      @include project-header(right);
     }
   }
   .button-label {

@@ -1,0 +1,64 @@
+@import '../../ProjectDetail/index.scss';
+
+.two-col-container {
+  display: grid;
+  grid-template-columns: 50% 25%;
+  column-gap: 25%;
+
+  .sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .section-header {
+      @include titleFont;
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: black;
+    }
+    
+    p {
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.05em;
+      color: #616475;
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: #616475;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.break-section {
+  @include centerContent(column);
+  @include textFont;
+  padding: 4em 0 1em;
+  margin-bottom: 1em;
+  width: 100%;
+  height: fit-content;
+
+  .header {
+    @include titleFont;
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #616475;
+    margin-bottom: 1.5em;
+  }
+
+  p {
+    text-align: center;
+    width: 60%;
+    margin-bottom: 2em;
+    font-family: 'PT Serif', serif;
+    color: #323649;
+    font-size: 27px;
+    line-height: 50px;
+    font-style: italic;
+  }
+}

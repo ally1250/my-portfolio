@@ -36,7 +36,7 @@ class About extends Component {
           <div className="label-section">
             <DesignerIcon />
             <div className="designer">
-              Designer
+              DESIGNER
               <DetailSection
                 section={data.designerSection}
               />
@@ -52,7 +52,7 @@ class About extends Component {
           <div className="label-section">
             <DeveloperIcon />
             <div className="developer">
-              Developer
+              DEVELOPER
               <DetailSection
                 section={data.developerSection}
               />

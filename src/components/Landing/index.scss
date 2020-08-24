@@ -4,17 +4,31 @@
 .landing {
   position: relative;
 
-  .header {
+  .landing-header {
     @include centerContent(column);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.2em;
+    // font-family: 'Montserrat', sans-serif;
     margin-top: 15vh;
-    height: 53vh;
+    height: 55vh;
+    font-weight: bold;
 
     .sub-header {
       color: $dark-gray;
-      font-size: 0.8em;
+      font-size: 1.2em;
+      width: 30em;
+      line-height: 1.5;
+      font-weight: normal;
       margin-top: 0.5em;
+
+      .design {
+        border-bottom: 1px solid $primary2;
+        color: $primary2;
+        // border-radius: 4px;
+      }
+
+      .develop {
+        border-bottom: 1px solid $primary1;
+        color: $primary1;
+      }
     } 
   }
 }

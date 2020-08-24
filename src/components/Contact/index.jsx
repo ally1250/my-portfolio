@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import emailjs from 'emailjs-com';
 import TextareaAutosize from 'react-textarea-autosize';
+import { Header } from '../common';
 import './index.scss';
 
 class Contact extends Component {
@@ -70,9 +71,7 @@ class Contact extends Component {
 
     return (
       <div className="contact">
-        <div className="header">
-          Let&apos;s Chat!
-        </div>
+        <Header header="Let's Chat!" />
         {this.renderTextField('Name', 'name', name)}
         {this.renderTextField('Email', 'email', email)}
         {this.renderTextArea('Message', 'message', message)}

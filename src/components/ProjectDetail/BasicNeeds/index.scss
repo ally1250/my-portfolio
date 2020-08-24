@@ -1,0 +1,207 @@
+@import '../../../stylesheets/variables';
+@import '../index.scss';
+
+.basic-needs-main {
+  @include centerContent(column);
+
+  // h1 {
+  //   @include titleFont;
+  //   font-size: 60px;
+  //   font-weight: bold;
+  //   line-height: 60px;
+  //   width: 11em;
+  //   line-height: 1.2;
+  //   color: $primary1;
+  // }
+
+  // h2 {
+  //   @include titleFont;
+  //   font-size: 30px;
+  //   // color: $primary1;
+  //   font-weight: bold;
+  //   // text-transform: uppercase;
+  //   margin-bottom: 2em;
+  //   margin-top: 5em;
+  //   counter-reset: h3-counter;
+  // }
+
+  // h3 {
+  //   counter-increment: h3-counter;
+  //   @include textFont;
+  //   font-style: italic;
+  //   margin-top: 2em;
+  //   color: black;
+  //   font-weight: bold;
+  //   // text-transform: uppercase;
+  //   font-size: 20px;
+  //   color: $primary1;
+
+  //   &::before {
+  //     @include titleFont;
+  //     color: $primary1;
+  //     content: counter(h3-counter);
+  //     width: 1em;
+  //     display: inline-block;
+  //     margin-right: 1em;
+  //   }
+  // }
+
+  .caption {
+    @include textFont;
+    font-weight: normal;
+    font-size: 14px;
+    color: #919191;
+    text-align: center;
+  }
+
+  .content-container {
+    margin: 10% auto 20%;
+    width: 66%;
+
+    // ul {
+    //   list-style-type: circle;
+    //   list-style-position: inside;
+    //   margin-left: 0;
+    //   padding-left: 0;
+    // }
+
+    // .two-col-container {
+    //   display: grid;
+    //   grid-template-columns: 50% 30%;
+    //   column-gap: 20%;
+
+    //   .sections {
+    //     .section-header {
+    //       @include titleFont;
+    //       font-weight: bold;
+    //       font-size: 12px;
+    //       text-transform: uppercase;
+    //       color: black;
+    //     }
+        
+    //     p {
+    //       font-size: 16px;
+    //       line-height: 28px;
+    //       letter-spacing: 0.05em;
+    //       color: #616475;
+
+    //       a {
+    //         display: block;
+    //       }
+    //     }
+
+        .feedback-section {
+          @include textFont;
+          line-height: 1.5em;
+          color: #444444;
+          font-size: 14px;
+          padding: 1.5em 1.5em;
+          text-align: left;
+          background-color: rgba($primary2, 0.4);
+        }
+    //   }
+    // }
+
+    // ul {
+    //   list-style-position: outside;
+    //   margin-left: 1em;
+    // }
+
+    // li {
+    //   @include textFont;
+    //   width: 37em;
+    //   margin-left: 2em;
+    // }
+  }
+
+  // p, div {
+  //   @include textFont;
+  // }
+
+  // .indent-container {
+  //   @include centerContent(column);
+  //   // @include indentFont;
+  //   padding: 1.5em 0;
+  //   background-color: $vwhite;
+  //   margin-bottom: 0.5em;
+
+  //   .indented-list {
+  //     list-style-type: none;
+
+  //     li {
+  //       @include textFont;
+  //       width: 100%;
+  //       color: #616475;
+  //       font-size: 15px;
+  //       letter-spacing: 2px;
+
+  //       &::before {
+  //         @include titleFont;
+  //         content: '>';
+  //         margin-right: 1.5em;
+  //         margin-left: -2em;
+  //         color: $gray;
+  //         font-weight: bold;
+  //       }
+  //     }
+  //   }
+  // }
+
+  .basic-needs-steps-container {
+    display: flex;
+    justify-content: center;
+    width: '100%';
+
+    .steps-svg {
+      margin-top: 1em;
+      width: 80%;
+    }
+  }
+
+  .design-iteration {
+    @include centerContent(column);
+    width: 100%;
+    padding: 20% 0;
+    height: fit-content;
+    
+    .iteration-img-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+      row-gap: 20px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .three-col {
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 30px;
+    }
+
+    .grid-gap {
+      margin-top: 100px;
+    }
+
+    img {
+      width: 270px;
+    }
+  }
+
+  // .design-iterations-container {
+  //   position: relative;
+
+  //   .design-iterations {
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //     width: 100vw;
+  //     height: 100vh;
+  //     background-color: black;
+  //     z-index: -2;
+  //   }
+  // }
+
+  .small-indent {
+    margin-bottom: 3em;
+  }
+}

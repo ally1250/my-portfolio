@@ -1,11 +1,12 @@
 @import '../../stylesheets/variables';
 
 .contact {
-  margin-top: 40vh;
+  margin-top: 30vh;
+  padding-top: 10vh;
   @include centerContent(column);
 
   .header {
-    @include header;
+    margin-bottom: 2em;
   }
 
   label {

@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import { Fade } from 'react-reveal';
+import { compose } from 'redux';
+import { withRouter } from 'react-router-dom';
+import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
+
+import { Header, Container } from '../common';
 import { ReactComponent as DesignerIcon } from '../../assets/designer-icon.svg';
 import { ReactComponent as DeveloperIcon } from '../../assets/developer-icon.svg';
 import { ReactComponent as Square } from '../../assets/square.svg';
@@ -16,7 +21,7 @@ import UCSDApp from '../../assets/UCSD-app.svg';
 import Test from '../../assets/test.svg';
 // import FoodDeliveryApp from '../../assets/food-delivery-app.svg';
 import BirchSearchApp from '../../assets/birch-search-app.svg';
-import AmazonProject from '../../assets/amazon-project.svg';
+import AmazonProject from '../../assets/amazon-project.png';
 
 import './index.scss';
 
@@ -30,21 +35,15 @@ const renderRole = (design, develop) => (
     <div className="label">
       {design ? 'Design' : ''}
       {develop && design ? ' & ' : ''}
-      {develop ? ' Develop ' : ''}
+      {develop ? ' Development ' : ''}
     </div>
   </div>
 );
 
-const Container = ({ children, style }) => (
-  <div className="content-container" style={style}>
-    {children}
-  </div>
-);
-
 const ContentContainer = ({
-  style, content, header, description, left, textStyle, develop, design,
+  style, content, header, description, left, textStyle, develop, design, onClick,
 }) => (
-  <div>
+  <div className="project-content-container" onClick={onClick}>
     {left
       ? (
         <div className="project-content" style={style}>
@@ -80,28 +79,35 @@ class Projects extends Component {
     };
   }
 
+  onSelectProject = (topic) => {
+    const { history } = this.props;
+    history.push(`/${topic}`);
+  }
+
   render() {
     return (
       <div className="projects">
-        <Container>
+        <Header header="My Recent Projects" />
+        {/* <Container>
           <Fade bottom>
             <div className="header">
               My Recent Projects
             </div>
           </Fade>
-        </Container>
+        </Container> */}
 
-        <Container style={{ marginTop: '13em' }}>
+        <Container>
           <LargeCircle className="content-left" />
           <ContentContainer
-            style={{ right: '29vw', top: '15vh' }}
-            textStyle={{ marginLeft: '3em', marginTop: '-3em' }}
+            style={{ left: '19vw', top: '15vh' }}
+            textStyle={{ marginLeft: '2em', marginTop: '-3em' }}
             content={<img src={RecodeWeb} alt="ReCode Website" />}
             header="CORE Platform Redesign"
             develop
             design
             description={['UI/UX Design', 'Communication', 'Agile Software Development', 'React.js']}
             left
+            onClick={() => this.onSelectProject('core-platform')}
           />
         </Container>
 
@@ -113,6 +119,7 @@ class Projects extends Component {
               <img
                 src={AmazonProject}
                 alt="Amazon Project"
+                style={{ width: 438 }}
               />
             )}
             textStyle={{ marginTop: '4em', marginRight: '3em' }}
@@ -134,6 +141,7 @@ class Projects extends Component {
             design
             description={['UI/UX Design', 'Communication', 'Flutter', 'AWS']}
             left
+            onClick={() => this.onSelectProject('basic-needs')}
           />
         </Container>
 
@@ -152,21 +160,21 @@ class Projects extends Component {
             develop
             design
             description={['UI/UX Design', 'Communication', 'React Native', 'MongoDB']}
-            textStyle={{ marginTop: '2em', marginRight: '4em' }}
+            textStyle={{ marginTop: '4em', marginRight: '4em' }}
           />
         </Container>
 
         <Container style={{ marginTop: '10em' }}>
           <StraightTriangle className="content-left" />
           <ContentContainer
-            style={{ left: '32vw', top: '4vh' }}
+            style={{ left: '32vw', top: '17vh' }}
             content={(
               <img
                 src={BirchSearchApp}
                 alt="Birch Search Application"
               />
             )}
-            textStyle={{ marginTop: '28vh', marginLeft: '4em' }}
+            textStyle={{ marginTop: '15vh', marginLeft: '4em' }}
             header="Birch Search Application"
             design
             description={['UI/UX Design', 'Stakeholder Research', 'User Testing']}
@@ -197,9 +205,14 @@ class Projects extends Component {
             </div>
           </div>
         </Container>
+        {/* <ParallaxProvider>
+          <Parallax y={[-30, 30]}>
+            <div style={{ height: '100vh', width: '100vw', backgroundColor: 'black'}} />
+          </Parallax>
+        </ParallaxProvider> */}
       </div>
     );
   }
 }
 
-export default Projects;
+export default compose(withRouter)(Projects);
