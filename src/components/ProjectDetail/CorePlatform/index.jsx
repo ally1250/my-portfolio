@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
-import styled from 'styled-components';
 
 import { ProjectHeaderSection, Footer } from '../../common';
 import CoreSteps from '../../../assets/corePlatform/core-steps.svg';
 import './index.scss';
 
 import IterationIcon from '../../../assets/basicNeeds/iteration-icon.png';
-import CoreResource from '../../../assets/corePlatform/core-resource.png';
+import ResourceLibrary from '../../../assets/corePlatform/resource-library.png';
 
 const overview = [
   'ReCode Health is a UC San Diego organization that informs ethical digital health research practices. They created the Connected and Open Research Ethics (CORE) Platform to help health researchers connect and share expertise.',
@@ -32,7 +31,9 @@ const headerSections = {
   ],
 };
 
-const CustomScene = ({ children }) => (
+const CustomScene = ({
+  children, pro = [], con = [], label,
+}) => (
   <Controller>
     <Scene
       triggerHook="onLeave"
@@ -44,6 +45,11 @@ const CustomScene = ({ children }) => (
       >
         <section className="panel original">
           {children[0]}
+          <div className="design-type">{`${label} (Original)`}</div>
+          <div className="evaluation">
+            <ul className="pro">{pro.map((p) => <li>{p}</li>)}</ul>
+            <ul className="con">{con.map((c) => <li>{c}</li>)}</ul>
+          </div>
         </section>
         <Tween
           from={{ x: '100%' }}
@@ -51,6 +57,11 @@ const CustomScene = ({ children }) => (
         >
           <section className="panel push">
             {children[1]}
+            <div className="design-type">{`${label} (Redesign)`}</div>
+            <div className="evaluation">
+              <ul className="pro">{pro.map((p) => <li>{p}</li>)}</ul>
+              <ul className="con">{con.map((c) => <li>{c}</li>)}</ul>
+            </div>
           </section>
         </Tween>
       </Timeline>
@@ -121,7 +132,7 @@ class CorePlatform extends Component {
 
         <div className="iterations-divider">
           <img src={IterationIcon} alt="iteration icon" />
-          <h2 style={{ margin: 0, color: 'white', marginTop: 40 }}>New Designs</h2>
+          <h2 style={{ margin: 0, color: 'white', marginTop: 40 }}>Design Modifications</h2>
         </div>
 
         {/* <div className="swip-container" id="swip-container">
@@ -132,9 +143,13 @@ class CorePlatform extends Component {
             <img src={IterationIcon} alt="iteration icon" />
           </section>
         </div> */}
-        <CustomScene>
-          <img src={CoreResource} alt="core resource" style={{ width: '50%'}} />
-          <span>test2</span>
+        <CustomScene
+          pro={['emphasis on search and filter', 'color patterns for organizing search results', 'bright color for accents']}
+          con={['inflexible and confusing filters', 'excessive detail in search result cards', 'lack of focus in search result cards']}
+          label="Resource Library"
+        >
+          <img src={ResourceLibrary} alt="core resource" style={{ width: 800 }} />
+          <img src={ResourceLibrary} alt="core resource" style={{ width: 719.5 }} />
         </CustomScene>
         <CustomScene>
           <span>test</span>
