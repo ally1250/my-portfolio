@@ -23,7 +23,8 @@
       }
 
       img {
-        margin-top: 2em;
+        margin-top: 1em;
+        margin-bottom: 1em;
         box-shadow: 0 2px 20px 0 rgba(45, 50, 58, 0.5);
 
       }
@@ -46,25 +47,34 @@
         font-size: 20px;
         font-weight: bold;
         width: 100%;
+
+        &.redesign {
+          color: $gray;
+        }
       }
 
-      .evaluation {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-        width: 45em;
-        height: fit-content;
-        padding: 0.5em 0;
-        border-radius: 6px;
-
+      .description {
         background-color: rgba(70, 64, 64, 0.7);
-        color: white;
+        border-radius: 6px;
+        padding: 0.5em 0;
         height: fit-content;
+        width: 44em;
+        box-sizing: border-box;
+
+        &.changes {
+          padding: 0;
+          padding-left: 2em;
+        }
+
+        &.evaluation {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
 
         ul {
-          list-style-type: none;
           font-family: 'Montserrat', sans-serif;
           font-size: 13px;
+          color: white;
 
           li {
             line-height: 1.5em;
@@ -75,6 +85,10 @@
             font-size: 20px;
             font-weight: bold;
             color: #dbb094;
+          }
+
+          &.pro, &.con {
+            list-style-type: none;
           }
 
           &.pro li::before {

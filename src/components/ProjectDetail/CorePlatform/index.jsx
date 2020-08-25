@@ -8,6 +8,8 @@ import './index.scss';
 
 import IterationIcon from '../../../assets/basicNeeds/iteration-icon.png';
 import ResourceLibrary from '../../../assets/corePlatform/resource-library.png';
+import ResourceLibraryRedesign from '../../../assets/corePlatform/resource-library-redesign.png';
+
 
 const overview = [
   'ReCode Health is a UC San Diego organization that informs ethical digital health research practices. They created the Connected and Open Research Ethics (CORE) Platform to help health researchers connect and share expertise.',
@@ -32,7 +34,7 @@ const headerSections = {
 };
 
 const CustomScene = ({
-  children, pro = [], con = [], label,
+  children, pro = [], con = [], label, redesignDescription = [],
 }) => (
   <Controller>
     <Scene
@@ -46,7 +48,7 @@ const CustomScene = ({
         <section className="panel original">
           {children[0]}
           <div className="design-type">{`${label} (Original)`}</div>
-          <div className="evaluation">
+          <div className="description evaluation">
             <ul className="pro">{pro.map((p) => <li>{p}</li>)}</ul>
             <ul className="con">{con.map((c) => <li>{c}</li>)}</ul>
           </div>
@@ -57,10 +59,9 @@ const CustomScene = ({
         >
           <section className="panel push">
             {children[1]}
-            <div className="design-type">{`${label} (Redesign)`}</div>
-            <div className="evaluation">
-              <ul className="pro">{pro.map((p) => <li>{p}</li>)}</ul>
-              <ul className="con">{con.map((c) => <li>{c}</li>)}</ul>
+            <div className="design-type redesign">{`${label} (Redesign)`}</div>
+            <div className="description changes">
+              <ul>{redesignDescription.map((d) => <li>{d}</li>)}</ul>
             </div>
           </section>
         </Tween>
@@ -147,9 +148,10 @@ class CorePlatform extends Component {
           pro={['emphasis on search and filter', 'color patterns for organizing search results', 'bright color for accents']}
           con={['inflexible and confusing filters', 'excessive detail in search result cards', 'lack of focus in search result cards']}
           label="Resource Library"
+          redesignDescription={['only essential information in the resource cards', 'hierarchical and multi-select filters for more flexibility and readability', 'vertical and horizontal division for better organization']}
         >
-          <img src={ResourceLibrary} alt="core resource" style={{ width: 800 }} />
-          <img src={ResourceLibrary} alt="core resource" style={{ width: 719.5 }} />
+          <img src={ResourceLibrary} alt="resource library" style={{ width: 800 }} />
+          <img src={ResourceLibraryRedesign} alt="resource library redesign" style={{ width: 800 }} />
         </CustomScene>
         <CustomScene>
           <span>test</span>
