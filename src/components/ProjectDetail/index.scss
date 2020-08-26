@@ -6,11 +6,20 @@
 }
 
 @mixin textFont {
-  font-family: 'Alegreya Sans', sans-serif;
+  // font-family: 'Alegreya Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   line-height: 28px;
-  letter-spacing: 0.05em;
+  // letter-spacing: 0.05em;
+  // font-weight: bold;
   color: #616475;
+}
+
+@mixin importantFont {
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  font-size: 18px;
 }
 
 @mixin indentFont {
@@ -18,52 +27,129 @@
   color: #323649;
 }
 
+@mixin descriptionBox {
+  border-radius: 6px;
+  padding: 1em 1em 0;
+  box-sizing: border-box;
+  height: fit-content;
+  width: 45em;
+}
+
+@mixin descriptionList {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: white;
+  position: relative;
+  margin-top: 0.2em;
+  padding-left: 2em;
+  margin-bottom: 0;
+}
+
 .content-container {
   margin: 10% auto 20%;
   width: 66%;
 
-  ul {
-    list-style-type: circle;
-    list-style-position: inside;
-    margin-left: 0;
-    padding-left: 0;
-    list-style-position: outside;
-    margin-left: 1em;
-  }
+  > {
+    ul {
+      list-style-type: circle;
+      list-style-position: inside;
+      margin-left: 0;
+      padding-left: 0;
+      list-style-position: outside;
+      margin-left: 1em;
 
-  li {
-    @include textFont;
-    width: 37em;
-    margin-left: 2em;
+      li {
+        @include textFont;
+        width: 80%;
+        margin-left: 2em;
+        margin-bottom: 1em;
+      }
+    }
   }
 }
 
 .indent-container {
-  padding: 2em 4em;
+  padding: 1.5em 6em 1.5em 4em;
   background-color: $vwhite;
   margin-bottom: 0.5em;
-  font-family: 'Montserrat';
+  font-family: 'Alegreya Sans', sans-serif;
 
-  .indented-list {
+  ul.indented-list {
     list-style-type: none;
 
     li {
-      // @include textFont;
+      // font-weight: bold;
+      @include importantFont;
+      width: 100%;
+      color: #616475;
+      line-height: 1.5;
+      margin-bottom: 1em;
+
+      &::before {
+        @include titleFont;
+        content: '>';
+        margin-right: 1.5em;
+        margin-left: -2.5em;
+        color: $dark-gray;
+        font-weight: bold;
+      }
+    }
+  }
+
+  ol.indented-list {
+    list-style-type: none;
+    position: relative;
+    counter-reset: indented-list-counter;
+
+    li {
+      counter-increment: indented-list-counter;
       font-family: 'Montserrat';
       font-weight: bold;
       width: 100%;
       color: #616475;
       font-size: 16px;
       line-height: 2.5;
-      // letter-spacing: 1px;
 
       &::before {
-        @include titleFont;
-        content: '>';
-        margin-right: 1.5em;
-        margin-left: -3em;
+        position: absolute;
+        left: 0;
+        content: counter(indented-list-counter);
         color: $dark-gray;
         font-weight: bold;
+      }
+    }
+  }
+}
+
+.two-col-container {
+  display: grid;
+  grid-template-columns: 50% 25%;
+  column-gap: 25%;
+
+  .sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .section-header {
+      @include titleFont;
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: black;
+    }
+    
+    p {
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.05em;
+      color: #616475;
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: #616475;
+        cursor: pointer;
       }
     }
   }
@@ -85,15 +171,17 @@ h2 {
   // color: $primary1;
   font-weight: bold;
   // text-transform: uppercase;
-  margin-bottom: 2em;
-  margin-top: 5em;
+  padding-bottom: 2em;
+  padding-top: 5em;
   counter-reset: h3-counter;
 }
 
 h3 {
   counter-increment: h3-counter;
-  @include textFont;
-  font-style: italic;
+  // @include textFont;
+  font-family: 'Alegreya Sans', sans-serif;
+  letter-spacing: 0.05em;
+  // font-style: italic;
   margin-top: 2em;
   color: black;
   font-weight: bold;
@@ -115,6 +203,10 @@ p, div {
   @include textFont;
 }
 
+p {
+  margin-bottom: 2em;
+}
+
 .divider {
   height: 20vh;
   width: 100%;
@@ -122,7 +214,8 @@ p, div {
 
 .center {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .iterations-divider {
@@ -130,4 +223,12 @@ p, div {
   padding: 15vh 0;
   width: 100vw;
   background-color: #141414;
+}
+
+.caption {
+  @include textFont;
+  font-weight: normal;
+  font-size: 14px;
+  color: #919191;
+  text-align: center;
 }

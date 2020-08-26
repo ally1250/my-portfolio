@@ -1,123 +1,97 @@
-/* eslint-disable max-len */
 import React, { Component } from 'react';
-import { ReactComponent as BasicNeedsSteps } from '../../../assets/basicNeeds/basic-needs-steps.svg';
 import { ProjectHeaderSection, Footer, ProjectReflectionSection } from '../../common';
-
-import IterationIcon from '../../../assets/basicNeeds/iteration-icon.png';
-
-import DefaultV1 from '../../../assets/basicNeeds/default-v1.png';
-import LimitExceededV1 from '../../../assets/basicNeeds/limit-exceeded-v1.png';
-import RegisteredV1 from '../../../assets/basicNeeds/registered-v1.png';
-import UnregisteredV1 from '../../../assets/basicNeeds/unregistered-v1.png';
-
-import DefaultV2 from '../../../assets/basicNeeds/default-v2.png';
-import LimitExceededV2 from '../../../assets/basicNeeds/limit-exceeded-v2.png';
-import RegisteredV2 from '../../../assets/basicNeeds/registered-v2.png';
-
-import DefaultToggle from '../../../assets/basicNeeds/default-toggle.png';
-import RegisteredToggle from '../../../assets/basicNeeds/registered-toggle.png';
-
-import DefaultV3 from '../../../assets/basicNeeds/default-v3.png';
-import LimitExceededV3 from '../../../assets/basicNeeds/limit-exceeded-v3.png';
-import RegisteredV3 from '../../../assets/basicNeeds/registered-v3.png';
-
-import BasicNeedsWorkflow from '../../../assets/basicNeeds/basic-needs-workflow.png';
-import BasicNeedsStructure from '../../../assets/basicNeeds/basic-needs-structure.png';
 
 import './index.scss';
 
 const overview = [
-  'Basic Needs is an organization at UCSD that aims to provide free food resources to students in needs from other participating organizations. Students who are interested can sign up for free food notifications through the UCSD Mobile App.',
-  'To help Basic Needs facilitate event attendance tracking, we created an RSVP feature in the UC San Diego mobile app for students to conveniently register for events and check food availability.',
-  'My task was to design and implement the RSVP feature to integrate it with the current campus event notifications in the app.',
+  'In the scenario when a customer files a ticket complaining about a really long page load, it is almost impossible for developers to quickly identify the cause if not enough context about the client-side activity is provided. Therefore, the objective of my intern project at Amazon was to design and build a tool for developers to check client-side network traffic.',
+  'More specifically, the tool is an HTTP analyzer that visualizes network requests for production traffic. With this tool, developers can easily pinpoint any cause of slow performance by tracing API call details within a given time range.',
 ];
 
 const headerSections = {
-  timeline: 'Janurary 2020 - Present',
+  timeline: 'June - September 2019',
   role: 'Designer, Developer',
-  tools: 'Figma, Flutter, AWS, WSO2',
+  tools: 'React, CSS, SQL, HTML, AWS',
   links: [
     {
-      url: 'https://github.com/ally1250/campus-mobile',
-      label: 'Github Fork',
-    },
-    {
-      url: 'https://mobile.ucsd.edu/',
-      label: 'UC San Diego App',
+      url: 'https://docs.google.com/document/d/1fi_lv-3GkB6cXRbZv-2gmjITDgHbVK04kgzBg5cApU0/edit?usp=sharing',
+      label: 'Design Document',
     },
   ],
 };
 
-const Image = ({ src, alt, label }) => (
-  <div>
-    <img src={src} alt={alt} />
-    <div className="caption">{label}</div>
-  </div>
-);
-
-class BasicNeeds extends Component {
+class AmazonInternship extends Component {
   constructor(props) {
     super(props);
     this.state = {
     };
   }
 
-  componentDidMount() {
-    window.scrollTo(0, 0);
-  }
-
   render() {
     return (
-      <div className="basic-needs-main">
+      <div className="amazon-main">
         <ProjectHeaderSection
-          header="Basic Needs Attendance Tracking"
+          header="Amazon Internship Project"
           overviewSections={overview}
           headerSections={headerSections}
-          problemStatement="Basic Needs and the participating departments need a way to
-                            know an approximate number of students attending the free food
-                            events in order to prepare food accordingly."
-          solution="I created an RSVP option to all free food notifications in the UC San Diego app,
-                    allowing us to easily and accurately keep track of the number of students attending."
+          problemStatement="Developers need a convenient way to learn about client-side activity in order to identify and analyze performance issues."
+          solution="I created a tool that displays a detailed timeline view of network requests for production traffic, allowing users to check the details for each API call within a specified time period."
         />
 
         <div className="content-container">
 
           <h2>Design Process</h2>
 
-          <h3>Understand Client Needs</h3>
+          <h3>Background Research</h3>
           <ul>
             <li>
-              Do background research on Basic Needs to learn the objective of the organization.
+              Consult mentor and project manager to learn about the resources available and suitable for the project. 
             </li>
             <li>
-              Communicate with Basic Needs to learn their challenges and expectations.
+              Set up meetings with other AWS service teams to discuss the details on working toward the objective of the project.
+            </li>
+            <li>
+              Construct survey for engineers to understand their expectations and needs.
             </li>
           </ul>
 
-          <h3>Understand User Needs</h3>
+          <h3>Understand User Workflow</h3>
           <ul>
             <li>
-              <i>Think like a user.</i>
-              {' '}
-              Identify what information the students need to know before registering for an event.
+              Create user stories:
             </li>
           </ul>
           <div className="indent-container">
-            As a user...
             <ul className="indented-list">
-              <li>I want to know how many people are going before I make my decision.</li>
-              <li>I want to know how many servings of food will be offered.</li>
-              <li>I want to know whether there will be enough food at the event.</li>
+              <li>Alice is a developer on the RDS console team. She is resolving a customer ticket that complains about a slow page load.</li>
+              <li>Alice wants to know about how long the page load took to determine whether the delay in performance is caused by a slow internet connection or an actual server error.</li>
+              <li>The load time is uncommonly long. Alice wants to get the detailed information and time elapsed for each API call triggered on the client-side, in order to find out which or if any API call has caused the delay.</li>
+              <li>Alice finds that one API call took much longer than usual so she wants to find out if any error occurred during that API call.</li>
             </ul>
           </div>
+          <ul>
+            <li>
+              Determine a general workflow that applies to all scenarios above:
+            </li>
+          </ul>
+          <div className="indent-container">
+            <ol className="indented-list">
+              <li>The user launches the tool and selects the service as RDS, environment, and region.</li>
+              <li>The user enters the Customer Id in the search box, specifies a start time, and clicks "scan".</li>
+              <li>The user now sees a list of all API calls within the ten-minute period after the start time, including the total load time in seconds, and the total number of API calls triggered by the page load.</li>
+              <li>The user clicks on an API name to check the details and error message for that API call.</li>
+            </ol>
+          </div>
 
-          <h3>Make Iterative Improvements</h3>
+          <h3>Generate Ideas</h3>
+
+          {/* <h3>Make Iterative Improvements</h3>
           <div className="basic-needs-steps-container">
             <BasicNeedsSteps className="steps-svg" />
-          </div>
+          </div> */}
         </div>
 
-        <div className="iterations-divider">
+        {/* <div className="iterations-divider">
           <img src={IterationIcon} alt="iteration icon" />
           <h2 style={{ margin: 0, color: 'white', marginTop: 40 }}>Design Iterations</h2>
         </div>
@@ -283,15 +257,15 @@ class BasicNeeds extends Component {
           feedbackSections={[
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque feugiat egestas metus neque. Orci consectetur eget est, purus tortor. Nunc, in felis cursus ornare malesuada vitae.',
           ]}
-        />
+        /> */}
 
-        <Footer
+        {/* <Footer
           previous="amazon-internship"
           next="food-delivery"
-        />
+        /> */}
       </div>
     );
   }
 }
 
-export default BasicNeeds;
+export default AmazonInternship;

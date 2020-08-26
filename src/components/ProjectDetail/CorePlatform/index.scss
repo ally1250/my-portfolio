@@ -2,7 +2,6 @@
 @import '../index.scss';
 
 .core-platform-main {
-  // @include centerContent(column);
   overflow: hidden;
   #pinContainer {
     height: 100vh;
@@ -13,7 +12,17 @@
       height: 100vh;
       width: 100vw;
       position: absolute;
-      @include centerContent(column);
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      padding: 0 6em;
+      align-items: center;
+      justify-items: center;
+      box-sizing: border-box;
+
+      .description-container {
+        @include centerContent(column);
+        margin-bottom: 0;
+      }
 
       span {
         position: relative;
@@ -25,66 +34,72 @@
       img {
         margin-top: 1em;
         margin-bottom: 1em;
-        box-shadow: 0 2px 20px 0 rgba(45, 50, 58, 0.5);
-
+        width: 800px;
+        box-shadow: 0 2px 20px 0 rgba(39, 44, 53, 0.5);
       }
 
       &.original {
-        background-color: rgba(#d68956, 0.5);
+        background-color: #252525;
       }
 
       &.push {
-        background-color: #252525;
+        background-color: #f3e2d5;
       }
 
       .design-type {
         font-family: 'Montserrat', sans-serif;
 
         @include centerContent;
-        margin-top: 2em;
-        margin-bottom: 0.8em;
-        color: rgba(70, 64, 64, 0.8);
+        text-align: center;
+        margin: 2em 1em 0.8em 2em;
         font-size: 20px;
         font-weight: bold;
-        width: 100%;
+        width: 10em;
+        color: $gray;
 
         &.redesign {
-          color: $gray;
+          color: #EF7B30;
         }
       }
 
       .description {
-        background-color: rgba(70, 64, 64, 0.7);
-        border-radius: 6px;
-        padding: 0.5em 0;
-        height: fit-content;
-        width: 44em;
-        box-sizing: border-box;
+        @include descriptionBox;
+        
+        .label {
+          color: #dbb094;
+        }
 
         &.changes {
-          padding: 0;
           padding-left: 2em;
+          color: #EF7B30;
+          ul {
+            margin-left: -0.5em;
+            li {
+              color: rgb(70, 64, 64);
+            }
+          }
         }
 
         &.evaluation {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 47% 47%;
+          column-gap: 6%;
         }
 
         ul {
-          font-family: 'Montserrat', sans-serif;
-          font-size: 13px;
-          color: white;
+          @include descriptionList;
 
           li {
             line-height: 1.5em;
+            margin-bottom: 1em;
           }
 
           li::before {
-            margin-right: 1em;
             font-size: 20px;
             font-weight: bold;
             color: #dbb094;
+            position: absolute;
+            left: 0;
           }
 
           &.pro, &.con {

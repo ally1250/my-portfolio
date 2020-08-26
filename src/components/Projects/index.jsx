@@ -127,6 +127,7 @@ class Projects extends Component {
             design
             develop
             description={['UI/UX Design', 'React.js', 'AWS']}
+            onClick={() => this.onSelectProject('amazon-internship')}
           />
         </Container>
 

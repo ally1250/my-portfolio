@@ -10,7 +10,7 @@ import Projects from './components/Projects';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
 
-import { BasicNeeds, CorePlatform } from './components/ProjectDetail';
+import { BasicNeeds, CorePlatform, AmazonInternship } from './components/ProjectDetail';
 
 const Home = () => (
   <div className="App">
@@ -40,13 +40,18 @@ function App() {
         component={Home}
       />
       <Route
-        path="/basic-needs"
-        component={BasicNeeds}
-      />
-      <Route
         path="/core-platform"
         component={CorePlatform}
       />
+      <Route
+        path="/amazon-internship"
+        component={AmazonInternship}
+      />
+      <Route
+        path="/basic-needs"
+        component={BasicNeeds}
+      />
+
     </Router>
 
   );

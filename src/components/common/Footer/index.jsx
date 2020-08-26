@@ -41,21 +41,25 @@ class Footer extends Component {
 
     return (
       <div className="footer-main">
-        <div className="arrow-container" onClick={() => this.onClick(previous)}>
-          <img src={PrevArrow} alt="prev arrow" style={{ width: 22 }} />
-          <span className="prev-text">{labels[previous].header}</span>
-        </div>
-        <div
-          className="arrow-container"
-          style={{ flexDirection: 'column' }}
-          onClick={() => this.onClick(next)}
-        >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <div className="next-header">{labels[next].header}</div>
-            <img src={NextArrow} alt="next arrow" style={{ width: 60 }} />
+        {previous ? (
+          <div className="arrow-container" onClick={() => this.onClick(previous)}>
+            <img src={PrevArrow} alt="prev arrow" style={{ width: 22 }} />
+            <span className="prev-text">{labels[previous].header}</span>
           </div>
-          <div className="next-sub-header">{labels[next].subHeader}</div>
-        </div>
+        ) : <div />}
+        {next ? (
+          <div
+            className="arrow-container"
+            style={{ flexDirection: 'column' }}
+            onClick={() => this.onClick(next)}
+          >
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <div className="next-header">{labels[next].header}</div>
+              <img src={NextArrow} alt="next arrow" style={{ width: 60 }} />
+            </div>
+            <div className="next-sub-header">{labels[next].subHeader}</div>
+          </div>
+        ) : <div />}
       </div>
     );
   }

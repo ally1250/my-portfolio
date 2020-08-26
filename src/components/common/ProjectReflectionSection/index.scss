@@ -1,0 +1,34 @@
+@import '../../ProjectDetail/index.scss';
+
+#project-reflection-main {
+  .reflection-container {
+    width: 70%;
+  }
+
+  .section-header {
+    @include titleFont;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: black;
+    margin-top: 5em;
+  }
+
+  .feedback-section {
+    @include textFont;
+    line-height: 1.8em;
+    color: #444444;
+    font-size: 15px;
+    padding: 3em 5em 1em;
+    text-align: left;
+    background-color: rgba($primary2, 0.4);
+  }
+
+  .quote-source {
+    margin-top: 2em;
+    margin-right: 2em;
+    font-style: italic;
+    font-size: 16px;
+    text-align: end;
+  }
+}

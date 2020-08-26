@@ -1,15 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
 
-import { ProjectHeaderSection, Footer } from '../../common';
+import { ProjectHeaderSection, Footer, ProjectReflectionSection } from '../../common';
 import CoreSteps from '../../../assets/corePlatform/core-steps.svg';
 import './index.scss';
 
 import IterationIcon from '../../../assets/basicNeeds/iteration-icon.png';
 import ResourceLibrary from '../../../assets/corePlatform/resource-library.png';
 import ResourceLibraryRedesign from '../../../assets/corePlatform/resource-library-redesign.png';
-
+import Forum from '../../../assets/corePlatform/the-forum.png';
+import ForumRedesign from '../../../assets/corePlatform/the-forum-redesign.png';
+import ForumPost from '../../../assets/corePlatform/forum-post.png';
+import ForumPostRedesign from '../../../assets/corePlatform/forum-post-redesign.png';
+import UserProfile from '../../../assets/corePlatform/user-profile.png';
+import UserProfileRedesign from '../../../assets/corePlatform/user-profile-redesign.png';
+import WeeklyPlan from '../../../assets/corePlatform/weekly-plan-sample.png';
 
 const overview = [
   'ReCode Health is a UC San Diego organization that informs ethical digital health research practices. They created the Connected and Open Research Ethics (CORE) Platform to help health researchers connect and share expertise.',
@@ -46,11 +52,19 @@ const CustomScene = ({
         wrapper={<div id="pinContainer" />}
       >
         <section className="panel original">
-          {children[0]}
           <div className="design-type">{`${label} (Original)`}</div>
-          <div className="description evaluation">
-            <ul className="pro">{pro.map((p) => <li>{p}</li>)}</ul>
-            <ul className="con">{con.map((c) => <li>{c}</li>)}</ul>
+          <div className="description-container">
+            {children[0]}
+            <div className="description evaluation">
+              <div className="label">
+                PRO
+                <ul className="pro">{pro.map((p) => <li>{p}</li>)}</ul>
+              </div>
+              <div className="label">
+                CON
+                <ul className="con">{con.map((c) => <li>{c}</li>)}</ul>
+              </div>
+            </div>
           </div>
         </section>
         <Tween
@@ -58,10 +72,13 @@ const CustomScene = ({
           to={{ x: '0%' }}
         >
           <section className="panel push">
-            {children[1]}
             <div className="design-type redesign">{`${label} (Redesign)`}</div>
-            <div className="description changes">
-              <ul>{redesignDescription.map((d) => <li>{d}</li>)}</ul>
+            <div className="description-container">
+              {children[1]}
+              <div className="description changes">
+                MODIFICATIONS
+                <ul>{redesignDescription.map((d) => <li>{d}</li>)}</ul>
+              </div>
             </div>
           </section>
         </Tween>
@@ -75,6 +92,10 @@ class CorePlatform extends Component {
     super(props);
     this.state = {
     };
+  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -133,37 +154,76 @@ class CorePlatform extends Component {
 
         <div className="iterations-divider">
           <img src={IterationIcon} alt="iteration icon" />
-          <h2 style={{ margin: 0, color: 'white', marginTop: 40 }}>Design Modifications</h2>
+          <h2 style={{ padding: 0, color: 'white', paddingTop: 40 }}>Design Modifications</h2>
         </div>
 
-        {/* <div className="swip-container" id="swip-container">
-          <section className="swip-panel" id="first" style={{ backgroundColor: 'red' }}>
-            <img src={IterationIcon} alt="iteration icon" />
-          </section>
-          <section className="swip-panel" id="second" style={{ backgroundColor: 'yellow' }}>
-            <img src={IterationIcon} alt="iteration icon" />
-          </section>
-        </div> */}
         <CustomScene
-          pro={['emphasis on search and filter', 'color patterns for organizing search results', 'bright color for accents']}
-          con={['inflexible and confusing filters', 'excessive detail in search result cards', 'lack of focus in search result cards']}
+          pro={['put emphasis on search and filter', 'have color patterns for organizing resource cards', 'use bright color for accents']}
+          con={['filters are inflexible and confusing', 'resource cards contain excessive detail', 'resource cards lack focus and are crowded']}
           label="Resource Library"
-          redesignDescription={['only essential information in the resource cards', 'hierarchical and multi-select filters for more flexibility and readability', 'vertical and horizontal division for better organization']}
+          redesignDescription={['remove unessential information from the cards', 'create hierarchical and multi-select filters for more flexibility and readability', 'divide content vertically and horizontally for better organization']}
         >
-          <img src={ResourceLibrary} alt="resource library" style={{ width: 800 }} />
-          <img src={ResourceLibraryRedesign} alt="resource library redesign" style={{ width: 800 }} />
-        </CustomScene>
-        <CustomScene>
-          <span>test</span>
-          <span>test2</span>
-        </CustomScene>
-        <CustomScene>
-          <span>test</span>
-          <span>test2</span>
+          <img src={ResourceLibrary} alt="resource library" />
+          <img src={ResourceLibraryRedesign} alt="resource library redesign" />
         </CustomScene>
 
+        <CustomScene
+          pro={['put emphasis on search and filter', 'have color patterns for organizing Forum posts', 'use bright color for accents']}
+          con={['filters are inflexible and confusing', 'lack emphasis on post replies and views']}
+          label="The Forum"
+          redesignDescription={['add favorite and share features for a more customizable experience', 'emphasize on number of votes and replies', 'create hierarchical and multi-select filters for more flexibility and readability']}
+        >
+          <img src={Forum} alt="forum" />
+          <img src={ForumRedesign} alt="forum redesign" />
+        </CustomScene>
+
+        <CustomScene
+          pro={['have color distinguishment between the question and the replies', 'put emphasis on questioner and respondents']}
+          con={['hard to understand the relationship between individual replies', 'need to scroll to the bottom to reply']}
+          label="The Forum Post Detail"
+          redesignDescription={['intergate upvote and downvote feature to provide reference for users', 'create hierarchical structure of posts and replies for clarity', 'add reply button for each post to make it more easily accessible']}
+        >
+          <img src={ForumPost} alt="forum post" />
+          <img src={ForumPostRedesign} alt="forum post redesign" />
+        </CustomScene>
+
+        <CustomScene
+          pro={['break input fields into sections']}
+          con={['contain large amount of information with limited organization', 'expand the input fields to take up full width']}
+          label="User Profile"
+          redesignDescription={['group fields with cards to create a simple and clean structure', 'create a one-stop shop for all user data']}
+        >
+          <img src={UserProfile} alt="user profile" />
+          <img src={UserProfileRedesign} alt="user profile redesign" />
+        </CustomScene>
+
+        <div className="content-container">
+          <h2>Development Process</h2>
+
+          <h3>Create a weekly development plan to keep track of progress</h3>
+          <div className="indent-container center">
+            <img src={WeeklyPlan} alt="weekly plan sample" style={{ width: 750 }} />
+          </div>
+          <div className="caption">Screenshot of Week 2 Development Plans</div>
+
+          <h3>Weekly development meeting for updates and troubleshoot</h3>
+          <h3>Hold additional meetings with team members to identify and resolve issues</h3>
+          <h3>Begin testing in late September, after the development completes</h3>
+        </div>
+
+        <ProjectReflectionSection
+          reflectionSections={[
+            'To improve the current design, it is essential to learn the purpose of each feature and what the designer wanted to communicate to users.',
+            'The original filter design for the CORE platform lacked flexibility and clarity for not allowing users to deselect a filter item or select multiple items. I referenced a lot of online resources to better understand the functionality and the design of a comprehensive filter. I visualized the hierarchical structure of the filters to create a resemblance of online shopping filters so that even new users could have prior knowledge of how to use the filter.',
+            'Since testing will begin in September, I am on a very tight schedule to build a working product that meets the expectations. I found that communication is the key to an agile development process. Expressing concerns and confusions to the ReCode Health team to seek for feedback allowed me to learn their opinion and make adjustments in time. This method immensely reduced the time wasted on reworking.',
+          ]}
+          feedbackSections={[
+            'As a both a designer and developer during the redesign of process, Ally has created and  developed designs that have dramatically changed the CORE platform for the betterment of our users. Each section and feature of the platform were carefully evaluated and improved in close collaboration with the rest of the team, and Ally consistently gave quality and constructive inputs throughout. She is also persistent, recreating and iterating whenever she felt something could be improved in the prototyping process, creating a noticeable polish in the final design. I am lucky to have worked with her on this project and wish her well on future ones.',
+          ]}
+          source="Shengzhi Wang"
+        />
+
         <Footer
-          previous="basic-needs"
           next="basic-needs"
         />
       </div>
