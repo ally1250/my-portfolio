@@ -3,6 +3,45 @@
 
 .core-platform-main {
   overflow: hidden;
+
+  .insights-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5em;
+    row-gap: 3em;
+    margin: 0 4em;
+    background-color: $font-gray;
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      content: "";
+      background-image: url("../../../assets/corePlatform/grid.png");
+      opacity: 0.5;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+    }
+
+    .insight {
+      font-weight: bold;
+      font-family: 'PT Serif', serif;
+      font-size: 22px;
+      color: white;
+      line-height: 1.3;
+      width: 10em;
+      z-index: 1;
+      
+      .insight-type {
+        color: $gray;
+        font-size: 10px;
+        margin-top: 5px;
+      }
+    }
+  }
+
   #pinContainer {
     height: 100vh;
     width: 100vw;
@@ -15,10 +54,8 @@
       display: grid;
       grid-template-columns: 1fr 3fr;
       column-gap: 2em;
-      padding-top: 20vh;
+      padding-top: 17vh;
       padding-left: 8em;
-      // align-items: center;
-      // justify-items: center;
       box-sizing: border-box;
 
       .description-container {
@@ -49,8 +86,7 @@
       .design-type {
         font-family: 'Montserrat', sans-serif;
 
-        // @include centerContent;
-        // text-align: center;
+        width: 10em;
         margin-left: 0.5em;
         margin-bottom: 1.5em;
         line-height: 1.5;

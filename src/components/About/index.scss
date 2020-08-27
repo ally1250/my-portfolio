@@ -20,7 +20,7 @@
   margin: auto;
   overflow-wrap: normal;
   word-wrap: break-word;
-  height: fit-content
+  height: fit-content;
 }
 
 .about {
@@ -30,14 +30,11 @@
   .background {
     margin-left: -40%;
     margin-right: -40%;
-    // width: 1900px;
-    // height: 1145px;
   }
 
   .label-container {
     display: grid;
     grid-template-columns: 4fr 2fr 4fr;
-    // justify-items: center;
     align-items: start;
 
     width: 75%;
@@ -48,6 +45,7 @@
     .label-section {
       margin-top: 1.5em; 
       font-size: 50px;
+      font-family: 'PT Serif', serif;
 
       .designer {
         color: $primary2;
@@ -64,7 +62,7 @@
         }
       }
       .overlap {
-        margin-top: 4.1em;
+        margin-top: 8em;
         color: $dark-gray;
 
         .section-detail {

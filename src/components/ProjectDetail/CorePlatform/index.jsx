@@ -87,6 +87,13 @@ const CustomScene = ({
   </Controller>
 );
 
+const Insight = ({ insight, type }) => (
+  <div className="insight">
+    {insight}
+    <div className="insight-type">{type}</div>
+  </div>
+);
+
 class CorePlatform extends Component {
   constructor(props) {
     super(props);
@@ -124,6 +131,12 @@ class CorePlatform extends Component {
               learn their feedback on the current design and expectations for the new design.
             </li>
             {/* TODO: add insights */}
+            <div className="indent-container insights-container">
+              <Insight insight="Easy Navigation and Search" type="Need" />
+              <Insight insight="Clean Data Organization" type="Need" />
+              <Insight insight="Encourage User Interactions" type="Goal" />
+              <Insight insight="Better User Interface" type="Goal" />
+            </div>
           </ul>
 
           <h3>Identify the Root Cause</h3>
