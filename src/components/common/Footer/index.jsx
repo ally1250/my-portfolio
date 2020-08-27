@@ -22,6 +22,26 @@ const labels = {
     header: 'Birch Search',
     subHeader: 'Mobile Design',
   },
+  'amazon-internship':
+  {
+    header: 'Amazon Internship',
+    subHeader: 'Web Design and Development',
+  },
+  'food-delivery':
+  {
+    header: 'Food Delivery System',
+    subHeader: 'Web and Mobile Design and Development',
+  },
+  together:
+  {
+    header: 'Together',
+    subHeader: 'App Design',
+  },
+  'art-work':
+  {
+    header: 'My Other Art Pieces',
+    subHeader: 'visual arts',
+  },
 };
 
 class Footer extends Component {

@@ -48,9 +48,9 @@ const headerSections = {
   ],
 };
 
-const Image = ({ src, alt, label }) => (
+export const Image = ({ src, alt, label, style }) => (
   <div>
-    <img src={src} alt={alt} />
+    <img src={src} alt={alt} style={style} />
     <div className="caption">{label}</div>
   </div>
 );
@@ -80,7 +80,7 @@ class BasicNeeds extends Component {
                     allowing us to easily and accurately keep track of the number of students attending."
         />
 
-        <div className="content-container">
+        <div className="content-container narrow-contianer">
 
           <h2>Design Process</h2>
 
@@ -117,7 +117,7 @@ class BasicNeeds extends Component {
           </div>
         </div>
 
-        <div className="iterations-divider">
+        <div className="break-block">
           <img src={IterationIcon} alt="iteration icon" />
           <h2 style={{ margin: 0, color: 'white', marginTop: 40 }}>Design Iterations</h2>
         </div>
@@ -244,9 +244,7 @@ class BasicNeeds extends Component {
           </div>
         </div>
 
-        <div className="divider" />
-
-        <div className="content-container" style={{ marginBottom: 20 }}>
+        <div className="content-container narrow-contianer" style={{ marginBottom: 20 }}>
           <h2>Development Process</h2>
           <h3>Create Backend Architecture</h3>
           <div className="center small-indent" style={{ marginTop: '2em' }}>
@@ -259,7 +257,7 @@ class BasicNeeds extends Component {
             I made sure that the tools are reusable and compatible
             for the intergation of other campus events in the future.
           </p>
-          <div className="indent-container">
+          <div className="indent-container indent-image">
             <img src={BasicNeedsWorkflow} alt="basic needs workflow" style={{ width: 730 }} />
           </div>
           <div className="caption">Backend Workflow Diagram</div>
@@ -278,7 +276,8 @@ class BasicNeeds extends Component {
 
         <ProjectReflectionSection
           reflectionSections={[
-            'The result of adding a feature to an existing design may look simple but the process of figuring out how to incorporate the new design with the predefined ones is difficult. Since the layout for notifications is fixed, I was given little flexibility to make changes to the original component. Therefore, to make the design intuitive to users, I spent a lot of effort exploring different approaches.',
+            'A search tool is about simplicity for use and clarity for the search results. I streamlined the required search parameters so that the users could simply copy and paste the information from the customer tickets. In addition, I made sure that the search results only display the essential data for identifying an issue, such as time elapsed, status code, etc. so that users can directly locate the data they want. It required a lot of trails and revisions to create a simple design that conveys exactly the information needed.',
+            'If I had more time, I would add instrumentation to make this tool a shared component for all other consoles to have network logging.',
           ]}
           feedbackSections={[
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque feugiat egestas metus neque. Orci consectetur eget est, purus tortor. Nunc, in felis cursus ornare malesuada vitae.',

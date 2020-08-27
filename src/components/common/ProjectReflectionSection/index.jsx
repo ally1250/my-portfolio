@@ -13,7 +13,7 @@ class ProjectReflectionSection extends Component {
     const { feedbackSections = [], reflectionSections = [], source = '' } = this.props;
 
     return (
-      <div className="content-container" id="project-reflection-main">
+      <div className="content-container narrow-contianer" id="project-reflection-main">
         <h2>Reflection</h2>
         <div className="reflection-container">
           <div>

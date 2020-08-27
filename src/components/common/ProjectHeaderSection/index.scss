@@ -9,12 +9,12 @@
   height: fit-content;
 
   .header {
-    @include titleFont;
+    @include textFont;
     font-size: 18px;
     font-weight: 300;
     text-transform: uppercase;
     color: #616475;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
   }
 
   p {
@@ -22,6 +22,7 @@
     width: 60%;
     margin-bottom: 2em;
     font-family: 'PT Serif', serif;
+    
     color: #323649;
     font-size: 27px;
     line-height: 50px;

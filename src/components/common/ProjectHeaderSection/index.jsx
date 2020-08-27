@@ -15,6 +15,7 @@ class ProjectHeaderSection extends Component {
       headerSections, // map, links: { url: '', label: ''}
       problemStatement,
       solution,
+      headerStyle,
     } = this.props;
 
     const {
@@ -24,7 +25,7 @@ class ProjectHeaderSection extends Component {
     return (
       <div>
         <div className="content-container">
-          <h1>{header}</h1>
+          <h1 style={headerStyle}>{header}</h1>
           <h2>Project Overview</h2>
           <div className="two-col-container">
             <div>
@@ -65,7 +66,7 @@ class ProjectHeaderSection extends Component {
           </p>
         </div>
 
-        <div className="divider" />
+        {/* <div className="divider" /> */}
       </div>
     );
   }

@@ -52,9 +52,8 @@ const CustomScene = ({
         wrapper={<div id="pinContainer" />}
       >
         <section className="panel original">
-          <div className="design-type">{`${label} (Original)`}</div>
-          <div className="description-container">
-            {children[0]}
+          <div>
+            <div className="design-type">{`${label} (Original)`}</div>
             <div className="description evaluation">
               <div className="label">
                 PRO
@@ -66,20 +65,21 @@ const CustomScene = ({
               </div>
             </div>
           </div>
+          {children[0]}
         </section>
         <Tween
           from={{ x: '100%' }}
           to={{ x: '0%' }}
         >
           <section className="panel push">
-            <div className="design-type redesign">{`${label} (Redesign)`}</div>
-            <div className="description-container">
-              {children[1]}
+            <div>
+              <div className="design-type redesign">{`${label} (Redesign)`}</div>
               <div className="description changes">
                 MODIFICATIONS
                 <ul>{redesignDescription.map((d) => <li>{d}</li>)}</ul>
               </div>
             </div>
+            {children[1]}
           </section>
         </Tween>
       </Timeline>
@@ -110,7 +110,7 @@ class CorePlatform extends Component {
           solution="I created redesigns for all pages of the CORE Platform to improve the experience of navigating and interacting with the tools. We then implemented the new designs with React.js for the frontend and Node.js for the backend."
         />
 
-        <div className="content-container">
+        <div className="content-container narrow-contianer">
           <h2>Design Process</h2>
 
           <h3>Background Research</h3>
@@ -197,11 +197,11 @@ class CorePlatform extends Component {
           <img src={UserProfileRedesign} alt="user profile redesign" />
         </CustomScene>
 
-        <div className="content-container">
+        <div className="content-container narrow-contianer">
           <h2>Development Process</h2>
 
           <h3>Create a weekly development plan to keep track of progress</h3>
-          <div className="indent-container center">
+          <div className="indent-container indent-image">
             <img src={WeeklyPlan} alt="weekly plan sample" style={{ width: 750 }} />
           </div>
           <div className="caption">Screenshot of Week 2 Development Plans</div>

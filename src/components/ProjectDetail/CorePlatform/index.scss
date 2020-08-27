@@ -14,9 +14,11 @@
       position: absolute;
       display: grid;
       grid-template-columns: 1fr 3fr;
-      padding: 0 6em;
-      align-items: center;
-      justify-items: center;
+      column-gap: 2em;
+      padding-top: 20vh;
+      padding-left: 8em;
+      // align-items: center;
+      // justify-items: center;
       box-sizing: border-box;
 
       .description-container {
@@ -32,8 +34,6 @@
       }
 
       img {
-        margin-top: 1em;
-        margin-bottom: 1em;
         width: 800px;
         box-shadow: 0 2px 20px 0 rgba(39, 44, 53, 0.5);
       }
@@ -49,13 +49,14 @@
       .design-type {
         font-family: 'Montserrat', sans-serif;
 
-        @include centerContent;
-        text-align: center;
-        margin: 2em 1em 0.8em 2em;
-        font-size: 20px;
+        // @include centerContent;
+        // text-align: center;
+        margin-left: 0.5em;
+        margin-bottom: 1.5em;
+        line-height: 1.5;
+        font-size: 25px;
         font-weight: bold;
-        width: 10em;
-        color: $gray;
+        color: white;
 
         &.redesign {
           color: #EF7B30;
@@ -67,10 +68,11 @@
         
         .label {
           color: #dbb094;
+          // padding-bottom: 2em;
         }
 
         &.changes {
-          padding-left: 2em;
+          // padding-left: 2em;
           color: #EF7B30;
           ul {
             margin-left: -0.5em;
@@ -81,9 +83,11 @@
         }
 
         &.evaluation {
-          display: grid;
-          grid-template-columns: 47% 47%;
-          column-gap: 6%;
+          display: flex;
+          flex-direction: column;
+          // display: grid;
+          // grid-template-rows: 1fr 1fr;
+          row-gap: 3em;
         }
 
         ul {
@@ -91,7 +95,7 @@
 
           li {
             line-height: 1.5em;
-            margin-bottom: 1em;
+            margin-top: 1em;
           }
 
           li::before {
