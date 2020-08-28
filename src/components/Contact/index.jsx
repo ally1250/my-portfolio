@@ -16,21 +16,21 @@ class Contact extends Component {
 
   renderTextField = (label, name, value) => (
     <label>
-      {label}
+      <div className="label">{label}</div>
       <input type="text" name={name} value={value} onChange={this.onChange} className="text-input" />
     </label>
   )
 
   renderTextArea = (label, name, value) => (
     <label>
-      {label}
+      <div className="label">{label}</div>
       <TextareaAutosize
         name={name}
         value={value}
         onChange={this.onChange}
         className="text-input"
         maxRows={3}
-        style={{ width: '15em', paddingBottom: 4 }}
+        style={{ width: '28vw', paddingBottom: 4 }}
       />
     </label>
   )
@@ -72,9 +72,11 @@ class Contact extends Component {
     return (
       <div className="contact">
         <Header header="Let's Chat!" />
-        {this.renderTextField('Name', 'name', name)}
-        {this.renderTextField('Email', 'email', email)}
-        {this.renderTextArea('Message', 'message', message)}
+        <div className="input-fields-container">
+          {this.renderTextField('Name', 'name', name)}
+          {this.renderTextField('Email', 'email', email)}
+          {this.renderTextArea('Message', 'message', message)}
+        </div>
         <input type="submit" value="Send!" onClick={this.onSend} className="submit-button" />
       </div>
     );

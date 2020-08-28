@@ -57,5 +57,15 @@ $brown: #976662;
   font-size: 2em;
   font-weight: bold;
   margin-bottom: 5em;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  color: $font-gray;
+  // font-family: 'Montserrat', sans-serif;
+}
+
+@mixin titleFontFamily {
+  font-family: 'PT Serif', serif;
+}
+
+@mixin textFontFamily {
+  font-family: 'Open Sans', sans-serif;
 }

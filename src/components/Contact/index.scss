@@ -3,31 +3,45 @@
 .contact {
   margin-top: 30vh;
   padding-top: 10vh;
-  @include centerContent(column);
+  // @include centerContent(column);
 
   .header {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+  }
+
+  .input-fields-container {
+    padding-left: 25vw;
   }
 
   label {
     display: flex;
+    justify-content: flex-start;
     align-items: flex-end;
     position: relative;
 
     margin-top: 2em;
-    font-size: 1.5em;
+    font-size: 1.2em;
+    font-weight: bold;
     color: $primary1;
     @include transition;
 
+    .label {
+      width: 12vw;
+      text-align: end;
+    }
+
     .text-input {
       border: none;
-      padding: 0 1em;
-      height: 1.5em;
+      @include textFontFamily;
+      padding: 0 0.3em;
       border-bottom: 2px solid $primary1;
-      font: normal 18px Arial;
-      // font-size: 18px;
-      width: 10em;
-      color: $primary2;
+      color: $vblack;
+      font-weight: 300;
+      display: flex;
+      align-items: center;
+      font-size: 1.5em;
+      width: 28vw;
+      // min-width: 8em;
       @include transition;
 
       &:focus, &:hover {
@@ -42,13 +56,16 @@
   }
 
   .submit-button {
-    margin-top: 3em;
+    font-size: 1.5em;
+
+    margin-top: 2em;
     border: none;
     background-color: transparent;
     color: $primary1;
-    font-size: 20px;
     font-weight: bold;
-    padding: .8em 2em;
+    height: 3em;
+    width: 5em;
+    border-radius: 100px;
     outline: none !important;
 
     @include transition;

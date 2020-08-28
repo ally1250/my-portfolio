@@ -21,6 +21,8 @@
   overflow-wrap: normal;
   word-wrap: break-word;
   height: fit-content;
+  line-height: 1.5;
+  @include textFontFamily;
 }
 
 .about {
@@ -44,8 +46,9 @@
 
     .label-section {
       margin-top: 1.5em; 
-      font-size: 50px;
-      font-family: 'PT Serif', serif;
+      font-size: 40px;
+      @include titleFontFamily;
+      font-weight: bold;
 
       .designer {
         color: $primary2;
@@ -62,7 +65,7 @@
         }
       }
       .overlap {
-        margin-top: 8em;
+        margin-top: 5em;
         color: $dark-gray;
 
         .section-detail {

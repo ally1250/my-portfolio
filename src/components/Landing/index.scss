@@ -9,24 +9,25 @@
     // font-family: 'Montserrat', sans-serif;
     margin-top: 15vh;
     height: 55vh;
-    font-weight: bold;
+    // font-weight: bold;
+    font-weight: 300;
 
     .sub-header {
-      color: $dark-gray;
-      font-size: 1.2em;
-      width: 30em;
+      color: $font-gray;
+      width: 33em;
       line-height: 1.5;
       font-weight: normal;
       margin-top: 0.5em;
 
       .design {
-        border-bottom: 1px solid $primary2;
+        // border-bottom: 1px solid $primary1;
+        background-color: $primary1;
         color: $primary2;
-        // border-radius: 4px;
       }
 
       .develop {
-        border-bottom: 1px solid $primary1;
+        // border-bottom: 1px solid $primary2;
+        background-color: $primary2;
         color: $primary1;
       }
     } 

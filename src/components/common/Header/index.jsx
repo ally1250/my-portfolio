@@ -1,7 +1,7 @@
 import React from 'react';
 import { Fade } from 'react-reveal';
 import Container from '../Container/index';
-import './index.scss';
+import './index.scoped.scss';
 
 const Header = ({ header }) => (
   <Container>

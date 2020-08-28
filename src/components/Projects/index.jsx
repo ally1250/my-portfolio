@@ -23,7 +23,7 @@ import Test from '../../assets/test.svg';
 import BirchSearchApp from '../../assets/birch-search-app.svg';
 import AmazonProject from '../../assets/amazon-project.png';
 
-import './index.scss';
+import './index.scoped.scss';
 
 const renderDescription = (description) => {
   if (description) return description.map((item) => <div className="description-item">{item}</div>);
@@ -88,13 +88,6 @@ class Projects extends Component {
     return (
       <div className="projects">
         <Header header="My Recent Projects" />
-        {/* <Container>
-          <Fade bottom>
-            <div className="header">
-              My Recent Projects
-            </div>
-          </Fade>
-        </Container> */}
 
         <Container>
           <LargeCircle className="content-left" />
@@ -102,7 +95,7 @@ class Projects extends Component {
             style={{ left: '19vw', top: '15vh' }}
             textStyle={{ marginLeft: '2em', marginTop: '-3em' }}
             content={<img src={RecodeWeb} alt="ReCode Website" />}
-            header="CORE Platform Redesign"
+            header="The CORE Platform Redesign"
             develop
             design
             description={['UI/UX Design', 'Communication', 'Agile Software Development', 'React.js']}
@@ -123,7 +116,7 @@ class Projects extends Component {
               />
             )}
             textStyle={{ marginTop: '4em', marginRight: '3em' }}
-            header="Amazon Internship"
+            header="The Har Viewer"
             design
             develop
             description={['UI/UX Design', 'React.js', 'AWS']}
@@ -146,7 +139,7 @@ class Projects extends Component {
           />
         </Container>
 
-        <Container style={{ marginTop: '20em', marginLeft: '5em' }}>
+        {/* <Container style={{ marginTop: '20em', marginLeft: '5em' }}>
           <Rectangle className="content-right" />
           <ContentContainer
             style={{ right: '17vw', top: '-2.5em' }}
@@ -205,7 +198,7 @@ class Projects extends Component {
               Checkout some of my art pieces!
             </div>
           </div>
-        </Container>
+        </Container> */}
         {/* <ParallaxProvider>
           <Parallax y={[-30, 30]}>
             <div style={{ height: '100vh', width: '100vw', backgroundColor: 'black'}} />

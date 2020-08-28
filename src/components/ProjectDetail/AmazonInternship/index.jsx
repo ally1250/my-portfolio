@@ -12,7 +12,7 @@ import HarViewerChart from '../../../assets/amazonProject/har-viewer-chart.png';
 
 import { Image } from '../BasicNeeds';
 
-import './index.scss';
+import './index.scoped.scss';
 
 const overview = [
   'For my intern project at Amazon Relational Database Service (RDS) team, I built an HTTP analyzer called the Har Viewer that visualizes network requests for production traffic.',

@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.5.0",
     "classnames": "^2.2.6",
+    "craco-plugin-scoped-css": "^1.1.0",
     "emailjs-com": "^2.6.3",
     "gsap": "^3.5.0",
     "node-sass": "^4.14.1",
@@ -47,9 +48,9 @@
     "file-loader": "^6.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

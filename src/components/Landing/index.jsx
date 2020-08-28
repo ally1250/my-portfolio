@@ -11,7 +11,7 @@ const Landing = () => (
         <div className="sub-header">
           I am passionate about creating
           {' '}
-          <span className="design">user-centered designs</span>
+          <span className="design">human-centered designs</span>
           {' '}
           and realizing them with my experience in
           {' '}

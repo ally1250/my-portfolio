@@ -18,8 +18,8 @@ import UserProfileRedesign from '../../../assets/corePlatform/user-profile-redes
 import WeeklyPlan from '../../../assets/corePlatform/weekly-plan-sample.png';
 
 const overview = [
-  'ReCode Health is a UC San Diego organization that informs ethical digital health research practices. They created the Connected and Open Research Ethics (CORE) Platform to help health researchers connect and share expertise.',
-  'Due to the ReCode Health team’s request for a cleaner and more user-friendly interface, I created redesigns for the CORE Platform. My work mainly focused on improving the organization of information and the functionality of the search filters.',
+  'The Connected and Open Research Ethics (CORE) Platform is created and maintained by a UC San Diego organization called ReCode Health. ReCode Health focuses on informing ethical health research practices and they built the CORE Platform hoping to help health researchers connect and share expertise.',
+  'The objective of the redesign is to develop a cleaner and more user-friendly interface to encourage more user interactions. My work mainly focused on improving the organization of information and the functionality of the search filters.',
   'After getting the team’s approval of the redesign, I am in the process of implementing the new CORE Platform layout with React.js.',
 ];
 
@@ -109,7 +109,7 @@ class CorePlatform extends Component {
     return (
       <div className="core-platform-main">
         <ProjectHeaderSection
-          header="The CORE Platform from ReCode Health"
+          header="The CORE Platform Redesign"
           overviewSections={overview}
           headerSections={headerSections}
           problemStatement="ReCode Health wants to make the entire CORE Platform more user-friendly in terms of

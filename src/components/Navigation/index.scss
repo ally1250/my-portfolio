@@ -5,9 +5,10 @@
   color: $dark-gray;
   font-size: 14px;
   padding: 1em 1em;
-  width: 80px;
+  width: 70px;
   display: flex;
   justify-content: flex-start;
+  font-weight: normal;
 
   cursor: pointer;
 }
@@ -38,7 +39,6 @@
       &:hover, .name-active {
         color: $primary1;
         cursor: pointer;
-        // text-shadow: 1px 1px rgba($primary1, 0.5);
       }
     }
   }
@@ -59,7 +59,7 @@
 
       &:hover {
         color: white;
-        width: 80px;
+        // width: 80px;
         background-color: $primary1;
       }
     }

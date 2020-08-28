@@ -4,7 +4,7 @@ import { ReactComponent as DesignerIcon } from '../../assets/designer-icon.svg';
 import { ReactComponent as DeveloperIcon } from '../../assets/developer-icon.svg';
 import data from '../../Data';
 
-import './index.scss';
+import './index.scoped.scss';
 
 const DetailSection = ({ section }) => (
   <div>
@@ -36,7 +36,7 @@ class About extends Component {
           <div className="label-section">
             <DesignerIcon />
             <div className="designer">
-              DESIGNER
+              Designer
               <DetailSection
                 section={data.designerSection}
               />
@@ -52,7 +52,7 @@ class About extends Component {
           <div className="label-section">
             <DeveloperIcon />
             <div className="developer">
-              DEVELOPER
+              Developer
               <DetailSection
                 section={data.developerSection}
               />

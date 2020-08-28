@@ -33,7 +33,7 @@ class index extends Component {
           >
             <Page
               pageNumber={pageNumber}
-              width={400}
+              width={350}
             />
           </Document>
           <div className="pdf-overlay">

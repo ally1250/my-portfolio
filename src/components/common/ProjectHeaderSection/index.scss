@@ -1,4 +1,4 @@
-@import '../../ProjectDetail/index.scss';
+@import '../../ProjectDetail/index.scoped.scss';
 
 .break-section {
   @include centerContent(column);

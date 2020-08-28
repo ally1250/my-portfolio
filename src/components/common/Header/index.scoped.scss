@@ -2,4 +2,7 @@
 
 .header {
   @include header;
+  font-weight: normal;
+  margin-bottom: 3em;
+  color: $vblack;
 }
