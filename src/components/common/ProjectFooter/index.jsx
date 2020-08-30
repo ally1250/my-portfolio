@@ -3,6 +3,7 @@ import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
 import NextArrow from '../../../assets/next-arrow.png';
 import PrevArrow from '../../../assets/back-arrow.png';
+import { ReactComponent as UpIcon } from '../../../assets/up.svg';
 
 import './index.scss';
 
@@ -24,7 +25,7 @@ const labels = {
   },
   'amazon-internship':
   {
-    header: 'Amazon Internship',
+    header: 'The Har Viewer',
     subHeader: 'Web Design and Development',
   },
   'food-delivery':
@@ -44,7 +45,7 @@ const labels = {
   },
 };
 
-class Footer extends Component {
+class ProjectFooter extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -54,6 +55,10 @@ class Footer extends Component {
   onClick = (path) => {
     const { history } = this.props;
     history.push(`/${path}`);
+  }
+
+  toTop = () => {
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -67,6 +72,7 @@ class Footer extends Component {
             <span className="prev-text">{labels[previous].header}</span>
           </div>
         ) : <div />}
+        <div className="to-top" onClick={this.toTop}><UpIcon className="up-icon" /></div>
         {next ? (
           <div
             className="arrow-container"
@@ -85,4 +91,4 @@ class Footer extends Component {
   }
 }
 
-export default compose(withRouter)(Footer);
+export default compose(withRouter)(ProjectFooter);

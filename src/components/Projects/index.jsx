@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Fade } from 'react-reveal';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
-import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 
 import { Header, Container } from '../common';
 import { ReactComponent as DesignerIcon } from '../../assets/designer-icon.svg';
@@ -16,12 +15,12 @@ import { ReactComponent as Rectangle } from '../../assets/rectangle.svg';
 import { ReactComponent as StraightTriangle } from '../../assets/straight-triangle.svg';
 import { ReactComponent as DiamondButton } from '../../assets/diamond-button.svg';
 
-import RecodeWeb from '../../assets/recode-web.svg';
-import UCSDApp from '../../assets/UCSD-app.svg';
+import RecodeWeb from '../../assets/recode-web.png';
 import Test from '../../assets/test.svg';
-// import FoodDeliveryApp from '../../assets/food-delivery-app.svg';
 import BirchSearchApp from '../../assets/birch-search-app.svg';
 import AmazonProject from '../../assets/amazon-project.png';
+
+import UCSDApp from '../../assets/basic-needs-app.png';
 
 import './index.scoped.scss';
 
@@ -48,6 +47,7 @@ const ContentContainer = ({
       ? (
         <div className="project-content" style={style}>
           {content}
+          {/* <Fade bottom> */}
           <div className="project-header-container" style={textStyle}>
             {renderRole(design, develop)}
             <div className="project-header-left">{header}</div>
@@ -55,6 +55,7 @@ const ContentContainer = ({
               {renderDescription(description)}
             </div>
           </div>
+          {/* </Fade> */}
         </div>
       )
       : (
@@ -94,7 +95,13 @@ class Projects extends Component {
           <ContentContainer
             style={{ left: '19vw', top: '15vh' }}
             textStyle={{ marginLeft: '2em', marginTop: '-3em' }}
-            content={<img src={RecodeWeb} alt="ReCode Website" />}
+            content={(
+              <img
+                src={RecodeWeb}
+                alt="ReCode Website"
+                style={{ width: 440 }}
+              />
+            )}
             header="The CORE Platform Redesign"
             develop
             design
@@ -112,7 +119,7 @@ class Projects extends Component {
               <img
                 src={AmazonProject}
                 alt="Amazon Project"
-                style={{ width: 438 }}
+                style={{ width: 440 }}
               />
             )}
             textStyle={{ marginTop: '4em', marginRight: '3em' }}
@@ -127,9 +134,9 @@ class Projects extends Component {
         <Container style={{ marginTop: '15em', marginRight: '10em' }}>
           <Circle className="content-left" />
           <ContentContainer
-            style={{ left: '36vw', top: '2.5em' }}
+            style={{ left: '34vw', top: '2.5em' }}
             textStyle={{ marginLeft: '4em', marginTop: '-1em' }}
-            content={<img src={UCSDApp} alt="UCSD Offical Application" />}
+            content={<img src={UCSDApp} alt="UCSD Offical Application" style={{ width: 155 }} />}
             header="UC San Diego Offical Application"
             develop
             design

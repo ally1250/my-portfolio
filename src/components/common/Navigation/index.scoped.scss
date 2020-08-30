@@ -1,0 +1,62 @@
+@import '../../../stylesheets/variables';
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  @mixin navigation {
+    position: fixed;
+    top: 0;
+    transition: top 0.6s;
+    z-index: 2;
+  }
+  
+  .name {
+    margin-top: 2em;
+    margin-left: 2em;
+    @include navigation;
+  
+    .name-link {
+      @include link;
+      width: fit-content;
+      background-color: rgba(255, 255, 255, 0.7);
+      @include transition;
+  
+      &:hover, .name-active {
+        color: $primary1;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.home-link {
+  @include link;
+  @include navigation;
+  @include transition;
+
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-top: 2em;
+  margin-right: 2em;
+  right: 0;
+  &:hover {
+    color: white;
+    background-color: $primary1;
+  }
+}
+
+.link {
+  @include transition;
+  @include link;
+
+  &:hover {
+    color: white;
+    background-color: $primary1;
+  }
+}
+
+.active {
+  color: white;
+  background-color: $primary1;
+}

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { ProjectHeaderSection, Footer, ProjectReflectionSection } from '../../common';
+import { Fade } from 'react-reveal';
+import {
+  ProjectHeaderSection, ProjectFooter, ProjectReflectionSection, Navigation, NavLink,
+} from '../../common';
 import Sketch1 from '../../../assets/amazonProject/sketch-1.png';
 import Sketch2 from '../../../assets/amazonProject/sketch-2.png';
 import Workflow1 from '../../../assets/amazonProject/amazon-workflow-1.png';
@@ -9,8 +12,10 @@ import HarViewerError from '../../../assets/amazonProject/har-viewer-error.png';
 import HarViewerDetail from '../../../assets/amazonProject/har-viewer-detail.png';
 import HarViewerHover from '../../../assets/amazonProject/har-viewer-hover.png';
 import HarViewerChart from '../../../assets/amazonProject/har-viewer-chart.png';
+import { NameLink } from '../../Navigation';
 
 import { Image } from '../BasicNeeds';
+import AnimatedHeader from '../AnimatedHeader';
 
 import './index.scoped.scss';
 
@@ -39,11 +44,16 @@ class AmazonInternship extends Component {
     };
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <div className="amazon-main">
+        <Navigation />
         <ProjectHeaderSection
-          header="Har Viewer - Amazon Internship"
+          header="The Har Viewer"
           headerStyle={{ width: '10em' }}
           overviewSections={overview}
           headerSections={headerSections}
@@ -53,24 +63,24 @@ class AmazonInternship extends Component {
 
         <div className="content-container narrow-contianer">
 
-          <h2>Design Process</h2>
+          <AnimatedHeader>Design Process</AnimatedHeader>
 
           <h3>Background Research</h3>
           <ul>
             <li>
-              Consult mentor and project manager to learn about the resources available and suitable for the project.
+              Consult my mentor and project manager to learn about the resources available and suitable for the project.
             </li>
             <li>
               Set up meetings with other AWS service teams to discuss the details on working toward the objective of the project.
             </li>
             <li>
-              Construct survey for engineers to understand their expectations and needs.
+              Construct a survey for engineers to understand their expectations and needs.
             </li>
           </ul>
 
           <h3>Understand User Workflow</h3>
           <p>
-            After collecting techical and personal opinions about the tool, I developed a story board to help align the project objectives with user needs.
+            After collecting technical and personal opinions about the tool, I developed a storyboard to help align the project objectives with user needs.
           </p>
           {/* <ul>
             <li>
@@ -91,8 +101,8 @@ class AmazonInternship extends Component {
           <div className="indent-container small-indent">
             <ol className="indented-list">
               <li>The user launches the Har Viewer and selects the service as RDS, environment, and region.</li>
-              <li>The user enters the Customer Id in the search box, specifies a start time, and clicks "scan".</li>
-              <li>The user now sees a list of all API calls within the ten-minute period after the start time, including the total load time in seconds, and the total number of API calls triggered by the page load.</li>
+              <li>The user enters the customer Id in the search box, specifies a start time, and clicks "scan".</li>
+              <li>The user now sees a list of all API calls within ten minutes after the start time, including the total load time in seconds, and the total number of API calls triggered by the page load.</li>
               <li>The user clicks on an API name to check the details and error message for that API call.</li>
             </ol>
           </div>
@@ -100,7 +110,7 @@ class AmazonInternship extends Component {
           <h3>Generate Ideas</h3>
 
           <p>
-            As a show of concept, I first drew a sketch of the tool to get a sense of how the pieces would fit together in the view. According to the background research, some essential features of the tool include:
+            As a show of concept, I first drew a sketch of the tool to get a sense of how the pieces would fit together in the view. According to background research, some essential features of the tool include:
           </p>
           <ul>
             <i>
@@ -130,7 +140,7 @@ class AmazonInternship extends Component {
           <div className="caption small-indent">Concept Sketch (First Version))</div>
 
           <p style={{ marginTop: '5em' }}>
-            Furthermore, according to the user survey, it would be helpful to make the visualization interactive so that users could have more flexibiity when searching for API information. Therefore, I changed the API list into a table, which displays some API details and the corresponding visualization side-by-side for more readability.
+            Furthermore, according to the user survey, it would be helpful to make the visualization interactive so that users could have more flexibility when searching for API information. Therefore, I changed the API list into a table, which displays some API details and the corresponding visualization side-by-side for more readability.
             After selecting a certain time range in the waterfall chart at the top, the content in the table would change to show the API calls made within the selected time range. This allows users to customize the search result with ease.
           </p>
           <div className="indent-container indent-image">
@@ -140,11 +150,11 @@ class AmazonInternship extends Component {
         </div>
 
         <div className="content-container narrow-contianer" style={{ marginBottom: 20 }}>
-          <h2>Development Process</h2>
+          <AnimatedHeader>Development Process</AnimatedHeader>
           <h3>Create a Design Document for Review</h3>
           <p>
-            This design document is shared with permission by my mentor Jingyi Luo. Some information was removed for privacy protection.
-            <a href="https://docs.google.com/document/d/1fi_lv-3GkB6cXRbZv-2gmjITDgHbVK04kgzBg5cApU0/edit?usp=sharing" style={{ display: 'block' }}>Open Design Document</a>
+            This design document is shared with permission by my mentor Jingyi Luo. Some information was omitted for privacy protection.
+            <a href="https://docs.google.com/document/d/1fi_lv-3GkB6cXRbZv-2gmjITDgHbVK04kgzBg5cApU0/edit?usp=sharing" target="_blank" rel="noreferrer" style={{ display: 'block' }}>Open Design Document</a>
           </p>
           <h3>Collect API Metrics</h3>
 
@@ -157,8 +167,8 @@ class AmazonInternship extends Component {
           </p> */}
           <ul>
             <li>Add instrumentation to collect response data upon each API call, including status code, error message, etc.</li>
-            <li>Use Resource Timing API to collect timing data for each API call, such as start time and end time.</li>
-            <li>Create a SDK wrapper for sending the collected API metrics to logging service's database.</li>
+            <li>Use the Resource Timing API to collect timing data for each API call, such as start time and end time.</li>
+            <li>Create an SDK wrapper for sending the collected API metrics to the logging service's database.</li>
           </ul>
 
           <h3>Use the Collected Metrics</h3>
@@ -173,7 +183,7 @@ class AmazonInternship extends Component {
         </div>
 
         <div className="break-block">
-          <h2 style={{ margin: 0, color: 'white', marginBottom: 40 }}>The Final Product</h2>
+          <AnimatedHeader style={{ margin: 0, color: 'white', marginBottom: 40 }}>The Final Product</AnimatedHeader>
           <img src={HarViewer} alt="har viewer" style={{ width: 700 }} />
         </div>
 
@@ -188,7 +198,7 @@ class AmazonInternship extends Component {
             />
             <p>
               Upon opening the Har Viewer, users are given clear visual indicators of how to operate the tool. With three simple steps, users can now easily analyze client-side traffic and quickly resolve customer tickets.
-              Given a customer ticket, users just need to copy over the account arn and the time when the ticket was submitted, and then click "Scan". The Har Viewer will search for all API metrics within the ten-minute range of 
+              Given a customer ticket, users just need to copy over the account arn and the time when the ticket was submitted, and then click "Scan". The Har Viewer will search for all API metrics within the ten-minute range of
               the specified start time.
             </p>
             <div className="divider" />
@@ -210,7 +220,7 @@ class AmazonInternship extends Component {
             <p>
               The search result contains an interactive waterfall chart that allows users to explore different time ranges more conveniently without having to search through the table of API metrics.
               By dragging and selecting an area in the chart, users can zoom in and out to investigate only the API calls triggered within the selected area. When users hover on any bar in the waterfall chart,
-              the timing details for the corresponding API call will show as a tool tip.
+              the timing details for the corresponding API call will show as a tooltip.
             </p>
             <div className="divider" />
             <h2>Customizable Table</h2>
@@ -221,9 +231,8 @@ class AmazonInternship extends Component {
               label="API Metrics Table"
             />
             <p>
-              The purpose of the table is to provide detailed information for each API call in a organized and easy-to-interpret way. By displaying only the important API information in the table, such as status code and time elapsed,
-              users could easily search through the table and filter out the information they want. Users can also look at the waterfall visualization in the last table to quickly identify API calls that are taking a long time and may have caused the client-side issue.
-              If they need to look at other details for an API, they can click the API name in the first table column to open up a pop up window with the complete metrics for that API.
+              The purpose of the table is to provide detailed information for each API call in an organized and easy-to-interpret way. By displaying only the important API information in the table, such as status code and time elapsed, users could easily search through the table and filter out the information they want. Users can also look at the waterfall visualization in the last table to quickly identify API calls that are taking a long time and may have caused the client-side issue.
+              If they need to look at other details for an API, they can click the API name in the first table column to open up a pop-up window with the complete metrics for that API.
             </p>
             <p>
               To allow more customization, the data in the table changes dynamically as users select different ranges of the waterfall chart.
@@ -236,188 +245,12 @@ class AmazonInternship extends Component {
           reflectionSections={[
             'The result of adding a feature to an existing design may look simple but the process of figuring out how to incorporate the new design with the predefined ones is difficult. Since the layout for notifications is fixed, I was given little flexibility to make changes to the original component. Therefore, to make the design intuitive to users, I spent a lot of effort exploring different approaches.',
           ]}
-          feedbackSections={[
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque feugiat egestas metus neque. Orci consectetur eget est, purus tortor. Nunc, in felis cursus ornare malesuada vitae.',
-          ]}
         />
 
-        <Footer
-          previous="amazon-internship"
-          next="food-delivery"
+        <ProjectFooter
+          previous="core-platform"
+          next="basic-needs"
         />
-
-        {/* <div className="iterations-divider">
-          <img src={IterationIcon} alt="iteration icon" />
-          <h2 style={{ margin: 0, color: 'white', marginTop: 40 }}>Design Iterations</h2>
-        </div>
-
-        <div className="design-iteration" style={{ backgroundColor: '#375368' }}>
-          <div className="content-container iteration-container">
-            <h2 className="iteration-header">Iteration 1</h2>
-            <div className="iteration-img-layout">
-              <Image
-                src={DefaultV1}
-                alt="default v1"
-                label="Default State"
-              />
-              <Image
-                src={RegisteredV1}
-                alt="registered v1"
-                label="Registered"
-              />
-              <Image
-                src={UnregisteredV1}
-                alt="unregistered v1"
-                label="Unregistered"
-              />
-              <Image
-                src={LimitExceededV1}
-                alt="limit exceeded v1"
-                label="RSVP Limit Exceeded"
-              />
-            </div>
-            <div className="description-box">
-              <ul>
-                <li>Create two buttons to give users the flexibility to register andunregister for events.</li>
-                <li>Use notification text to give users clear feedback on their actions.</li>
-                <li>Disable the register button when RSVP count has reached the limit.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="design-iteration" style={{ backgroundColor: '#597489' }}>
-          <div className="content-container iteration-container">
-
-            <h2 className="iteration-header">Iteration 2</h2>
-            <div className="iteration-img-layout">
-              <Image
-                src={DefaultV2}
-                alt="default v2"
-                label="Default State (Button)"
-              />
-              <Image
-                src={RegisteredV2}
-                alt="registered v2"
-                label="Registered (Button)"
-              />
-              <Image
-                src={LimitExceededV2}
-                alt="limit exceeded v2"
-                label="RSVP Limit Exceeded (Button)"
-              />
-            </div>
-            <div className="iteration-img-layout" style={{ marginTop: '5em' }}>
-              <Image
-                src={DefaultToggle}
-                alt="default toggle"
-                label="Default State (Toggle)"
-              />
-              <Image
-                src={RegisteredToggle}
-                alt="registered toggle"
-                label="Registered (Toggle)"
-              />
-            </div>
-            <div className="description-box">
-              Problems with the first prototype
-              <ul>
-                <li>Noitification text is not intuitive enough to tell which events are registered and which are not.</li>
-                <li>The &quot;Maybe Not&quot; button is not necessary and may cause confusion.</li>
-                <li>Disabled button is limiting and confusing.</li>
-              </ul>
-              <div style={{ height: '3em' }} />
-              Solution
-              <ul>
-                <li>Combine the register and unregister buttons into a toogle button.</li>
-                <li>Experimente with two approaches for representing the toggle button. The first approach is to use different colors to indicate the on and off states of the toggle button. The second approach directly uses a toggle for more clarity.</li>
-                <li>Change the noitification text to show the current RSVP count to give users more context.</li>
-                <li>When RSVP limit is reached, display a warning text to notify users that there may not be enough food, instead of disabling the button. This gives users more flexibility and control over their decisions.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="design-iteration" style={{ backgroundColor: '#7A94A8' }}>
-          <div className="content-container iteration-container">
-            <h2 className="iteration-header">Final Iteration</h2>
-
-            <div className="iteration-img-layout">
-              <Image
-                src={DefaultV3}
-                alt="default v3"
-                label="Default State"
-              />
-              <Image
-                src={RegisteredV3}
-                alt="registered v3"
-                label="Registered"
-              />
-              <Image
-                src={LimitExceededV3}
-                alt="limit exceeded v3"
-                label="RSVP Limit Exceeded"
-              />
-            </div>
-            <div className="description-box">
-              Problems with the second prototype
-              <ul>
-                <li>The team likes the idea of changing button color to indicate its state. However, users may not know which colors correspond to registered and unregistered.</li>
-                <li>The gray background is not a good indicator of the intial state for the toggle button. Users may confuse the gray color for a disabled button instead of an active button.</li>
-              </ul>
-              Solution
-              <ul>
-                <li>Add a check box inside the toggle button to help users quickly and easily understand the button state.</li>
-                <li>Change the initial state to be an outlined button with an unchecked check box. This is a clearer indication for users that the button is in its off state and is pressable.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="divider" />
-
-        <div className="content-container" style={{ marginBottom: 20 }}>
-          <h2>Development Process</h2>
-          <h3>Create Backend Architecture</h3>
-          <div className="center small-indent" style={{ marginTop: '2em' }}>
-            <img src={BasicNeedsStructure} alt="workflow structure" style={{ width: 600 }} />
-          </div>
-          <p>
-            Before diving into the implementation, I created a workflow diagram
-            and a design document
-            to help configure the backend structure.
-            I made sure that the tools are reusable and compatible
-            for the intergation of other campus events in the future.
-          </p>
-          <div className="indent-container">
-            <img src={BasicNeedsWorkflow} alt="basic needs workflow" style={{ width: 730 }} />
-          </div>
-          <div className="caption">Backend Workflow Diagram</div>
-          <h3>Develop Client Side</h3>
-          <ul>
-            <li>Implement the design in Flutter.</li>
-            <li>Store user&apos;s attendance information in local storage.</li>
-            <li>Integrate AWS API endpoints to retrieve and update attendance data.</li>
-          </ul>
-
-          <h3>Create a detailed checklist for testing</h3>
-          <h3>Submit the final pull request for review and deploy to production</h3>
-        </div>
-
-        <div className="divider" />
-
-        <ProjectReflectionSection
-          reflectionSections={[
-            'The result of adding a feature to an existing design may look simple but the process of figuring out how to incorporate the new design with the predefined ones is difficult. Since the layout for notifications is fixed, I was given little flexibility to make changes to the original component. Therefore, to make the design intuitive to users, I spent a lot of effort exploring different approaches.',
-          ]}
-          feedbackSections={[
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque feugiat egestas metus neque. Orci consectetur eget est, purus tortor. Nunc, in felis cursus ornare malesuada vitae.',
-          ]}
-        /> */}
-
-        {/* <Footer
-          previous="amazon-internship"
-          next="food-delivery"
-        /> */}
       </div>
     );
   }

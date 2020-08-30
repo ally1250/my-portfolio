@@ -1,13 +1,10 @@
 @import '../../stylesheets/variables';
 
 .contact {
-  margin-top: 30vh;
-  padding-top: 10vh;
+  margin-top: 40vh;
+  position: relative;
+  // padding-top: 10vh;
   // @include centerContent(column);
-
-  .header {
-    margin-bottom: 1em;
-  }
 
   .input-fields-container {
     padding-left: 25vw;
@@ -19,7 +16,7 @@
     align-items: flex-end;
     position: relative;
 
-    margin-top: 2em;
+    margin-top: 1em;
     font-size: 1.2em;
     font-weight: bold;
     color: $primary1;
@@ -34,19 +31,20 @@
       border: none;
       @include textFontFamily;
       padding: 0 0.3em;
-      border-bottom: 2px solid $primary1;
+      margin-left: 0.5em;
+      background-color: rgba($primary1, 0.3);
       color: $vblack;
       font-weight: 300;
       display: flex;
       align-items: center;
       font-size: 1.5em;
-      width: 28vw;
-      // min-width: 8em;
+      width: 23vw;
+      height: 1.5em;
       @include transition;
 
       &:focus, &:hover {
         outline: none;
-        border-bottom: 2px solid rgba($primary1, 0.6);
+        background-color: rgba($primary2, 0.5);
       }
     }
 
@@ -57,8 +55,8 @@
 
   .submit-button {
     font-size: 1.5em;
-
-    margin-top: 2em;
+    margin: 2em auto;
+    margin-bottom: 0;
     border: none;
     background-color: transparent;
     color: $primary1;
@@ -67,13 +65,55 @@
     width: 5em;
     border-radius: 100px;
     outline: none !important;
-
+    @include centerContent;
     @include transition;
     cursor: pointer;
 
-    &:hover {
+    &:hover, &.active {
       background-color: $primary1;
       color: white;
+    }
+  }
+
+  .feedback {
+    font-size: 14px;
+    color: $font-gray;
+    font-weight: 300;
+  }
+
+  .contact-footer {
+    margin-top: 10vh;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: $vwhite;
+    background-color: rgba($primary2, 0.2);
+    padding: 0 2em;
+
+    a {
+      @include transition;
+      text-decoration: none;
+      margin-left: 1em;
+      font-weight: 300;
+      font-size: 13px;
+      margin-right: 1.5em;
+      color: black;
+
+      &:visited {
+        color: black;
+      }
+
+      &:hover {
+        @include transition;
+        color: $primary1;
+      }
+    }
+
+    .contact-icon {
+      width: 20px;
+      height: 20px;
+      margin-left: 1.5em;
     }
   }
 }

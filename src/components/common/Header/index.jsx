@@ -3,10 +3,10 @@ import { Fade } from 'react-reveal';
 import Container from '../Container/index';
 import './index.scoped.scss';
 
-const Header = ({ header }) => (
+const Header = ({ header, style }) => (
   <Container>
     <Fade bottom>
-      <div className="header">
+      <div className="header" style={style}>
         {header}
       </div>
     </Fade>

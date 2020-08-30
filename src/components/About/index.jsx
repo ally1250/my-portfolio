@@ -59,10 +59,6 @@ class About extends Component {
             </div>
           </div>
         </div>
-        <div className="scroll">
-          SCROLL
-          <div className="line" />
-        </div>
       </div>
     );
   }

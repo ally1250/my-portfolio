@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Fade } from 'react-reveal';
 import './index.scss';
 
 class ProjectHeaderSection extends Component {
@@ -25,13 +26,17 @@ class ProjectHeaderSection extends Component {
     return (
       <div>
         <div className="content-container">
-          <h1 style={headerStyle}>{header}</h1>
-          <h2>Project Overview</h2>
+          <h1 style={{ ...headerStyle, width: '12em' }}>{header}</h1>
+          <Fade bottom><h2>Project Overview</h2></Fade>
           <div className="two-col-container">
             <div>
               {overviewSections.map((overview) => <p>{overview}</p>)}
             </div>
             <div className="sections">
+              <p>
+                <div className="section-header">Links</div>
+                {links.map((link) => <a href={link.url} target="_blank" rel="noreferrer" className="project-link">{link.label}</a>)}
+              </p>
               <p>
                 <div className="section-header">Timeline</div>
                 {timeline}
@@ -43,10 +48,6 @@ class ProjectHeaderSection extends Component {
               <p>
                 <div className="section-header">Tools</div>
                 {tools}
-              </p>
-              <p>
-                <div className="section-header">Links</div>
-                {links.map((link) => <a href={link.url}>{link.label}</a>)}
               </p>
             </div>
           </div>

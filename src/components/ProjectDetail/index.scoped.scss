@@ -154,6 +154,9 @@
         text-decoration: none;
         color: #616475;
         cursor: pointer;
+        &:hover {
+          color: $primary1;
+        }
       }
     }
   }
@@ -168,6 +171,7 @@ h1 {
   line-height: 1.5;
   color: $primary1;
   padding: 1em 0;
+  margin-top: 2em;
 }
 
 h2 {

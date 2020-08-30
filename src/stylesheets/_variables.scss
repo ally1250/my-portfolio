@@ -8,12 +8,12 @@ $gray: #C7C7C7;
 $dark-gray: #777777;
 $brown: #976662;
 
-@mixin transition {
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
+@mixin transition($time: 0.3s) {
+  transition: all $time ease-in-out;
+  -webkit-transition: all $time ease-in-out;
+  -moz-transition: all $time ease-in-out;
+  -ms-transition: all $time ease-in-out;
+  -o-transition: all $time ease-in-out;
 }
 
 @mixin centerContent ($direction: row) {
@@ -68,4 +68,24 @@ $brown: #976662;
 
 @mixin textFontFamily {
   font-family: 'Open Sans', sans-serif;
+}
+
+@mixin link {
+  text-decoration: none;
+  color: $dark-gray;
+  font-size: 14px;
+  padding: 1em 1em;
+  width: 70px;
+  display: flex;
+  justify-content: flex-start;
+  font-weight: normal;
+
+  cursor: pointer;
+}
+
+@mixin navigation {
+  position: fixed;
+  top: 0;
+  transition: top 0.6s;
+  z-index: 2;
 }

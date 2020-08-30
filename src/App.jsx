@@ -23,15 +23,10 @@ const Home = () => (
       <Resume />
     </div>
     <Contact />
-    <div style={{ height: 2000, width: '100%' }} />
   </div>
 );
 
 function App() {
-  window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-  };
-
   return (
     <Router>
       <Route
@@ -51,9 +46,7 @@ function App() {
         path="/basic-needs"
         component={BasicNeeds}
       />
-
     </Router>
-
   );
 }
 

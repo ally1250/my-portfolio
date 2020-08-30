@@ -1,4 +1,4 @@
-@import '../Navigation/index.scss';
+@import '../Navigation/index.scoped.scss';
 @import '../../stylesheets/variables';
 
 .landing {
@@ -8,7 +8,7 @@
     @include centerContent(column);
     // font-family: 'Montserrat', sans-serif;
     margin-top: 15vh;
-    height: 55vh;
+    height: 45vh;
     // font-weight: bold;
     font-weight: 300;
 

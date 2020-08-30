@@ -2,7 +2,9 @@ import React, { Component, useEffect } from 'react';
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
 
-import { ProjectHeaderSection, Footer, ProjectReflectionSection } from '../../common';
+import {
+  ProjectHeaderSection, ProjectFooter, ProjectReflectionSection, Navigation,
+} from '../../common';
 import CoreSteps from '../../../assets/corePlatform/core-steps.svg';
 import './index.scss';
 
@@ -17,15 +19,17 @@ import UserProfile from '../../../assets/corePlatform/user-profile.png';
 import UserProfileRedesign from '../../../assets/corePlatform/user-profile-redesign.png';
 import WeeklyPlan from '../../../assets/corePlatform/weekly-plan-sample.png';
 
+import AnimatedHeader from '../AnimatedHeader';
+
 const overview = [
-  'The Connected and Open Research Ethics (CORE) Platform is created and maintained by a UC San Diego organization called ReCode Health. ReCode Health focuses on informing ethical health research practices and they built the CORE Platform hoping to help health researchers connect and share expertise.',
-  'The objective of the redesign is to develop a cleaner and more user-friendly interface to encourage more user interactions. My work mainly focused on improving the organization of information and the functionality of the search filters.',
+  'The Connected and Open Research Ethics (CORE) Platform is created and maintained by a UC San Diego organization called ReCode Health. ReCode Health aims to inform ethical health research practices so they built the CORE Platform to help health researchers connect and share expertise.',
+  'The objective of the redesign is to develop a cleaner and more user-friendly interface to encourage more user interactions. My work mainly focuses on improving the organization of information and the functionality of the search filters.',
   'After getting the team’s approval of the redesign, I am in the process of implementing the new CORE Platform layout with React.js.',
 ];
 
 const headerSections = {
   timeline: 'April 2020 - Present',
-  role: 'Designer, Frontend Developer',
+  role: 'Designer, Front-end Developer',
   tools: 'Figma, React.js, SASS, Node.js',
   links: [
     {
@@ -108,17 +112,18 @@ class CorePlatform extends Component {
   render() {
     return (
       <div className="core-platform-main">
+        <Navigation />
         <ProjectHeaderSection
           header="The CORE Platform Redesign"
           overviewSections={overview}
           headerSections={headerSections}
           problemStatement="ReCode Health wants to make the entire CORE Platform more user-friendly in terms of
-          Information search and display."
-          solution="I created redesigns for all pages of the CORE Platform to improve the experience of navigating and interacting with the tools. We then implemented the new designs with React.js for the frontend and Node.js for the backend."
+          information search and display."
+          solution="I created redesigns for all pages of the CORE Platform to improve the experience of navigating and interacting with the tools. We then implemented the new designs with React.js for the front-end and Node.js for the back-end."
         />
 
         <div className="content-container narrow-contianer">
-          <h2>Design Process</h2>
+          <AnimatedHeader>Design Process</AnimatedHeader>
 
           <h3>Background Research</h3>
           <ul>
@@ -165,13 +170,13 @@ class CorePlatform extends Component {
           </div>
         </div>
 
-        <div className="iterations-divider">
+        <div className="break-block">
           <img src={IterationIcon} alt="iteration icon" />
-          <h2 style={{ padding: 0, color: 'white', paddingTop: 40 }}>Design Modifications</h2>
+          <AnimatedHeader style={{ padding: 0, color: 'white', paddingTop: 40 }}>Design Modifications</AnimatedHeader>
         </div>
 
         <CustomScene
-          pro={['put emphasis on search and filter', 'have color patterns for organizing resource cards', 'use bright color for accents']}
+          pro={['prioritize search and filters', 'have color patterns for organizing resource cards', 'use bright color for accents']}
           con={['filters are inflexible and confusing', 'resource cards contain excessive detail', 'resource cards lack focus and are crowded']}
           label="Resource Library"
           redesignDescription={['remove unessential information from the cards', 'create hierarchical and multi-select filters for more flexibility and readability', 'divide content vertically and horizontally for better organization']}
@@ -181,7 +186,7 @@ class CorePlatform extends Component {
         </CustomScene>
 
         <CustomScene
-          pro={['put emphasis on search and filter', 'have color patterns for organizing Forum posts', 'use bright color for accents']}
+          pro={['prioritize search and filters', 'have color patterns for organizing Forum posts', 'use bright color for accents']}
           con={['filters are inflexible and confusing', 'lack emphasis on post replies and views']}
           label="The Forum"
           redesignDescription={['add favorite and share features for a more customizable experience', 'emphasize on number of votes and replies', 'create hierarchical and multi-select filters for more flexibility and readability']}
@@ -191,10 +196,10 @@ class CorePlatform extends Component {
         </CustomScene>
 
         <CustomScene
-          pro={['have color distinguishment between the question and the replies', 'put emphasis on questioner and respondents']}
-          con={['hard to understand the relationship between individual replies', 'need to scroll to the bottom to reply']}
+          pro={['have color distinguishment between the question and the replies', 'emphasize on the questioner and respondents']}
+          con={['hard to understand the relationship between individual replies', 'need to scroll to the bottom to post a reply']}
           label="The Forum Post Detail"
-          redesignDescription={['intergate upvote and downvote feature to provide reference for users', 'create hierarchical structure of posts and replies for clarity', 'add reply button for each post to make it more easily accessible']}
+          redesignDescription={['integrate the upvote-downvote system to provide more context for users', 'create a hierarchical structure of posts and replies for clarity', 'add reply button for each post for accessibility and convenience']}
         >
           <img src={ForumPost} alt="forum post" />
           <img src={ForumPostRedesign} alt="forum post redesign" />
@@ -202,16 +207,16 @@ class CorePlatform extends Component {
 
         <CustomScene
           pro={['break input fields into sections']}
-          con={['contain large amount of information with limited organization', 'expand the input fields to take up full width']}
+          con={['contain a large amount of information with limited organization', 'expand the input fields to take up the full width']}
           label="User Profile"
-          redesignDescription={['group fields with cards to create a simple and clean structure', 'create a one-stop shop for all user data']}
+          redesignDescription={['group fields with cards to create a simple and clean structure', 'create a one-stop-shop to display all user information for a personalized experience']}
         >
           <img src={UserProfile} alt="user profile" />
           <img src={UserProfileRedesign} alt="user profile redesign" />
         </CustomScene>
 
         <div className="content-container narrow-contianer">
-          <h2>Development Process</h2>
+          <AnimatedHeader>Development Process</AnimatedHeader>
 
           <h3>Create a weekly development plan to keep track of progress</h3>
           <div className="indent-container indent-image">
@@ -219,25 +224,24 @@ class CorePlatform extends Component {
           </div>
           <div className="caption">Screenshot of Week 2 Development Plans</div>
 
-          <h3>Weekly development meeting for updates and troubleshoot</h3>
-          <h3>Hold additional meetings with team members to identify and resolve issues</h3>
+          <h3>Hold weekly development meeting for updates and troubleshoot</h3>
           <h3>Begin testing in late September, after the development completes</h3>
         </div>
 
         <ProjectReflectionSection
           reflectionSections={[
             'To improve the current design, it is essential to learn the purpose of each feature and what the designer wanted to communicate to users.',
-            'The original filter design for the CORE platform lacked flexibility and clarity for not allowing users to deselect a filter item or select multiple items. I referenced a lot of online resources to better understand the functionality and the design of a comprehensive filter. I visualized the hierarchical structure of the filters to create a resemblance of online shopping filters so that even new users could have prior knowledge of how to use the filter.',
-            'Since testing will begin in September, I am on a very tight schedule to build a working product that meets the expectations. I found that communication is the key to an agile development process. Expressing concerns and confusions to the ReCode Health team to seek for feedback allowed me to learn their opinion and make adjustments in time. This method immensely reduced the time wasted on reworking.',
+            'The original filter design for the CORE platform lacked flexibility and clarity for not allowing users to deselect a filter item or select multiple items. I referenced many online resources to better understand the functionality and the design of a comprehensive filter. I visualized the hierarchical structure of the filters to create a resemblance of online shopping filters so that even new users could have prior knowledge of how to use the filter.',
+            'Since testing will begin in September, I am on a very tight schedule to build a working product that meets expectations. I found that communication is the key to an agile development process. Expressing concerns and confusions to the ReCode Health team to seek feedback allowed me to learn their opinion and make adjustments in time. This method immensely reduced the time wasted on rework.',
           ]}
           feedbackSections={[
-            'As a both a designer and developer during the redesign of process, Ally has created and  developed designs that have dramatically changed the CORE platform for the betterment of our users. Each section and feature of the platform were carefully evaluated and improved in close collaboration with the rest of the team, and Ally consistently gave quality and constructive inputs throughout. She is also persistent, recreating and iterating whenever she felt something could be improved in the prototyping process, creating a noticeable polish in the final design. I am lucky to have worked with her on this project and wish her well on future ones.',
+            'As both a designer and developer during the redesign of process, Ally has created and developed designs that have dramatically changed the CORE platform for the betterment of our users. Each section and feature of the platform were carefully evaluated and improved in close collaboration with the rest of the team, and Ally consistently gave quality and constructive inputs throughout. She is also persistent, recreating, and iterating whenever she felt something could be improved in the prototyping process, creating a noticeable polish in the final design. I am lucky to have worked with her on this project and wish her well on future ones.',
           ]}
           source="Shengzhi Wang"
         />
 
-        <Footer
-          next="basic-needs"
+        <ProjectFooter
+          next="amazon-internship"
         />
       </div>
     );

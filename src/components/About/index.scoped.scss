@@ -27,6 +27,7 @@
 
 .about {
   position: relative;
+  margin-top: 13vh;
   @include centerContent;
 
   .background {
@@ -52,6 +53,7 @@
 
       .designer {
         color: $primary2;
+        margin-top: -0.7em;
         .section-detail {
           color: white;
           @include section-detail;
@@ -59,6 +61,7 @@
       }
       .developer {
         color: $primary1;
+        margin-top: -0.7em;
         .section-detail {
           color: $brown;
           @include section-detail;
@@ -92,8 +95,9 @@
   }
 
   .scroll {
-    color: $gray;
-    font-size: 14px;
+    color: #a5a5a5;
+    font-weight: 300;
+    font-size: 13px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,7 +106,7 @@
 
     .line {
       height: 80px;
-      width: 2px;
+      width: 1px;
       background-color: $light-gray;
     }
   }

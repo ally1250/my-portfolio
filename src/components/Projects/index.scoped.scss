@@ -23,15 +23,27 @@
   margin-top: 10vh;
   @include centerContent(column);
 
+  .container:hover .content-left, .container:hover .content-right {
+    @include transition(0.5s);
+    transform: scale(1.1);
+  }
+
+  // .project-content-container:hover + .content-left {
+  //   @include transition(0.5s);
+  //   transform: scale(1.1);
+  // }
+
   .header {
     @include header;
   }
   
   .content-right {
+    @include transition(0.5s);
     margin-left: 15vw;
   }
 
   .content-left {
+    @include transition(0.5s);
     margin-right: 25vw;
   }
 
@@ -56,6 +68,7 @@
     flex-direction: column;
     align-items: flex-start;
     margin: 0 2em;
+    @include transition;
 
     .description-container {
       display: flex;
@@ -110,6 +123,7 @@
       @include project-header(right);
     }
   }
+
   .button-label {
     position: absolute;
     top: 50%;

@@ -1,28 +1,21 @@
 import React, { Component } from 'react';
 import { Link, animateScroll as scroll } from 'react-scroll';
-import classnames from 'classnames';
-import { Nav, NavItem, Navbar } from 'react-bootstrap';
+import { Navigation, NavLink } from '../common';
 import data from '../../Data';
-// import './index.css';
-import './index.scss';
+import './index.scoped.scss';
 
-export const NavLink = ({
-  to, label, className = 'link', activeClass = 'active',
-}) => (
-  <Link
-    className={className}
-    activeClass={activeClass}
-    to={to}
-    spy
-    smooth
-    offset={-70}
-    duration={500}
-  >
-    {label}
-  </Link>
+export const NameLink = () => (
+  <div className="name">
+    <NavLink
+      to="landing"
+      label={data.name}
+      className="name-link"
+      activeClass="name-active"
+    />
+  </div>
 );
 
-class Navigation extends Component {
+class index extends Component {
   constructor(props) {
     super(props);
 
@@ -55,17 +48,8 @@ class Navigation extends Component {
     const { visible } = this.state;
 
     return (
-      <div
-        className="nav-container"
-      >
-        <div className="name" onClick={this.logS}>
-          <NavLink
-            to="landing"
-            label={data.name}
-            className="name-link"
-            activeClass="name-active"
-          />
-        </div>
+      <div className="nav-container">
+        <NameLink />
         <div className="nav">
           <NavLink
             to="about"
@@ -89,4 +73,4 @@ class Navigation extends Component {
   }
 }
 
-export default Navigation;
+export default index;
