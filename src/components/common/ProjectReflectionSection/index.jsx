@@ -27,8 +27,8 @@ class ProjectReflectionSection extends Component {
             {feedbackSections.map((section) => (
               <p>
                 <div className="feedback-section">
-                  {`"${section}"`}
-                  <div className="quote-source">{`--- ${source}`}</div>
+                  {`"${section.text}"`}
+                  <div className="quote-source">{`--- ${section.source}`}</div>
                 </div>
               </p>
             ))}

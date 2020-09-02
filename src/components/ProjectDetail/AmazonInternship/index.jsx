@@ -245,6 +245,12 @@ class AmazonInternship extends Component {
           reflectionSections={[
             'The result of adding a feature to an existing design may look simple but the process of figuring out how to incorporate the new design with the predefined ones is difficult. Since the layout for notifications is fixed, I was given little flexibility to make changes to the original component. Therefore, to make the design intuitive to users, I spent a lot of effort exploring different approaches.',
           ]}
+          feedbackSections={[
+            {
+              text: 'During her Internship, I can see Ally is very hardworking and willing to learn new knowledge. Whenever she encounters a problem, she would try her best to find the solution by herself first. And after she solves the issue, she will also think more about other similar situations to enhance her understanding. I like the way she deals with problems. She is not just focused on current issues but trying to establish a better understanding of the whole framework.',
+              source: 'Jingyi (Mentor)',
+            },
+          ]}
         />
 
         <ProjectFooter

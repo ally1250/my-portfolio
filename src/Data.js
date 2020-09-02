@@ -67,7 +67,7 @@ const data = {
     detail: [
       {
         title: ['Clarity', 'Usability', 'Desirability'],
-        detail: ['My knowledge in both fields help me create clean design patterns and simple interactions that are easy to implement and use.'],
+        detail: ['My knowledge in both fields helps me create clean design patterns and simple interactions that are easy to implement and use.'],
       },
       // {
       //   title: ['Desirability'],
@@ -75,7 +75,7 @@ const data = {
       // },
       {
         title: ['Innovation'],
-        detail: ['I enjoy bringing ideas to life with my artistic senses and technical strengths.'],
+        detail: ['I enjoy bringing ideas to life with my artistic senses and technical skills.'],
       },
       // {
       //   title: ['Aesthetics', 'Functionality'],

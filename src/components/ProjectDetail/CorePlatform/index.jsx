@@ -235,9 +235,11 @@ class CorePlatform extends Component {
             'Since testing will begin in September, I am on a very tight schedule to build a working product that meets expectations. I found that communication is the key to an agile development process. Expressing concerns and confusions to the ReCode Health team to seek feedback allowed me to learn their opinion and make adjustments in time. This method immensely reduced the time wasted on rework.',
           ]}
           feedbackSections={[
-            'As both a designer and developer during the redesign of process, Ally has created and developed designs that have dramatically changed the CORE platform for the betterment of our users. Each section and feature of the platform were carefully evaluated and improved in close collaboration with the rest of the team, and Ally consistently gave quality and constructive inputs throughout. She is also persistent, recreating, and iterating whenever she felt something could be improved in the prototyping process, creating a noticeable polish in the final design. I am lucky to have worked with her on this project and wish her well on future ones.',
+            {
+              text: 'As both a designer and developer during the redesign of process, Ally has created and developed designs that have dramatically changed the CORE platform for the betterment of our users. Each section and feature of the platform were carefully evaluated and improved in close collaboration with the rest of the team, and Ally consistently gave quality and constructive inputs throughout. She is also persistent, recreating, and iterating whenever she felt something could be improved in the prototyping process, creating a noticeable polish in the final design. I am lucky to have worked with her on this project and wish her well on future ones.',
+              source: 'Shengzhi Wang',
+            },
           ]}
-          source="Shengzhi Wang"
         />
 
         <ProjectFooter

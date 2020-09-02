@@ -47,6 +47,7 @@ class Contact extends Component {
         onChange={this.onChange}
         className="text-input"
         maxRows={3}
+        minRows={2}
         style={{ width: '23vw', paddingBottom: 4 }}
       />
     </label>
@@ -98,7 +99,7 @@ class Contact extends Component {
 
     return (
       <div className="contact">
-        <Header header="Let's Chat!" style={{ marginBottom: '1em' }} />
+        <Header header="Let's Chat!" style={{ marginBottom: '0.8em' }} />
         <div className="input-fields-container">
           {this.renderTextField('Name', 'name', name)}
           {this.renderTextField('Email', 'email', email)}
@@ -110,7 +111,7 @@ class Contact extends Component {
         >
           {loading ? <BeatLoader color="white" /> : 'Send!'}
         </div>
-        <div style={{ height: '9vh' }}>
+        <div style={{ height: '8vh' }}>
           <Fade bottom collapse when={success || error}>
             <div
               className="feedback"

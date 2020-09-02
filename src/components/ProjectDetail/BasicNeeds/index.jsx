@@ -281,9 +281,12 @@ class BasicNeeds extends Component {
             'A search tool is about simplicity for use and clarity for the search results. I streamlined the required search parameters so that the users could simply copy and paste the information from the customer tickets. In addition, I made sure that the search results only display the essential data for identifying an issue, such as time elapsed, status code, etc. so that users can directly locate the data they want. It required a lot of trails and revisions to create a simple design that conveys exactly the information needed.',
             'If I had more time, I would add instrumentation to make this tool a shared component for all other consoles to have network logging.',
           ]}
-          // feedbackSections={[
-          //   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque feugiat egestas metus neque. Orci consectetur eget est, purus tortor. Nunc, in felis cursus ornare malesuada vitae.',
-          // ]}
+          feedbackSections={[
+            {
+              text: 'Ally was responsible for meeting with the client and implementing the RSVP feature as an enhancement for the free food mobile notifications. She approached the project methodically and worked with minimal supervision. We are excited to roll out this update to campus!',
+              source: 'Alex (Manager)',
+            },
+          ]}
         />
 
         <ProjectFooter

@@ -16,7 +16,7 @@
     align-items: flex-end;
     position: relative;
 
-    margin-top: 1em;
+    margin-top: 0.5em;
     font-size: 1.2em;
     font-weight: bold;
     color: $primary1;
@@ -87,7 +87,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // background-color: $vwhite;
     background-color: rgba($primary2, 0.2);
     padding: 0 2em;
 
