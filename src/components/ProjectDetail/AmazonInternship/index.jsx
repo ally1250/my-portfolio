@@ -12,7 +12,6 @@ import HarViewerError from '../../../assets/amazonProject/har-viewer-error.png';
 import HarViewerDetail from '../../../assets/amazonProject/har-viewer-detail.png';
 import HarViewerHover from '../../../assets/amazonProject/har-viewer-hover.png';
 import HarViewerChart from '../../../assets/amazonProject/har-viewer-chart.png';
-import { NameLink } from '../../Navigation';
 
 import { Image } from '../BasicNeeds';
 import AnimatedHeader from '../AnimatedHeader';
@@ -37,6 +36,25 @@ const headerSections = {
   ],
 };
 
+const navigations = [
+  {
+    to: 'overview',
+    label: 'Overview',
+  },
+  {
+    to: 'design-process',
+    label: 'Design',
+  },
+  {
+    to: 'development-process',
+    label: 'Development',
+  },
+  {
+    to: 'reflection',
+    label: 'Reflection',
+  },
+];
+
 class AmazonInternship extends Component {
   constructor(props) {
     super(props);
@@ -51,7 +69,7 @@ class AmazonInternship extends Component {
   render() {
     return (
       <div className="amazon-main">
-        <Navigation />
+        <Navigation navigations={navigations} />
         <ProjectHeaderSection
           header="The Har Viewer"
           headerStyle={{ width: '10em' }}
@@ -61,7 +79,7 @@ class AmazonInternship extends Component {
           solution="I created a tool that displays a detailed timeline view of network requests for production traffic, allowing users to check the details for each API call within a specified time period."
         />
 
-        <div className="content-container narrow-contianer">
+        <div className="design-process content-container narrow-contianer">
 
           <AnimatedHeader>Design Process</AnimatedHeader>
 
@@ -149,7 +167,7 @@ class AmazonInternship extends Component {
           <div className="caption">Concept Sketch (Second Version)</div>
         </div>
 
-        <div className="content-container narrow-contianer" style={{ marginBottom: 20 }}>
+        <div className="development-process content-container narrow-contianer" style={{ marginBottom: 20 }}>
           <AnimatedHeader>Development Process</AnimatedHeader>
           <h3>Create a Design Document for Review</h3>
           <p>

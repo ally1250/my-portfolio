@@ -24,7 +24,7 @@ class ProjectHeaderSection extends Component {
     } = headerSections;
 
     return (
-      <div>
+      <div className="overview">
         <div className="content-container">
           <h1 style={{ ...headerStyle, width: '12em' }}>{header}</h1>
           <Fade bottom><h2>Project Overview</h2></Fade>

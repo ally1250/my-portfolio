@@ -1,0 +1,127 @@
+@import '../../../stylesheets/variables';
+
+.swiper-container {
+  width: 500px;
+  margin-top: 200px;
+}
+
+.swiper-pagination {
+  bottom: 0;
+  padding-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+.swiper-wrapper {
+  padding-inline-start: 0;
+}
+
+// img {
+//   width: 500px;
+// }
+
+#thumbs {
+  img {
+    width: 163px;
+  }
+}
+
+.close_1x3s325 {
+  display: none;
+}
+
+.footer_60scne {
+  width: 100% !important;
+  padding: 0 20%;
+  justify-content: center !important;
+  align-items: center;
+  margin: auto;
+
+  .footerCaption_2r5qf {
+    // width: 500px !important;
+    flex: none !important;
+    text-align: center;
+  }
+}
+
+.container_9tizg4 {
+  @include fade-in;
+  background-color: rgba(0, 0, 0, 0.95) !important;
+}
+
+.footerCount_lkhc9u {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+// .ReactGridGallery {
+//   width: 40%;
+//   margin: 20% auto;
+// }
+
+@media screen and (min-width: 64em) {
+  .main-content {
+    max-width: 72rem;
+    padding: 12rem 10rem;
+    margin: 0 auto;
+    font-size: 1.1rem; 
+  } 
+}
+
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  .main-content {
+    padding: 2rem 4rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 42em) {
+  .main-content {
+    padding: 2rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+.main-content {
+  background-color: black;
+  .ReactGridGallery_tile-viewport {
+    @include transition;
+    &:hover {
+      @include transition;
+      box-shadow: 0px 2px 15px 0px black;
+    }
+  }
+
+  .container {
+    display: block;
+    min-height: 1px;
+    width: 80%;
+    padding: 5% 10%;
+    // border: 1px solid #ddd;
+    overflow: auto;
+    // background-color: rgba(#EBC7AA, 0.7);
+
+    background-color: #592c27;
+
+    p {
+      color: white;
+      font-weight: 300;
+      font-size: 16px;
+      padding-bottom: 2em;
+    }
+  }
+  .title {
+    font-size: 80px;
+    line-height: 27px;
+    // margin-bottom: -12px;
+    color: #592c27;
+    font-weight: bold;
+  }
+}
+
+.image_1swebtw-o_O-imageLoaded_zgbg08 {
+  max-height: calc(100vh - 200px) !important;
+}

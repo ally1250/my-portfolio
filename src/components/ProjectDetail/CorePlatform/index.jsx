@@ -9,13 +9,15 @@ import CoreSteps from '../../../assets/corePlatform/core-steps.svg';
 import './index.scss';
 
 import IterationIcon from '../../../assets/basicNeeds/iteration-icon.png';
-import ResourceLibrary from '../../../assets/corePlatform/resource-library.png';
-import ResourceLibraryRedesign from '../../../assets/corePlatform/resource-library-redesign.png';
+import ResourceLibrary from '../../../assets/corePlatform/resource-library-gif.gif';
+// import ResourceLibraryRedesign from '../../../assets/corePlatform/resource-library-redesign.png';
+import ResourceLibraryRedesign from '../../../assets/corePlatform/resource-library-redesign-gif.gif';
 import Forum from '../../../assets/corePlatform/the-forum.png';
 import ForumRedesign from '../../../assets/corePlatform/the-forum-redesign.png';
 import ForumPost from '../../../assets/corePlatform/forum-post.png';
 import ForumPostRedesign from '../../../assets/corePlatform/forum-post-redesign.png';
 import UserProfile from '../../../assets/corePlatform/user-profile.png';
+// import UserProfileRedesign from '../../../assets/corePlatform/profile-gif.gif';
 import UserProfileRedesign from '../../../assets/corePlatform/user-profile-redesign.png';
 import WeeklyPlan from '../../../assets/corePlatform/weekly-plan-sample.png';
 
@@ -42,6 +44,25 @@ const headerSections = {
     },
   ],
 };
+
+const navigations = [
+  {
+    to: 'overview',
+    label: 'Overview',
+  },
+  {
+    to: 'design-process',
+    label: 'Design',
+  },
+  {
+    to: 'development-process',
+    label: 'Development',
+  },
+  {
+    to: 'reflection',
+    label: 'Reflection',
+  },
+];
 
 const CustomScene = ({
   children, pro = [], con = [], label, redesignDescription = [],
@@ -112,7 +133,7 @@ class CorePlatform extends Component {
   render() {
     return (
       <div className="core-platform-main">
-        <Navigation />
+        <Navigation navigations={navigations} />
         <ProjectHeaderSection
           header="The CORE Platform Redesign"
           overviewSections={overview}
@@ -122,7 +143,7 @@ class CorePlatform extends Component {
           solution="I created redesigns for all pages of the CORE Platform to improve the experience of navigating and interacting with the tools. We then implemented the new designs with React.js for the front-end and Node.js for the back-end."
         />
 
-        <div className="content-container narrow-contianer">
+        <div className="design-process content-container narrow-contianer">
           <AnimatedHeader>Design Process</AnimatedHeader>
 
           <h3>Background Research</h3>
@@ -182,6 +203,7 @@ class CorePlatform extends Component {
           redesignDescription={['remove unessential information from the cards', 'create hierarchical and multi-select filters for more flexibility and readability', 'divide content vertically and horizontally for better organization']}
         >
           <img src={ResourceLibrary} alt="resource library" />
+          {/* <img src={ResourceLibraryRedesign} alt="resource library redesign" /> */}
           <img src={ResourceLibraryRedesign} alt="resource library redesign" />
         </CustomScene>
 
@@ -215,7 +237,7 @@ class CorePlatform extends Component {
           <img src={UserProfileRedesign} alt="user profile redesign" />
         </CustomScene>
 
-        <div className="content-container narrow-contianer">
+        <div className="development-process content-container narrow-contianer">
           <AnimatedHeader>Development Process</AnimatedHeader>
 
           <h3>Create a weekly development plan to keep track of progress</h3>

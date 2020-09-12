@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-scroll';
 import NextArrow from '../../../assets/next-arrow.png';
 import PrevArrow from '../../../assets/back-arrow.png';
 import { ReactComponent as UpIcon } from '../../../assets/up.svg';
@@ -72,7 +73,15 @@ class ProjectFooter extends Component {
             <span className="prev-text">{labels[previous].header}</span>
           </div>
         ) : <div />}
-        <div className="to-top" onClick={this.toTop}><UpIcon className="up-icon" /></div>
+        <Link
+          to="overview"
+          spy
+          smooth
+          offset={-70}
+          duration={300}
+        >
+          <div className="to-top"><UpIcon className="up-icon" /></div>
+        </Link>
         {next ? (
           <div
             className="arrow-container"

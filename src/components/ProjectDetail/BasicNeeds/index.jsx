@@ -22,6 +22,7 @@ import RegisteredToggle from '../../../assets/basicNeeds/registered-toggle.png';
 import DefaultV3 from '../../../assets/basicNeeds/default-v3.png';
 import LimitExceededV3 from '../../../assets/basicNeeds/limit-exceeded-v3.png';
 import RegisteredV3 from '../../../assets/basicNeeds/registered-v3.png';
+import FinalGif from '../../../assets/basicNeeds/basic-needs-gif.gif';
 
 import BasicNeedsWorkflow from '../../../assets/basicNeeds/basic-needs-workflow.png';
 import BasicNeedsStructure from '../../../assets/basicNeeds/basic-needs-structure.png';
@@ -51,6 +52,25 @@ const headerSections = {
   ],
 };
 
+const navigations = [
+  {
+    to: 'overview',
+    label: 'Overview',
+  },
+  {
+    to: 'design-process',
+    label: 'Design',
+  },
+  {
+    to: 'development-process',
+    label: 'Development',
+  },
+  {
+    to: 'reflection',
+    label: 'Reflection',
+  },
+];
+
 export const Image = ({
   src, alt, label, style,
 }) => (
@@ -74,7 +94,7 @@ class BasicNeeds extends Component {
   render() {
     return (
       <div className="basic-needs-main">
-        <Navigation />
+        <Navigation navigations={navigations} />
         <ProjectHeaderSection
           header="Basic Needs Attendance Tracking"
           overviewSections={overview}
@@ -86,8 +106,7 @@ class BasicNeeds extends Component {
                     allowing us to easily and accurately keep track of the number of students attending."
         />
 
-        <div className="content-container narrow-contianer">
-
+        <div className="design-process content-container narrow-contianer">
           <AnimatedHeader>Design Process</AnimatedHeader>
 
           <h3>Understand Client Needs</h3>
@@ -217,14 +236,13 @@ class BasicNeeds extends Component {
         <div className="design-iteration" style={{ backgroundColor: '#7A94A8' }}>
           <div className="content-container iteration-container">
             <h2 className="iteration-header">Final Iteration</h2>
-
-            <div className="iteration-img-layout">
+            <div className="iteration-img-layout final-gif">
               <Image
-                src={DefaultV3}
+                src={FinalGif}
                 alt="default v3"
-                label="Default State"
+                label="Register / Unregister Events"
               />
-              <Image
+              {/* <Image
                 src={RegisteredV3}
                 alt="registered v3"
                 label="Registered"
@@ -233,7 +251,7 @@ class BasicNeeds extends Component {
                 src={LimitExceededV3}
                 alt="limit exceeded v3"
                 label="RSVP Limit Exceeded"
-              />
+              /> */}
             </div>
             <div className="description-box">
               Problems with the second prototype
@@ -250,7 +268,7 @@ class BasicNeeds extends Component {
           </div>
         </div>
 
-        <div className="content-container narrow-contianer" style={{ marginBottom: 20 }}>
+        <div className="development-process content-container narrow-contianer" style={{ marginBottom: 20 }}>
           <AnimatedHeader>Development Process</AnimatedHeader>
           <h3>Create Backend Architecture</h3>
           <div className="center small-indent" style={{ marginTop: '2em' }}>

@@ -3,7 +3,7 @@ import { Link } from 'react-scroll';
 import './index.scoped.scss';
 
 const NavLink = ({
-  to, label, className = 'link', activeClass = 'active',
+  to, label, className = 'link', activeClass = 'active', style,
 }) => (
   <Link
     className={className}
@@ -12,7 +12,8 @@ const NavLink = ({
     spy
     smooth
     offset={-70}
-    duration={500}
+    duration={400}
+    style={style}
   >
     {label}
   </Link>

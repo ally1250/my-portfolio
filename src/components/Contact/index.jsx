@@ -106,7 +106,7 @@ class Contact extends Component {
           {this.renderTextArea('Message', 'message', message)}
         </div>
         <div
-          className={classnames('submit-button', loading ? 'active' : '')}
+          className={classnames('submit-button', { active: loading })}
           onClick={this.onSend}
         >
           {loading ? <BeatLoader color="white" /> : 'Send!'}

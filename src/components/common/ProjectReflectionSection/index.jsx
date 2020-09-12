@@ -14,7 +14,7 @@ class ProjectReflectionSection extends Component {
     const { feedbackSections = [], reflectionSections = [], source = '' } = this.props;
 
     return (
-      <div className="content-container narrow-contianer" id="project-reflection-main">
+      <div className="reflection content-container narrow-contianer" id="project-reflection-main">
         <Fade bottom><h2>Reflection</h2></Fade>
         <div className="reflection-container">
           <div>

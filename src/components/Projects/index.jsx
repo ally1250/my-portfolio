@@ -85,6 +85,11 @@ class Projects extends Component {
     history.push(`/${topic}`);
   }
 
+  openPortfolio = () => {
+    const { history } = this.props;
+    history.push(`/art`);
+  }
+
   render() {
     return (
       <div className="projects">
@@ -211,6 +216,17 @@ class Projects extends Component {
             <div style={{ height: '100vh', width: '100vw', backgroundColor: 'black'}} />
           </Parallax>
         </ParallaxProvider> */}
+        <Container style={{ marginTop: '25vh' }}>
+          <div style={{ fontSize: 16, marginBottom: '2em' }}>
+            I’m also interested in visual arts.
+          </div>
+          <div style={{ position: 'relative', width: 'fit-content' }} onClick={this.openPortfolio}>
+            <DiamondButton style={{ width: '25vw' }} className="diamond-button" />
+            <div className="button-label">
+              Checkout some of my art pieces!
+            </div>
+          </div>
+        </Container>
       </div>
     );
   }

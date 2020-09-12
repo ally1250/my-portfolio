@@ -23,9 +23,16 @@
   margin-top: 10vh;
   @include centerContent(column);
 
-  .container:hover .content-left, .container:hover .content-right {
+  .diamond-button {
     @include transition(0.5s);
-    transform: scale(1.1);
+  }
+
+  .container:hover {
+    .content-left, .content-right, .diamond-button {
+      cursor: pointer;
+      @include transition(0.5s);
+      transform: scale(1.1);
+    }
   }
 
   // .project-content-container:hover + .content-left {

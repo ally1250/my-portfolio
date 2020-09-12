@@ -1,9 +1,16 @@
 @import '../../../stylesheets/variables';
 
-.nav-container {
+.project-nav-bar {
+  width: 100%;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  // display: flex;
+  // justify-content: space-between;
+  // width: 100%;
 
   @mixin navigation {
     position: fixed;
@@ -12,51 +19,106 @@
     z-index: 2;
   }
   
-  .name {
-    margin-top: 2em;
+  // .name {
+  //   margin-top: 2em;
+  //   margin-left: 2em;
+  //   // @include navigation;
+  
+  //   .name-link {
+  //     @include link;
+  //     width: fit-content;
+  //     background-color: rgba(255, 255, 255, 0.7);
+  
+  //     &:hover, .name-active {
+  //       color: $primary1;
+  //       cursor: pointer;
+  //     }
+  //   }
+  // }
+
+  .name-link {
+    @include link;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.7);
     margin-left: 2em;
-    @include navigation;
-  
-    .name-link {
+    margin-top: 2em;
+    transition: margin 0.6s;
+
+    &:hover, .name-active {
+      color: $primary1;
+      cursor: pointer;
+    }
+
+    &--hidden {
+      margin-left: -100px;
+    }
+  }
+
+  .nav {
+    background-color: rgba(255, 255, 255, 0.8);
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 2em;
+    margin-top: 2em;
+    transition: margin 0.6s;
+
+    &--hidden {
+      margin-right: -130px;
+    }
+
+    .link {
       @include link;
-      width: fit-content;
-      background-color: rgba(255, 255, 255, 0.7);
       @include transition;
-  
-      &:hover, .name-active {
+      width: 100px;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: rgba($dark-gray, 0.6);
+
+      &:hover {
         color: $primary1;
-        cursor: pointer;
+        // font-weight: normal;
+        @include transition;
+        // width: 80px;
+        // background-color: $primary1;
       }
+    }
+
+    .active {
+      color: $primary1;
+      font-weight: normal;
+      // background-color: $primary1;
     }
   }
 }
 
-.home-link {
-  @include link;
-  @include navigation;
-  @include transition;
+// .home-link {
+//   @include link;
+//   @include navigation;
+//   @include transition;
 
-  background-color: rgba(255, 255, 255, 0.7);
-  margin-top: 2em;
-  margin-right: 2em;
-  right: 0;
-  &:hover {
-    color: white;
-    background-color: $primary1;
-  }
-}
+//   background-color: rgba(255, 255, 255, 0.7);
+//   margin-top: 2em;
+//   margin-right: 2em;
+//   right: 0;
+//   &:hover {
+//     color: white;
+//     background-color: $primary1;
+//   }
+// }
 
-.link {
-  @include transition;
-  @include link;
+// .link {
+//   @include transition;
+//   @include link;
 
-  &:hover {
-    color: white;
-    background-color: $primary1;
-  }
-}
+//   &:hover {
+//     color: white;
+//     background-color: $primary1;
+//   }
+// }
 
-.active {
-  color: white;
-  background-color: $primary1;
-}
+// .active {
+//   color: white;
+//   background-color: $primary1;
+// }
