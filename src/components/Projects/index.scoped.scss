@@ -33,6 +33,17 @@
       @include transition(0.5s);
       transform: scale(1.1);
     }
+
+    .button-label {
+      font-size: 16px;
+      @include transition(0.5s);
+      cursor: pointer;
+    }
+
+    // .button-label {
+    //   color: $primary1;
+    //   @include transition;
+    // }
   }
 
   // .project-content-container:hover + .content-left {
@@ -137,8 +148,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    font-weight: bold;
-    font-size: 20px;
-    color: $primary1;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgb(216, 164, 53);
+    @include transition(0.5s);
   }
 }

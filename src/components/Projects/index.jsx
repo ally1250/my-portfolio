@@ -87,7 +87,7 @@ class Projects extends Component {
 
   openPortfolio = () => {
     const { history } = this.props;
-    history.push(`/art`);
+    history.push('/art');
   }
 
   render() {
@@ -219,11 +219,16 @@ class Projects extends Component {
         <Container style={{ marginTop: '25vh' }}>
           <div style={{ fontSize: 16, marginBottom: '2em' }}>
             I’m also interested in visual arts.
+            <div style={{ color: 'black' }}>
+              Checkout some of my art pieces!
+              <span role="img" aria-label="down" style={{ fontSize: 18 }}>👇</span>
+            </div>
           </div>
           <div style={{ position: 'relative', width: 'fit-content' }} onClick={this.openPortfolio}>
             <DiamondButton style={{ width: '25vw' }} className="diamond-button" />
             <div className="button-label">
-              Checkout some of my art pieces!
+              <span role="img" aria-label="down" className="emoji" style={{ fontSize: 22 }}>🖼️ 🖼️ 🖼️</span>
+              <div>Open Gallary</div>
             </div>
           </div>
         </Container>
