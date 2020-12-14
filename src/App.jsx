@@ -51,6 +51,10 @@ function App() {
         path="/art"
         component={Portfolio}
       />
+      <Route
+        path="/art"
+        component={Portfolio}
+      />
     </Router>
   );
 }
