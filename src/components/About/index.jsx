@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { ReactComponent as Background } from '../../assets/background.svg';
+// import { ReactComponent as Background } from '../../assets/background.png';
 import { ReactComponent as DesignerIcon } from '../../assets/designer-icon.svg';
 import { ReactComponent as DeveloperIcon } from '../../assets/developer-icon.svg';
 import data from '../../Data';
+
+import Background from '../../assets/background.png';
 
 import './index.scoped.scss';
 
@@ -31,7 +33,8 @@ class About extends Component {
   render() {
     return (
       <div className="about">
-        <Background className="background" />
+        <img src={Background} alt="about-background-circles" className="background" />
+        {/* <Background className="background" /> */}
         <div className="label-container">
           <div className="label-section">
             <DesignerIcon />

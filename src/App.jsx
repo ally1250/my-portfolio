@@ -11,7 +11,7 @@ import Resume from './components/Resume';
 import Contact from './components/Contact';
 import Portfolio from './components/ProjectDetail/Portfolio';
 
-import { BasicNeeds, CorePlatform, AmazonInternship } from './components/ProjectDetail';
+import { BasicNeeds, CorePlatform, AmazonInternship, MFPRedesign } from './components/ProjectDetail';
 
 const Home = () => (
   <div className="App">
@@ -52,8 +52,8 @@ function App() {
         component={Portfolio}
       />
       <Route
-        path="/art"
-        component={Portfolio}
+        path="/mfp-redesign"
+        component={MFPRedesign}
       />
     </Router>
   );

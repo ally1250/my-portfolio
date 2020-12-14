@@ -309,7 +309,7 @@ class BasicNeeds extends Component {
 
         <ProjectFooter
           previous="amazon-internship"
-          // next="food-delivery"
+          next="mfp-redesign"
         />
       </div>
     );

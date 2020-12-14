@@ -29,6 +29,11 @@ const labels = {
     header: 'The Har Viewer',
     subHeader: 'Web Design and Development',
   },
+  'mfp-redesign':
+  {
+    header: 'MFP Redesign',
+    subHeader: 'Mobile Design',
+  },
   'food-delivery':
   {
     header: 'Food Delivery System',

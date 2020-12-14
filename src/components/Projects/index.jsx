@@ -11,6 +11,7 @@ import { ReactComponent as Triangle } from '../../assets/triangle.svg';
 import { ReactComponent as TogetherApp } from '../../assets/together-app.svg';
 import { ReactComponent as Circle } from '../../assets/circle.svg';
 import { ReactComponent as LargeCircle } from '../../assets/large-circle.svg';
+import { ReactComponent as Triangle3 } from '../../assets/triangle3.svg';
 import { ReactComponent as Rectangle } from '../../assets/rectangle.svg';
 import { ReactComponent as StraightTriangle } from '../../assets/straight-triangle.svg';
 import { ReactComponent as DiamondButton } from '../../assets/diamond-button.svg';
@@ -19,6 +20,7 @@ import RecodeWeb from '../../assets/recode-web.png';
 import Test from '../../assets/test.svg';
 import BirchSearchApp from '../../assets/birch-search-app.svg';
 import AmazonProject from '../../assets/amazon-project.png';
+import MFP from '../../assets/MFPChallenge.png';
 
 import UCSDApp from '../../assets/basic-needs-app.png';
 
@@ -151,6 +153,19 @@ class Projects extends Component {
           />
         </Container>
 
+        <Container style={{ marginTop: '15em', marginLeft: '10em' }}>
+          <Triangle3 className="content-right" />
+          <ContentContainer
+            style={{ right: '45vw', top: '6em' }}
+            textStyle={{ marginLeft: '4em', marginTop: '-1em' }}
+            content={<img src={MFP} alt="MFP" style={{ width: 155 }} />}
+            header="MyFitnessPal Redesign"
+            design
+            description={['User Research', 'UI/UX Design', 'Communication']}
+            onClick={() => this.onSelectProject('mfp-redesign')}
+          />
+        </Container>
+
         {/* <Container style={{ marginTop: '20em', marginLeft: '5em' }}>
           <Rectangle className="content-right" />
           <ContentContainer
@@ -199,18 +214,6 @@ class Projects extends Component {
             description={['User Research', 'Ideation', 'Prototyping']}
           />
         </Container>
-
-        <Container style={{ marginTop: '25vh' }}>
-          <div style={{ fontSize: 16, marginBottom: '2em' }}>
-            I’m also interested in visual arts.
-          </div>
-          <div style={{ position: 'relative', width: 'fit-content' }}>
-            <DiamondButton style={{ width: '25vw' }} />
-            <div className="button-label">
-              Checkout some of my art pieces!
-            </div>
-          </div>
-        </Container> */}
         {/* <ParallaxProvider>
           <Parallax y={[-30, 30]}>
             <div style={{ height: '100vh', width: '100vw', backgroundColor: 'black'}} />
@@ -220,7 +223,7 @@ class Projects extends Component {
           <div style={{ fontSize: 16, marginBottom: '2em' }}>
             I’m also interested in visual arts.
             <div style={{ color: 'black' }}>
-              Checkout some of my art pieces!
+              Check out some of my art pieces!
               <span role="img" aria-label="down" style={{ fontSize: 18 }}>👇</span>
             </div>
           </div>
