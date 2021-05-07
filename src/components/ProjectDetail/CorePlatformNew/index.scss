@@ -1,0 +1,177 @@
+@import '../../../stylesheets/variables';
+@import '../index.scoped.scss';
+@import '../AmazonInternshipNew/index.scoped.scss';
+
+.core-platform-main {
+  overflow: hidden;
+
+  // .header-container {
+  //   display: flex;
+  //   justify-content: flex-end;
+  // }
+
+  h1 {
+    width: 30%;
+  }
+
+  .indent-image {
+    background-color: #b9b9b9;
+    margin: 1rem 15%;
+    padding: 3rem 0 !important;
+  }
+
+  .insights-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5em;
+    row-gap: 3em;
+    margin: 0 4em;
+    background-color: $font-gray;
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      content: "";
+      background-image: url("../../../assets/corePlatform/grid.png");
+      opacity: 0.5;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+    }
+
+    .insight {
+      font-weight: bold;
+      font-family: 'PT Serif', serif;
+      font-size: 22px;
+      color: white;
+      line-height: 1.3;
+      width: 10em;
+      z-index: 1;
+      
+      .insight-type {
+        color: $gray;
+        font-size: 10px;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  #pinContainer {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    .panel {
+      height: 100vh;
+      width: 100vw;
+      position: absolute;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      column-gap: 2em;
+      padding-top: 17vh;
+      padding-left: 8em;
+      box-sizing: border-box;
+
+      .description-container {
+        @include centerContent(column);
+        margin-bottom: 0;
+      }
+
+      span {
+        position: relative;
+        display: block;
+        top: 50%;
+        font-size: 80px;
+      }
+
+      img {
+        width: 800px;
+        box-shadow: 0 2px 20px 0 rgba(39, 44, 53, 0.5);
+      }
+
+      &.original {
+        background-color: #252525;
+      }
+
+      &.push {
+        background-color: #e6dad3;
+      }
+
+      .design-type {
+        font-family: 'Montserrat', sans-serif;
+
+        width: 10em;
+        margin-left: 0.5em;
+        margin-bottom: 1.5em;
+        line-height: 1.5;
+        font-size: 25px;
+        font-weight: bold;
+        color: white;
+
+        &.redesign {
+          color: #EF7B30;
+        }
+      }
+
+      .description {
+        @include descriptionBox;
+        
+        .label {
+          color: #dbb094;
+          // padding-bottom: 2em;
+        }
+
+        &.changes {
+          // padding-left: 2em;
+          color: #EF7B30;
+          ul {
+            margin-left: -0.5em;
+            // padding: 0.5em;
+            li {
+              color: rgb(70, 64, 64);
+            }
+          }
+        }
+
+        &.evaluation {
+          display: flex;
+          flex-direction: column;
+          // display: grid;
+          // grid-template-rows: 1fr 1fr;
+          row-gap: 3em;
+        }
+
+        ul {
+          @include descriptionList;
+
+          li {
+            line-height: 1.5em;
+            margin-top: 1em;
+          }
+
+          li::before {
+            font-size: 20px;
+            font-weight: bold;
+            color: #dbb094;
+            position: absolute;
+            left: 0;
+          }
+
+          &.pro, &.con {
+            list-style-type: none;
+          }
+
+          &.pro li::before {
+            content: '+';
+          }
+
+          &.con li::before {
+            content: '-';
+          }
+        }
+      }
+    }
+  }
+}

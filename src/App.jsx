@@ -11,7 +11,9 @@ import Resume from './components/Resume';
 import Contact from './components/Contact';
 import Portfolio from './components/ProjectDetail/Portfolio';
 
-import { BasicNeeds, CorePlatform, AmazonInternship, MFPRedesign } from './components/ProjectDetail';
+import {
+  BasicNeeds, CorePlatform, AmazonInternship, MFPRedesign, AmazonInternshipNew, CorePlatformNew,
+} from './components/ProjectDetail';
 
 const Home = () => (
   <div className="App">
@@ -54,6 +56,14 @@ function App() {
       <Route
         path="/mfp-redesign"
         component={MFPRedesign}
+      />
+      <Route
+        path="/har-viewer-new"
+        component={AmazonInternshipNew}
+      />
+      <Route
+        path="/core-platform-new"
+        component={CorePlatformNew}
       />
     </Router>
   );

@@ -55,7 +55,7 @@ const navigations = [
   },
 ];
 
-class AmazonInternship extends Component {
+class AmazonInternshipNew extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -280,4 +280,4 @@ class AmazonInternship extends Component {
   }
 }
 
-export default AmazonInternship;
+export default AmazonInternshipNew;
