@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { pdfjs } from 'react-pdf';
 import { Document, Page } from 'react-pdf/dist/entry.webpack';
 import { Header } from '../common';
-import Resume from '../../assets/resume-danling.pdf';
+import Resume from '../../assets/Resume-danling.pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 
 import './index.scss';
