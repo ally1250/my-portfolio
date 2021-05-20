@@ -2,13 +2,27 @@
 @import '../index.scoped.scss';
 @import '../AmazonInternshipNew/index.scoped.scss';
 
-.core-platform-main {
+.core-platform-new-main {
   overflow: hidden;
 
   // .header-container {
   //   display: flex;
   //   justify-content: flex-end;
   // }
+
+  .problem-statement {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 8em 4em !important;
+    margin: 4em 0 !important;
+    background-color: #D3D7DB;
+
+    font-size: 20px;
+    color: black;
+  }
 
   h1 {
     width: 30%;
