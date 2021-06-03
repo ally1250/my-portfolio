@@ -81,12 +81,18 @@
       height: 100vh;
       width: 100vw;
       position: absolute;
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      column-gap: 2em;
-      padding-top: 17vh;
-      padding-left: 8em;
+      padding-top: 10vh;
+      padding-left: 5em;
       box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .panel-content {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        column-gap: 2em;
+      }
 
       .description-container {
         @include centerContent(column);
@@ -101,7 +107,8 @@
       }
 
       img {
-        width: 800px;
+        align-self: center;
+        width: 900px;
         box-shadow: 0 2px 20px 0 rgba(39, 44, 53, 0.5);
       }
 
@@ -116,11 +123,11 @@
       .design-type {
         font-family: 'Montserrat', sans-serif;
 
-        width: 10em;
-        margin-left: 0.5em;
+        // width: 10em;
+        // margin-left: 0.5em;
         margin-bottom: 1.5em;
         line-height: 1.5;
-        font-size: 25px;
+        font-size: 30px;
         font-weight: bold;
         color: white;
 
@@ -144,7 +151,7 @@
             margin-left: -0.5em;
             // padding: 0.5em;
             li {
-              color: rgb(70, 64, 64);
+              color: rgb(27, 25, 25);
             }
           }
         }
@@ -159,6 +166,8 @@
 
         ul {
           @include descriptionList;
+          font-size: 16px;
+          letter-spacing: -1.5%;
 
           li {
             line-height: 1.5em;

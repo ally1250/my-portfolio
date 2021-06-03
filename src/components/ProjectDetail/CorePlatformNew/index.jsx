@@ -71,15 +71,15 @@ const CustomScene = ({
   <Controller>
     <Scene
       triggerHook="onLeave"
-      duration="100%"
+      duration="200%"
       pin
     >
       <Timeline
         wrapper={<div id="pinContainer" />}
       >
         <section className="panel original">
-          <div>
-            <div className="design-type">{`${label} (Original)`}</div>
+          <div className="design-type">{`${label} (Original)`}</div>
+          <div className="panel-content">
             <div className="description evaluation">
               <div className="label">
                 PRO
@@ -92,22 +92,22 @@ const CustomScene = ({
                 <ul className="con">{con.map((c) => <li>{c}</li>)}</ul>
               </div>
             </div>
+            {children[0]}
           </div>
-          {children[0]}
         </section>
         <Tween
-          from={{ x: '100%' }}
-          to={{ x: '0%' }}
+          from={{ y: '100%' }}
+          to={{ y: '0%' }}
         >
           <section className="panel push">
-            <div>
-              <div className="design-type redesign">{`${label} (Redesign)`}</div>
+            <div className="design-type redesign">{`${label} (Redesign)`}</div>
+            <div className="panel-content">
               <div className="description changes">
                 MODIFICATIONS
                 <ul>{redesignDescription.map((d) => <li>{d}</li>)}</ul>
               </div>
+              {children[1]}
             </div>
-            {children[1]}
           </section>
         </Tween>
       </Timeline>
@@ -137,15 +137,15 @@ class CorePlatform extends Component {
     return (
       <div className="amazon-main core-platform-new-main">
         {/* <Navigation navigations={navigations} /> */}
-        <div className="header-container" style={{ backgroundColor: '#bd520a', paddingBottom: '3em' }}>
+        <div className="header-container" style={{ backgroundColor: '#bd520a', paddingBottom: '5em' }}>
           <h1 style={{ color: 'white' }}>The CORE Redesign</h1>
-          <p style={{ color: 'white', width: '37%' }}>A large community for public health researhers to connect and share expertise.</p>
+          <p style={{ color: 'white', width: '34%' }}>A large community for public health researhers to connect and share expertise.</p>
           <div className="intro-img-container">
-            <img src={CORE} alt="core" style={{ width: 650 }} />
+            <img src={CORE} alt="core" style={{ width: 800 }} />
           </div>
         </div>
 
-        <div className="header-container sections" style={{ boxShadow: 'none', paddingBottom: 0, paddingTop: '4em' }}>
+        <div className="header-container sections" style={{ boxShadow: 'none', paddingBottom: 0, paddingTop: '2.5em' }}>
           <p>
             <div className="section-header">Links</div>
             <a href={headerSections.links[1].url} target="_blank" rel="noreferrer">{headerSections.links[1].label}</a>
