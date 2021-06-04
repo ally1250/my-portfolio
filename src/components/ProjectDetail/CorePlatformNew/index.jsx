@@ -136,13 +136,12 @@ class CorePlatform extends Component {
   render() {
     return (
       <div className="amazon-main core-platform-new-main">
-        {/* <Navigation navigations={navigations} /> */}
-        <div className="header-container" style={{ backgroundColor: '#bd520a', paddingBottom: '5em' }}>
-          <h1 style={{ color: 'white' }}>The CORE Redesign</h1>
-          <p style={{ color: 'white', width: '34%' }}>A large community for public health researhers to connect and share expertise.</p>
-          <div className="intro-img-container">
-            <img src={CORE} alt="core" style={{ width: 800 }} />
+        <div className="header-container overview" style={{ backgroundColor: '#bd520a' }}>
+          <div>
+            <h1 style={{ color: 'white', width: '100%' }}>The CORE Redesign</h1>
+            <p style={{ color: 'white', width: '90%' }}>THE CORE PLATFORM - A large community for public health researhers to connect and share expertise.</p>
           </div>
+          <img src={CORE} alt="core" style={{ width: '100%' }} />
         </div>
 
         <div className="header-container sections" style={{ boxShadow: 'none', paddingBottom: 0, paddingTop: '2.5em' }}>

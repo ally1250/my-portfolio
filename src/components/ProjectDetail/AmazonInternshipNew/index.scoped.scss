@@ -68,8 +68,8 @@
     padding: 3em 20em;
 
     p, li {
-      color: #161618ce;
-      font-size: 16px;
+      color: #000000ce;
+      font-size: 17px;
     }
 
     .indent-image {
@@ -123,10 +123,12 @@
   }
 
   .header-container {
-    margin: 0;
-    max-width: 100%;
-    padding: 3.5em 6em 6em;
+    width: 100%;
+    padding: 3.5em 6em 1.5em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 35% 65%;
 
     .intro-img-container {
       position: absolute;

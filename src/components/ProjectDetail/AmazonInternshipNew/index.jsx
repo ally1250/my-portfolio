@@ -73,14 +73,18 @@ class AmazonInternship extends Component {
       <div className="amazon-main">
         {/* <Navigation navigations={navigations} /> */}
         <div className="header-container overview" style={{ backgroundColor: '#232F3E' }}>
-          <h1 style={{ color: 'white', textTransform: 'uppercase' }}>Har Viewer</h1>
-          <p style={{ color: 'white', width: '35%' }}>A simple tool for developers to analyze client-side network performance.</p>
-          <div className="intro-img-container">
-            <img src={HarViewerNoBorder} alt="amazon project sketch 1" style={{ width: 580 }} />
+          <div>
+            <h1 style={{ color: 'white', marginTop: 0, width: '100%' }}>Amazon Internship</h1>
+            <p style={{ color: 'white' }}>
+              <b>THE HAR VIEWER</b>
+              {' '}
+              - A simple tool for developers to analyze client-side network performance.
+            </p>
           </div>
+          <img src={HarViewerNoBorder} alt="amazon project sketch 1" style={{ width: '100%' }} />
         </div>
 
-        <div className="header-container sections" style={{ boxShadow: 'none', paddingBottom: 0 }}>
+        <div className="header-container sections" style={{ boxShadow: 'none', paddingBottom: 0, paddingTop: '2em' }}>
           <p>
             <div className="section-header">Links</div>
             <a href={headerSections.links[0].url} target="_blank" rel="noreferrer">{headerSections.links[0].label}</a>
@@ -100,17 +104,17 @@ class AmazonInternship extends Component {
         </div>
 
         <div className="design-process content-container">
-          <AnimatedHeader style={{ textTransform: 'uppercase' }}>Overview</AnimatedHeader>
+          <AnimatedHeader style={{ textTransform: 'uppercase', padding: 0 }}>Overview</AnimatedHeader>
           <p>As developers, we often face challenges of fixing a client-reported performance issue where the only hint to finding the cause is the client’s brief description. My intern project at Amazon focuses on helping developers overcome such challenges by building an HTTP analyzer called the Har Viewer that allows developers to trace back the steps that have led to the error. With the Har Viewer, developers can easily pinpoint the source of the traffic issue and quickly help the clients fix their problems. </p>
         </div>
 
         <div className="design-process content-container problem-statement">
-          <AnimatedHeader style={{ textTransform: 'uppercase' }}>Problem Statement</AnimatedHeader>
+          <AnimatedHeader style={{ textTransform: 'uppercase', padding: 0 }}>Problem Statement</AnimatedHeader>
           It is time-consuming and sometimes impossible for developers to pinpoint the cause of a client-reported performance issue so they need a way to quickly reproduce and trace errors on the client-side.
         </div>
 
         <div className="design-process content-container">
-          <AnimatedHeader style={{ textTransform: 'uppercase' }}>Ideation</AnimatedHeader>
+          <AnimatedHeader style={{ textTransform: 'uppercase', margin: 0, padding: 0 }}>Ideation</AnimatedHeader>
           <p>To determine the necessary features to include in the design, I interviewed a few programmers on the team to get a sense of the problems they face when resolving customer tickets.</p>
 
           <h3>Problems</h3>
@@ -120,22 +124,43 @@ class AmazonInternship extends Component {
           </ul>
           <h3>The Solution</h3>
           <p>From the two problems I identified, it is clear that programmers need a way to trace the steps taken by the customers on the client-side to correctly identify and analyze a performance issue.</p>
-          <p><b>Therefore, the plan is to build an HTTP analyzer called the Har Viewer that collects API response data and timing data upon user actions on the client-side.</b> The Har Viewer allows users to retrieve data within a specific time range for a specific client. Each API data includes information, such as status code, error message, start time, and end time, that would give developers more context and help them identify any unusual cases.</p>
-
+          <p>
+            <b>Therefore, the plan is to build an HTTP analyzer called the Har Viewer that collects API response data and timing data upon user actions on the client-side.</b>
+            {' '}
+          </p>
+          <p>
+            To overcome the first problem listed above, the Har Viewer allows developers to easily trace the steps that the customer took without requesting more information from the customer. To do so, developers only need to provide a customer id and a time by copy pasting from the customer ticket. Then the Har Viewer will list out all API call activities before and after the provided time, such as status code, error message, start time, and end time. By analyzing this information, developers can quickly solve the second problem and distinguish API issues from network connection problems.
+          </p>
         </div>
 
         <div className="design-process content-container">
-          <AnimatedHeader style={{ textTransform: 'uppercase' }}>Design</AnimatedHeader>
+          <AnimatedHeader style={{ textTransform: 'uppercase', margin: 0, padding: 0 }}>Design</AnimatedHeader>
           <p>As a show of concept, I first drew a sketch of the tool to get a sense of how the pieces would fit together in the view. According to the user interviews, some essential features of the tool include:</p>
           <ul>
             <li>
-              Input fields for specifying a <b>customer id</b> and a <b>start time</b> for the search.
+              Input fields for specifying a
+              {' '}
+              <b>customer id</b>
+              {' '}
+              and a
+              {' '}
+              <b>start time</b>
+              {' '}
+              for the search.
             </li>
             <li>
-              A list of <b>API call names and details</b> in the search result.
+              A list of
+              {' '}
+              <b>API call names and details</b>
+              {' '}
+              in the search result.
             </li>
             <li>
-            A <b>waterfall chart</b> to visualize the time elapsed for all API calls in the search result.
+              A
+              {' '}
+              <b>waterfall chart</b>
+              {' '}
+              to visualize the time elapsed for all API calls in the search result.
             </li>
           </ul>
           <div className="indent-container indent-image">
@@ -143,7 +168,7 @@ class AmazonInternship extends Component {
           </div>
           <div className="caption small-indent">Concept Sketch (First Version)</div>
           <p style={{ marginTop: '6em' }}>
-            From user testing, I learned that it would be helpful to make the visualization interactive so that users could have more flexibility when searching for API information. Therefore, I changed the API list into a table, which displays some API details and the corresponding timing visualization side-by-side for more readability. 
+            From user testing, I learned that it would be helpful to make the visualization interactive so that users could have more flexibility when searching for API information. Therefore, I changed the API list into a table, which displays some API details and the corresponding timing visualization side-by-side for more readability.
           </p>
           <div className="indent-container indent-image">
             <img src={Sketch2} alt="amazon project sketch 2" style={{ width: 650 }} />
@@ -152,26 +177,38 @@ class AmazonInternship extends Component {
         </div>
 
         <div className="design-process content-container">
-          <AnimatedHeader style={{ textTransform: 'uppercase' }}>Development</AnimatedHeader>
+          <AnimatedHeader style={{ textTransform: 'uppercase', margin: 0, padding: 0 }}>Development</AnimatedHeader>
           <h3>To Collect API Metrics...</h3>
           <div className="center small-indent diagram" style={{ marginTop: '2em' }}>
             <img src={Workflow1} alt="workflow structure" style={{ width: 450 }} />
           </div>
-          <p>I added instrumentation on the <b>RDS Console SDK</b> to collect two types of metrics for each API call:</p>
+          <p>
+            I added instrumentation on the
+            <b>RDS Console SDK</b>
+            {' '}
+            to collect two types of metrics for each API call:
+          </p>
           <div className="metric-list">
             <div>
               <div className="header">Timing Data</div>
               <ul>
                 <li>This type of data is collected whenever an API call gets triggered, which includes the start time, end time, and time elapsed to help developers quickly identify any slow loads. </li>
                 <li>The instrumentation gets called at 30-second intervals to accurately capture the time taken for each API call to complete.</li>
-                <li>A unique Id is generated for each API call in order to match the timing data with the corresponding respose data.</li>   
+                <li>A unique Id is generated for each API call in order to match the timing data with the corresponding respose data.</li>
               </ul>
             </div>
             <div>
               <div className="header">Response Data</div>
               <ul>
                 <li>This type of data is collected upon completion of each API call, including information such as API name, HTTP status code, error message, etc. that helps developers understand what happened during the API call.</li>
-                <li>Once both timing and response data are collected for an API call, the complete <b>log data schema</b> is sent off to be stored in the <b>Logging Service's database</b>.</li>
+                <li>
+                  Once both timing and response data are collected for an API call, the complete
+                  <b>log data schema</b>
+                  {' '}
+                  is sent off to be stored in the
+                  <b>Logging Service's database</b>
+                  .
+                </li>
               </ul>
             </div>
           </div>
@@ -181,8 +218,28 @@ class AmazonInternship extends Component {
             <img src={Workflow2} alt="workflow structure" style={{ width: 600 }} />
           </div>
           <ul>
-            <li>I used <b>Athena Glue</b> to filter and copy data from <b>Logging Service</b> to our own database periodically. </li>
-            <li>When user starts a search with the <b>Har Viewer Interface</b>, the <b>Athena query API</b> is triggered to fetch the stored API data from our own database.</li>
+            <li>
+              I used
+              {' '}
+              <b>Athena Glue</b>
+              {' '}
+              to filter and copy data from
+              {' '}
+              <b>Logging Service</b>
+              {' '}
+              to our own database periodically.
+              {' '}
+            </li>
+            <li>
+              When user starts a search with the
+              {' '}
+              <b>Har Viewer Interface</b>
+              , the
+              {' '}
+              <b>Athena query API</b>
+              {' '}
+              is triggered to fetch the stored API data from our own database.
+            </li>
           </ul>
         </div>
 
@@ -207,10 +264,10 @@ class AmazonInternship extends Component {
               style={{ width: 750 }}
               label="Har Viewer"
             />
-            <p style={{ marginTop: '3em' }}>With three simple steps, users can easily retrieve and analyze client-side traffic. The minimalist interface gives clear indication of what information is needed and how to start searching without giving any written instructions.</p>
-            
+            <p style={{ marginTop: '3em' }}>With three simple steps, users can easily retrieve and analyze client-side traffic. The minimalist interface gives clear indication of what information is needed and how to start searching without giving any written instructions. This saves time and effort for users when resolving customer tickets.</p>
+
             <div className="divider" />
-            
+
             <h2>Interactive Waterfall Chart</h2>
             <div className="image-container">
               <Image
@@ -226,9 +283,12 @@ class AmazonInternship extends Component {
                 label="Waterfall Chart on Hover"
               />
             </div>
-            <p style={{ marginTop: '5em' }}>Inspired by Chrome’s Network tab under inspect, I included a waterfall chart in the search results that correspond to the API data displayed. This visualization allows users to compare the API timings side-by-side to quickly identify any API call that took longer than others.</p>
+            <p style={{ marginTop: '5em' }}>
+              <b>Inspired by Chrome’s Network tab under inspect, I included a waterfall chart in the search results that correspond to the API data displayed.</b>
+              {' '}
+              The purpose of this interactive visualization is to provide more context for users in terms of the timing of all API calls within the specified time frame. It helps users visually compare the API timings side-by-side to quickly identify any API call that took longer than others.
+            </p>
             <p>By selecting an area in the chart, users can zoom in and out to investigate only the API calls triggered within the selected time frame. When users hover on any bar in the waterfall chart, the timing information for the corresponding API shows up as a tooltip to make information more accessible for users.</p>
-            
             <div className="divider" />
             <h2>Customizable Table</h2>
             <Image
@@ -237,13 +297,18 @@ class AmazonInternship extends Component {
               style={{ width: 750 }}
               label="API Metrics Table"
             />
-            <p style={{ marginTop: '5em' }}>The table provides detailed information for each API call in an organized and easy-to-interpret way. Users can easily compare the same types of information for different API calls in the same column to identify any outliers that may have caused the performance problem.</p>
+            <p style={{ marginTop: '5em' }}>
+              The original plan was to include a expandable list of API calls where users need to click on each API call to see detailed information. I noticed that it would be a redundant and unnecessary process to click open every API call and try to compare them.
+              <b>Therefore, the new approach is to transform the list into a data table, which provides detailed information for each API call in an organized and easy-to-interpret way.</b>
+              {' '}
+              Users can more easily compare the same types of information for different API calls in the same column to identify any outliers that may have caused the performance problem.
+            </p>
             <p style={{ marginBottom: '5em' }}>The last column of the table shows a small waterfall visualization for quick reference. To allow more customization, the data in the table changes dynamically as users select different ranges of the waterfall chart.</p>
           </div>
         </div>
 
         <div className="design-process content-container">
-          <AnimatedHeader style={{ textTransform: 'uppercase' }}>Reflection</AnimatedHeader>
+          <AnimatedHeader style={{ textTrxansform: 'uppercase', marginTop: '3em', padding: 0 }}>Reflection</AnimatedHeader>
           <p>The most important skill I learned from this internship experience was time management. I was on a tight schedule to build this tool from scratch because I was unfamiliar with the technology and the codebase. I spent a lot of time developing the perfect development plan to make sure I could finish on time.</p>
           <p>However, many unexpected situations occurred during the process and I was forced to quickly adapt to the changes and find alternative solutions. The largest challenge was to revert three weeks of work because of some external factors unrelated to my project. This created a huge gap in my schedule so I needed to quickly respond to the sudden change to keep everything on the same track.</p>
           <p style={{ marginBottom: '8em' }}>I immediately contacted my mentor and project manager to come up with alternative ways to implement the feature. From their kind suggestions, I set up meetings with other service teams to discuss the possibility of integrating with my tool to speed up the implementation process. At the end of the internship, I successfully presented my finished product to the whole team without any regrets.</p>
