@@ -266,7 +266,7 @@ class AmazonInternship extends Component {
             />
             <p style={{ marginTop: '3em' }}>With three simple steps, users can easily retrieve and analyze client-side traffic. The minimalist interface gives clear indication of what information is needed and how to start searching without giving any written instructions. This saves time and effort for users when resolving customer tickets.</p>
 
-            <div className="divider" />
+            {/* <div className="divider" /> */}
 
             <h2>Interactive Waterfall Chart</h2>
             <div className="image-container">
@@ -289,7 +289,7 @@ class AmazonInternship extends Component {
               The purpose of this interactive visualization is to provide more context for users in terms of the timing of all API calls within the specified time frame. It helps users visually compare the API timings side-by-side to quickly identify any API call that took longer than others.
             </p>
             <p>By selecting an area in the chart, users can zoom in and out to investigate only the API calls triggered within the selected time frame. When users hover on any bar in the waterfall chart, the timing information for the corresponding API shows up as a tooltip to make information more accessible for users.</p>
-            <div className="divider" />
+            {/* <div className="divider" /> */}
             <h2>Customizable Table</h2>
             <Image
               src={HarViewerDetail}
